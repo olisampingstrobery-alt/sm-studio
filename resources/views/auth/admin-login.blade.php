@@ -7,7 +7,7 @@
     <title>Masuk — SM Studio Admin</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600|outfit:600,700&display=swap" rel="stylesheet" />
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.jsx'])
 </head>
 <body class="min-h-screen bg-[#F1F5F9] font-sans antialiased text-slate-800 flex flex-col">
     {{-- Thin top bar — utilitarian, bukan hero --}}

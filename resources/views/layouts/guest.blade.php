@@ -7,7 +7,7 @@
     <title>{{ config('app.name', 'SM Studio') }} — Admin Access</title>
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600,700|outfit:600,700&display=swap" rel="stylesheet" />
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.jsx'])
 </head>
 <body class="font-sans antialiased bg-[#F1F5F9]">
     {{ $slot }}

@@ -22,10 +22,14 @@ use Illuminate\Support\Facades\Route;
 |--------------------------------------------------------------------------
 */
 Route::get('/', function () {
-    $clients = \App\Models\Client::where('is_active', true)->latest()->take(6)->get();
-    $portfolios = \App\Models\Portfolio::where('status','published')->with(['category','client'])->latest()->take(3)->get();
-    $services = \App\Models\Service::where('is_active', true)->latest()->take(3)->get();
-    return view('public.home', compact('clients','portfolios','services'));
+    // Semua halaman tampil di home — tanpa batas ketat, kecuali portfolio tetap preview 3 (ada halaman terpisah)
+    $clients = \App\Models\Client::where('is_active', true)->latest()->get();
+    $portfolios = \App\Models\Portfolio::where('status','published')->with(['category','client'])->latest()->take(6)->get();
+    $services = \App\Models\Service::where('is_active', true)->latest()->get();
+    $faqs = \App\Models\Faq::where('is_active', true)->orderBy('order')->get();
+    $articles = \App\Models\Article::where('is_published', true)->latest()->take(6)->get();
+    $testimonials = \App\Models\Testimonial::where('is_active', true)->latest()->get();
+    return view('public.home', compact('clients','portfolios','services','faqs','articles','testimonials'));
 })->name('home');
 
 Route::get('/about', function () {

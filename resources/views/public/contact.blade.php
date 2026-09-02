@@ -34,7 +34,7 @@
                 <h3 class="font-semibold text-[#0B1D33]">Kontak Langsung</h3>
                 <div class="mt-4 space-y-3 text-sm">
                     <div class="flex gap-3"><span class="w-9 h-9 rounded-xl bg-white grid place-items-center">📍</span><span>Jl. Adipati Agung No.23, Baleendah, Kec. Baleendah, Kabupaten Bandung, Jawa Barat 40375<br><span class="text-slate-500">Studio siswa — jam sekolah & mentoring</span></span></div>
-                    <div class="flex gap-3"><span class="w-9 h-9 rounded-xl bg-white grid place-items-center">✉️</span><span>hello@smstudio.id<br><span class="text-slate-500">Respon < 1x24 jam</span></span></div>
+                    <div class="flex gap-3"><span class="w-9 h-9 rounded-xl bg-white grid place-items-center">✉️</span><span>smstudiobppi@gmail.com<br><span class="text-slate-500">Respon < 1x24 jam</span></span></div>
                     <div class="flex gap-3"><span class="w-9 h-9 rounded-xl bg-white grid place-items-center">📞</span><span>+62 812-3456-7890<br><span class="text-slate-500">WA / Call — chat aja dulu</span></span></div>
                 </div>
             </div>

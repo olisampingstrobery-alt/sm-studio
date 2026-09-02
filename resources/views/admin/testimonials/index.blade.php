@@ -2,10 +2,10 @@
 @section('title','Testimonials')
 @section('header','Testimonials')
 @section('content')
-<div class="bg-white rounded-2xl shadow-card border border-slate-100 overflow-hidden">
-    <div class="p-6 border-b flex flex-col sm:flex-row sm:items-center justify-between gap-4"><div><h3 class="font-semibold text-[#0B1D33]">Testimoni Klien</h3><p class="text-sm text-slate-500">Kelola testimoni untuk halaman publik.</p></div><a href="{{ route('admin.testimonials.create') }}" class="inline-flex items-center gap-2 bg-[#0F2A4A] text-white px-5 py-2.5 rounded-xl text-sm font-semibold"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg> Tambah</a></div>
-    <div class="p-6">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="w-full bg-white rounded-2xl shadow-card border border-slate-100 overflow-hidden">
+    <div class="p-4 sm:p-6 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4"><div><h3 class="font-semibold text-[#0B1D33] text-base sm:text-lg">Testimoni Klien</h3><p class="text-xs sm:text-sm text-slate-500">Kelola testimoni untuk halaman publik.</p></div><a href="{{ route('admin.testimonials.create') }}" class="w-full sm:w-auto justify-center inline-flex items-center gap-2 bg-[#0F2A4A] text-white px-5 py-2.5 rounded-xl text-sm font-semibold hover:bg-[#162F4A]"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg> Tambah</a></div>
+    <div class="p-4 sm:p-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4">
             @forelse($testimonials as $t)
             <div class="border border-slate-200 rounded-2xl p-5 hover:shadow-soft transition bg-white">
                 <div class="flex gap-3">

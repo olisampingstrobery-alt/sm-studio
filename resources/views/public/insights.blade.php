@@ -1,11 +1,11 @@
 @extends('layouts.public')
 @section('title','Insights')
 @section('content')
-<section class="bg-[#F8FAFC] border-b border-slate-200">
+<section class="bg-[#0B1D33] text-white">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <span class="text-xs tracking-widest font-semibold text-[#0F2A4A]">INSIGHTS • DARI STUDIO SMK BPPI BALEENDAH</span>
-        <h1 class="text-3xl font-bold text-[#0B1D33] mt-2">Belajar, Berbagi, Berkarya.</h1>
-        <p class="text-slate-500 mt-3 max-w-xl">Tips praktis, cerita project, dan wawasan digital dari keseharian siswa SMK BPPI Baleendah — ditulis tim SM STUDIO biar kamu juga bisa tumbuh bareng.</p>
+        <span class="text-xs tracking-widest font-semibold text-white/60">INSIGHTS • DARI STUDIO SMK BPPI BALEENDAH</span>
+        <h1 class="text-3xl font-bold mt-2">Belajar, Berbagi, Berkarya.</h1>
+        <p class="text-white/60 mt-3 max-w-xl">Tips praktis, cerita project, dan wawasan digital dari keseharian siswa SMK BPPI Baleendah — ditulis tim SM STUDIO biar kamu juga bisa tumbuh bareng.</p>
     </div>
 </section>
 <section class="py-12">

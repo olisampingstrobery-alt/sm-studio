@@ -8,16 +8,23 @@
             </a>
             <nav class="hidden lg:flex items-center gap-1">
                 @php $navPublic = [
-                    ['label'=>'Home','route'=>'home'],
-                    ['label'=>'About','route'=>'about'],
-                    ['label'=>'Services','route'=>'services'],
-                    ['label'=>'Portfolio','route'=>'portfolio'],
-                    ['label'=>'Clients','route'=>'clients'],
-                    ['label'=>'Insights','route'=>'insights'],
-                    ['label'=>'FAQ','route'=>'faq'],
+                    ['label'=>'Home','route'=>'home', 'anchor'=>'#home'],
+                    ['label'=>'About','route'=>'about', 'anchor'=>'#about'],
+                    ['label'=>'Services','route'=>'services', 'anchor'=>'#services'],
+                    ['label'=>'Portfolio','route'=>'portfolio', 'anchor'=>'#portfolio'],
+                    ['label'=>'Clients','route'=>'clients', 'anchor'=>'#clients'],
+                    ['label'=>'Insights','route'=>'insights', 'anchor'=>'#insights'],
+                    ['label'=>'FAQ','route'=>'faq', 'anchor'=>'#faq'],
                 ]; @endphp
                 @foreach($navPublic as $item)
-                    <a href="{{ Route::has($item['route']) ? route($item['route']) : '#' }}" class="px-3 py-2 rounded-full text-sm font-medium {{ request()->routeIs($item['route']) ? 'bg-[#0F2A4A] text-white' : 'text-slate-600 hover:text-[#0B1D33] hover:bg-slate-100' }}">{{ $item['label'] }}</a>
+                    @php
+                        $isHome = request()->routeIs('home');
+                        // Portfolio tetap halaman terpisah, lainnya scroll di home
+                        $isPortfolio = $item['route'] === 'portfolio';
+                        $href = $isPortfolio ? route($item['route']) : ($isHome ? $item['anchor'] : route('home').$item['anchor']);
+                        $isActive = request()->routeIs($item['route']);
+                    @endphp
+                    <a href="{{ $href }}" class="px-3 py-2 rounded-full text-sm font-medium {{ $isActive ? 'bg-[#0F2A4A] text-white' : 'text-slate-600 hover:text-[#0B1D33] hover:bg-slate-100' }}">{{ $item['label'] }}</a>
                 @endforeach
             </nav>
             <div class="hidden lg:flex items-center gap-3">
@@ -32,7 +39,8 @@
     <div x-show="open" x-cloak x-transition class="lg:hidden border-t border-slate-200 bg-white">
         <nav class="px-4 py-4 space-y-1">
             @foreach($navPublic as $item)
-                <a href="{{ route($item['route']) }}" class="block px-4 py-3 rounded-xl text-sm font-medium {{ request()->routeIs($item['route']) ? 'bg-[#0F2A4A] text-white' : 'text-slate-700 hover:bg-slate-100' }}">{{ $item['label'] }}</a>
+                @php $isPortfolioM = $item['route'] === 'portfolio'; $hrefMobile = $isPortfolioM ? route($item['route']) : (request()->routeIs('home') ? $item['anchor'] : route('home').$item['anchor']); @endphp
+                <a href="{{ $hrefMobile }}" @click="open=false" class="block px-4 py-3 rounded-xl text-sm font-medium {{ request()->routeIs($item['route']) ? 'bg-[#0F2A4A] text-white' : 'text-slate-700 hover:bg-slate-100' }}">{{ $item['label'] }}</a>
             @endforeach
             <a href="{{ route('contact') }}" class="block mt-3 text-center px-5 py-3 rounded-xl bg-[#0F2A4A] text-white font-semibold">Hubungi Saja</a>
         </nav>

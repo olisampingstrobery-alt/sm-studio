@@ -53,7 +53,7 @@ $nav = [
     </nav>
 
     <div class="p-3 border-t border-white/10">
-        <div class="rounded-xl bg-gradient-to-br from-[#1A4B7A] to-[#0F2A4A] p-4 text-white relative overflow-hidden">
+        <div class="rounded-xl bg-gradient-to-br from-[#1A3A5C] to-[#0F2A4A] p-4 text-white relative overflow-hidden">
             <div class="absolute -right-6 -top-6 w-20 h-20 rounded-full bg-white/10"></div>
             <div class="text-xs font-semibold tracking-wide opacity-90">Butuh bantuan?</div>
             <div class="text-sm font-bold mt-1">Dokumentasi SM Studio</div>

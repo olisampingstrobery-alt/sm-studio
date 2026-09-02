@@ -1,31 +1,29 @@
 @extends('layouts.public')
 @section('title','Layanan')
 @section('content')
-{{-- HEADER --}}
-<section class="relative overflow-hidden bg-gradient-to-b from-[#F8FAFC] via-white to-[#EFF6FF]/40 border-b border-slate-200/60">
-    <div class="absolute inset-0 pointer-events-none">
-        <div class="absolute inset-0 opacity-[0.04]" style="background-image: radial-gradient(circle at 1px 1px, #0F2A4A 1px, transparent 0); background-size: 28px 28px;"></div>
-        <div class="absolute -top-24 -right-24 w-[520px] h-[520px] rounded-full bg-[#93C5FD]/15 blur-3xl"></div>
-        <div class="absolute -bottom-32 -left-32 w-[420px] h-[420px] rounded-full bg-[#C5A880]/10 blur-3xl"></div>
-    </div>
+{{-- HEADER — samain kaya Portfolio (dark) --}}
+<section class="relative overflow-hidden bg-[#0B1D33] text-white">
+    <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 28px 28px;"></div>
+    <div class="absolute -top-24 -right-24 w-[520px] h-[520px] rounded-full bg-[#1A4B7A]/30 blur-3xl"></div>
+    <div class="absolute -bottom-32 -left-32 w-[420px] h-[420px] rounded-full bg-[#C5A880]/10 blur-3xl"></div>
     <div class="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-16">
         <div class="grid lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-12 items-center">
             <div>
-                <span class="inline-flex items-center gap-2 text-[11px] tracking-[0.18em] font-bold text-[#0F2A4A] bg-white border border-[#BFDBFE] px-3.5 py-1.5 rounded-full shadow-sm">
-                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                <span class="inline-flex items-center gap-2 text-[11px] tracking-[0.18em] font-bold text-white/80 bg-white/10 border border-white/15 px-3.5 py-1.5 rounded-full backdrop-blur">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                     LAYANAN — SMK BPPI BALEENDAH
                 </span>
-                <h1 class="mt-4 font-display font-extrabold text-[30px] sm:text-[38px] lg:text-[44px] leading-[0.95] tracking-tight text-[#0B1D33]">
+                <h1 class="mt-4 font-display font-extrabold text-[30px] sm:text-[38px] lg:text-[44px] leading-[0.95] tracking-tight">
                     Butuh Bantuan Digital?<br>
-                    <span class="bg-gradient-to-r from-[#0F2A4A] via-[#1A4B7A] to-[#93C5FD] bg-clip-text text-transparent">Kami Siap.</span>
+                    <span class="text-[#93C5FD]">Kami Siap.</span>
                 </h1>
-                <p class="mt-4 text-sm sm:text-[15px] leading-relaxed text-slate-500 max-w-[56ch]">
-                    Pilih layanan yang kamu butuh — website, branding, sampai konten. Dikerjakan tim siswa <span class="font-semibold text-slate-700">SMK BPPI Baleendah</span> yang kolaboratif, dibimbing mentor, dan fokus ke hasil yang rapi & siap pakai.
+                <p class="mt-4 text-sm sm:text-[15px] leading-relaxed text-white/70 max-w-[56ch]">
+                    Pilih layanan yang kamu butuh — website, branding, sampai konten. Dikerjakan tim siswa <span class="font-semibold text-white">SMK BPPI Baleendah</span> yang kolaboratif, dibimbing mentor, dan fokus ke hasil yang rapi & siap pakai.
                 </p>
                 <div class="mt-6 flex flex-wrap gap-2.5">
-                    <span class="inline-flex items-center gap-2 bg-[#0F2A4A] text-white text-xs font-semibold px-3.5 py-2 rounded-full shadow-sm"><span class="w-5 h-5 rounded-full bg-white/15 grid place-items-center text-[10px]">✓</span> 6 Layanan siap pakai</span>
-                    <span class="inline-flex items-center gap-2 bg-white border border-slate-200 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-full">Kolaborasi Siswa + Mentor</span>
-                    <span class="inline-flex items-center gap-2 bg-white border border-slate-200 text-slate-700 text-xs font-semibold px-3.5 py-2 rounded-full">Revisi & support ramah</span>
+                    <span class="inline-flex items-center gap-2 bg-white text-[#0B1D33] text-xs font-semibold px-3.5 py-2 rounded-full shadow-sm"><span class="w-5 h-5 rounded-full bg-[#0F2A4A]/10 grid place-items-center text-[10px] text-[#0F2A4A]">✓</span> 6 Layanan siap pakai</span>
+                    <span class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white text-xs font-semibold px-3.5 py-2 rounded-full backdrop-blur">Kolaborasi Siswa + Mentor</span>
+                    <span class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white text-xs font-semibold px-3.5 py-2 rounded-full backdrop-blur">Revisi & support ramah</span>
                 </div>
             </div>
             {{-- mini highlight card stack (desktop) --}}

@@ -3,8 +3,8 @@
 @section('content')
 <section class="bg-[#0B1D33] text-white relative overflow-hidden">
     <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(white 1px, transparent 0); background-size: 28px 28px;"></div>
-    <div class="absolute -right-32 -top-32 w-[520px] h-[520px] rounded-full bg-[#1A4B7A]/30 blur-3xl pointer-events-none"></div>
-    <div class="absolute -left-20 bottom-0 w-[420px] h-[420px] rounded-full bg-[#12365E]/50 blur-3xl pointer-events-none"></div>
+    <div class="absolute -right-32 -top-32 w-[520px] h-[520px] rounded-full bg-[#1A3A5C]/30 blur-3xl pointer-events-none"></div>
+    <div class="absolute -left-20 bottom-0 w-[420px] h-[420px] rounded-full bg-[#0F2440]/50 blur-3xl pointer-events-none"></div>
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 relative">
         <span class="inline-flex items-center gap-2 bg-white/10 border border-white/15 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-widest text-white/80">TENTANG SM STUDIO • SMK BPPI BALEENDAH</span>
         <h1 class="mt-4 text-[30px] sm:text-4xl lg:text-5xl font-display font-bold leading-[0.95] text-pretty">Dibangun Siswa SMK.<br><span class="text-[#93C5FD]">Dibuat untuk Kebutuhan Nyata.</span></h1>

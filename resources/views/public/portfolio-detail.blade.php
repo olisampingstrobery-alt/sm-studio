@@ -15,7 +15,7 @@
 <section class="py-12">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-8">
         <div class="lg:col-span-2 space-y-6">
-            <div class="bg-white rounded-2xl border border-slate-100 p-8">
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-8">
                 <h2 class="font-semibold text-[#0B1D33]">Tentang Project Ini</h2>
                 <p class="text-xs text-slate-500 -mt-1 mb-3">Dikerjakan siswa SMK BPPI Baleendah — kolaborasi tim & mentor</p>
                 <p class="text-slate-600 mt-3 leading-relaxed whitespace-pre-line">{{ $portfolio->description }}</p>
@@ -23,12 +23,6 @@
                     @if($portfolio->$k)<h3 class="font-semibold text-[#0B1D33] mt-8">{{ $label }}</h3><p class="text-slate-600 mt-2 whitespace-pre-line">{{ $portfolio->$k }}</p>@endif
                 @endforeach
             </div>
-            @if($portfolio->images->count())
-            <div class="bg-white rounded-2xl border border-slate-100 p-6">
-                <h3 class="font-semibold text-[#0B1D33] mb-4">Gallery</h3>
-                <div class="grid grid-cols-2 gap-4">@foreach($portfolio->images as $img)<img src="{{ asset('storage/'.$img->image) }}" class="rounded-xl h-48 w-full object-cover">@endforeach</div>
-            </div>
-            @endif
         </div>
         <div class="space-y-6">
             <div class="bg-[#0F2A4A] rounded-2xl p-6 text-white">
@@ -36,11 +30,20 @@
                 <p class="text-white/70 text-sm mt-2">Tim siswa SMK BPPI Baleendah siap bantu wujudkan — konsultasi dulu gratis.</p>
                 <a href="{{ route('contact') }}" class="mt-4 block text-center py-3 rounded-xl bg-white text-[#0B1D33] font-semibold">Konsultasi Gratis</a>
             </div>
-            <div class="bg-white border border-slate-100 rounded-2xl p-6">
+            <div class="bg-white border border-slate-200 shadow-sm rounded-2xl p-6">
                 <h4 class="font-semibold text-sm">Info Project</h4>
                 <dl class="mt-4 space-y-3 text-sm"><div class="flex justify-between"><dt class="text-slate-500">Client</dt><dd class="font-medium">{{ $portfolio->client_name ?? $portfolio->client?->name ?? '-' }}</dd></div><div class="flex justify-between"><dt class="text-slate-500">Status</dt><dd class="font-medium">{{ ucfirst($portfolio->status) }}</dd></div></dl>
             </div>
         </div>
     </div>
+    {{-- Gallery — full layar (di luar grid 2:1 agar tidak ada space kanan) --}}
+    @if($portfolio->images->count())
+    <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+            <h3 class="font-semibold text-[#0B1D33] mb-4">Gallery</h3>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">@foreach($portfolio->images as $img)<img src="{{ asset('storage/'.$img->image) }}" class="rounded-xl h-48 w-full object-cover border border-slate-200">@endforeach</div>
+        </div>
+    </div>
+    @endif
 </section>
 @endsection

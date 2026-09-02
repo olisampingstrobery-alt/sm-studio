@@ -8,8 +8,8 @@
         @php
             $cards = [
                 ['label'=>'Services','value'=>$stats['services'] ?? 0,'icon'=>'M19.428 15.428a2 2 0 00-1.022-.547','color'=>'bg-[#0F2A4A]','trend'=>'+12%'],
-                ['label'=>'Portfolio','value'=>$stats['portfolio'] ?? 0,'icon'=>'M4 16l4.586-4.586','color'=>'bg-[#1A4B7A]','trend'=>'+8%'],
-                ['label'=>'Clients','value'=>$stats['clients'] ?? 0,'icon'=>'M17 20h5v-2','color'=>'bg-[#12365E]','trend'=>'+5%'],
+                ['label'=>'Portfolio','value'=>$stats['portfolio'] ?? 0,'icon'=>'M4 16l4.586-4.586','color'=>'bg-[#1A3A5C]','trend'=>'+8%'],
+                ['label'=>'Clients','value'=>$stats['clients'] ?? 0,'icon'=>'M17 20h5v-2','color'=>'bg-[#0F2440]','trend'=>'+5%'],
                 ['label'=>'Inquiries','value'=>$stats['inquiries'] ?? 0,'icon'=>'M3 8l7.89 5.26','color'=>'bg-amber-500','trend'=>$stats['pending_inquiries'] ?? 0 . ' pending'],
             ];
         @endphp
