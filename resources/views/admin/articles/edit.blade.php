@@ -2,16 +2,16 @@
 @section('title','Edit Artikel')
 @section('header','Edit Artikel')
 @section('content')
-<div class="max-w-3xl bg-white rounded-2xl shadow-card border border-slate-100 overflow-hidden">
-    <div class="px-6 py-5 border-b border-slate-100"><h3 class="font-semibold text-[#0B1D33]">Edit: {{ $article->title }}</h3><p class="text-xs text-slate-500">Perubahan langsung di /insights jika Published.</p></div>
-    <form action="{{ route('admin.articles.update',$article) }}" method="POST" enctype="multipart/form-data" class="p-6 space-y-5">
+<div class="w-full max-w-none bg-white rounded-2xl shadow-card border border-slate-100 overflow-hidden">
+    <div class="px-4 sm:px-6 lg:px-8 py-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2"><div><h3 class="font-semibold text-[#0B1D33] text-base sm:text-lg">Edit: {{ $article->title }}</h3><p class="text-xs sm:text-sm text-slate-500 mt-1">Perubahan langsung di <span class="font-medium text-[#0F2A4A]">/insights</span> & <span class="font-medium text-[#0F2A4A]">Home #insights</span> jika Published.</p></div><a href="{{ route('admin.articles.index') }}" class="inline-flex items-center gap-1.5 text-xs font-medium text-[#0F2A4A] hover:underline"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m7 7H3"/></svg> Kembali</a></div>
+    <form action="{{ route('admin.articles.update',$article) }}" method="POST" enctype="multipart/form-data" class="p-4 sm:p-6 lg:p-8 space-y-6">
         @csrf @method('PUT')
         <div>
             <label class="block text-sm font-semibold text-slate-700 mb-1.5">Judul *</label>
             <input type="text" name="title" value="{{ old('title',$article->title) }}" required class="w-full rounded-xl border-slate-200 focus:border-[#0F2A4A] @error('title') border-red-300 @enderror">
             @error('title')<p class="text-xs text-red-600 mt-1">{{ $message }}</p>@enderror
         </div>
-        <div class="grid md:grid-cols-2 gap-5">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <div>
                 <label class="block text-sm font-semibold text-slate-700 mb-1.5">Kategori</label>
                 <select name="category_id" class="w-full rounded-xl border-slate-200"><option value="">Pilih</option>@foreach($categories as $c)<option value="{{ $c->id }}" @selected(old('category_id',$article->category_id)==$c->id)>{{ $c->name }}</option>@endforeach</select>
@@ -27,7 +27,7 @@
         </div>
         <div><label class="block text-sm font-semibold text-slate-700 mb-1.5">Excerpt</label><textarea name="excerpt" rows="2" class="w-full rounded-xl border-slate-200">{{ old('excerpt',$article->excerpt) }}</textarea></div>
         <div><label class="block text-sm font-semibold text-slate-700 mb-1.5">Konten *</label><textarea name="content" rows="8" required class="w-full rounded-xl border-slate-200 @error('content') border-red-300 @enderror">{{ old('content',$article->content) }}</textarea>@error('content')<p class="text-xs text-red-600 mt-1">{{ $message }}</p>@enderror</div>
-        <div class="grid md:grid-cols-2 gap-5">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <div><label class="block text-sm font-semibold text-slate-700 mb-1.5">SEO Title</label><input type="text" name="seo_title" value="{{ old('seo_title',$article->seo_title) }}" class="w-full rounded-xl border-slate-200"></div>
             <div><label class="block text-sm font-semibold text-slate-700 mb-1.5">Meta Description</label><input type="text" name="meta_description" value="{{ old('meta_description',$article->meta_description) }}" class="w-full rounded-xl border-slate-200"></div>
         </div>
@@ -44,7 +44,7 @@
             <div class="rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700"><ul class="list-disc list-inside">@foreach($errors->all() as $e)<li>{{ $e }}</li>@endforeach</ul></div>
         @endif
 
-        <div class="flex justify-end gap-3 pt-4 border-t border-slate-100"><a href="{{ route('admin.articles.index') }}" class="px-5 py-2.5 rounded-xl border text-sm font-medium">Batal</a><button type="submit" class="px-6 py-2.5 rounded-xl bg-[#0F2A4A] text-white font-semibold text-sm">Update</button></div>
+        <div class="flex flex-col sm:flex-row justify-end gap-3 pt-4 border-t border-slate-100"><a href="{{ route('admin.articles.index') }}" class="px-5 py-2.5 rounded-xl border border-slate-200 text-sm font-medium hover:bg-slate-50 text-center order-2 sm:order-1">Batal</a><button type="submit" class="px-6 py-2.5 rounded-xl bg-[#0F2A4A] hover:bg-[#162F4A] text-white font-semibold text-sm shadow order-1 sm:order-2">Update</button></div>
     </form>
 </div>
 @endsection

@@ -229,7 +229,7 @@
                             @else
                                 <div class="w-full h-full grid place-items-center text-slate-400 text-sm bg-gradient-to-br {{ $pst['grad'] }}">No Image</div>
                             @endif
-                            <span class="absolute top-3 left-3 text-xs font-semibold text-[#0F2A4A] bg-white/90 backdrop-blur border border-slate-200 px-2.5 py-1 rounded-full shadow-sm">{{ $pf->category->name ?? 'Umum' }}</span>
+                            <span class="absolute top-3 left-3 text-xs font-semibold text-[#0F2A4A] bg-white/90 backdrop-blur border border-slate-200 px-2.5 py-1 rounded-full shadow-sm">{{ $pf->client->name ?? $pf->client_name ?? 'Client' }}</span>
                             <span class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white border border-slate-200 grid place-items-center text-slate-400 group-hover:bg-[#0F2A4A] group-hover:text-white group-hover:border-[#0F2A4A] group-hover:rotate-45 transition-all duration-300 shadow-sm text-xs">↗</span>
                             <div class="absolute -top-10 -right-10 w-36 h-36 rounded-full {{ $pst['blob'] }} blur-2xl opacity-60 group-hover:scale-110 transition duration-500 pointer-events-none"></div>
                             <span class="absolute bottom-3 right-3 font-display font-extrabold text-[32px] leading-none tracking-tight text-white/80 drop-shadow select-none">{{ str_pad($idx+1,2,'0',STR_PAD_LEFT) }}</span>
@@ -254,7 +254,8 @@
     </div>
 </section>
 
-{{-- INSIGHTS PREVIEW — sedikit warna --}}
+{{-- INSIGHTS PREVIEW — DISEMBUNYIKAN SEMENTARA (website umum) — hapus @if(false)/@endif untuk tampilkan lagi --}}
+@if(false)
 <section id="insights" class="scroll-mt-20 py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#F8FAFC] via-[#EFF6FF]/20 to-[#F8FAFC]/50 relative overflow-hidden">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[250px] bg-[#BFDBFE]/15 rounded-full blur-3xl pointer-events-none"></div>
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -298,30 +299,28 @@
                     </div>
                 </a>
             @empty
-                @foreach([
-                    ['t'=>'Tips landing page yang convert','d'=>'Struktur simple yang bikin pengunjung langsung paham & klik.'],
-                    ['t'=>'Branding UMKM anti ribet','d'=>'Mulai dari warna, font, sampai logo yang konsisten.'],
-                    ['t'=>'Cerita dibalik project nyata','d'=>'Gimana siswa SMK kerjain website UMKM dalam 3 minggu.'],
-                ] as $idx=>$f)
-                @php $ist = $insStyles[$idx % count($insStyles)]; @endphp
-                    <div class="group relative flex flex-col overflow-hidden rounded-[24px] border {{ $ist['border'] }} bg-gradient-to-br {{ $ist['grad'] }} p-[1.2px]">
-                        <div class="relative flex flex-col h-full rounded-[22px] bg-white overflow-hidden">
-                            <div class="h-44 bg-gradient-to-br {{ $ist['grad'] }} grid place-items-center text-slate-400 text-sm relative">
-                                No Cover
-                                <div class="absolute -top-10 -right-10 w-36 h-36 rounded-full {{ $ist['blob'] }} blur-2xl opacity-60"></div>
-                            </div>
-                            <div class="p-6 flex-1 flex flex-col bg-gradient-to-br {{ $ist['grad'] }}">
-                                <span class="self-start text-xs font-semibold text-[#0F2A4A] bg-white border border-slate-200 px-2.5 py-1 rounded-full shadow-sm">Insight</span>
-                                <h3 class="font-semibold text-[#0B1D33] mt-3 text-[15px]">{{ $f['t'] }}</h3>
-                                <p class="text-sm text-slate-500 mt-2">{{ $f['d'] }}</p>
-                            </div>
+                <div class="col-span-full">
+                    <div class="bg-white rounded-[24px] border border-dashed border-slate-300 p-8 sm:p-12 text-center shadow-sm max-w-2xl mx-auto">
+                        <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-sky-50 to-white border border-sky-200/50 grid place-items-center mx-auto text-sky-600">
+                            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/></svg>
+                        </div>
+                        <h3 class="font-bold text-[#0B1D33] mt-4 text-lg">Belum ada Insight</h3>
+                        <p class="text-sm text-slate-500 mt-2 leading-relaxed">Insight akan tampil di sini setelah admin menambahkan artikel via <span class="font-mono text-xs bg-slate-100 border px-1.5 py-0.5 rounded">/admin/articles</span> dan mencentang <b>Publish langsung</b>. Semua konten 100% manual — tidak ada dummy.</p>
+                        <div class="mt-6 flex flex-col sm:flex-row gap-3 justify-center">
+                            <a href="{{ route('insights') }}" class="px-5 py-2.5 rounded-full bg-white border border-slate-200 text-sm font-semibold text-[#0B1D33] hover:bg-slate-50">Lihat halaman Insights →</a>
+                            @auth
+                                @if(auth()->user()->role==='admin')
+                                    <a href="{{ route('admin.articles.create') }}" class="px-5 py-2.5 rounded-full bg-[#0F2A4A] text-white text-sm font-semibold hover:bg-[#162F4A] shadow">+ Tulis Insight di Admin</a>
+                                @endif
+                            @endauth
                         </div>
                     </div>
-                @endforeach
+                </div>
             @endforelse
         </div>
     </div>
 </section>
+@endif
 
 {{-- FAQ PREVIEW — diberi warna tipis biar tidak flat --}}
 <section id="faq" class="scroll-mt-20 py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#F8FAFC] via-[#EFF6FF]/40 to-white border-y border-slate-100 relative overflow-hidden">

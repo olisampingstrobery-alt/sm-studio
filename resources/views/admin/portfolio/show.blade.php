@@ -2,8 +2,8 @@
 @section('title',$portfolio->title)
 @section('header','Detail Portfolio')
 @section('content')
-<div class="max-w-4xl space-y-6">
-    <div class="bg-white rounded-2xl shadow-card border border-slate-100 overflow-hidden">
+<div class="w-full max-w-none space-y-6">
+    <div class="bg-white rounded-2xl shadow-card border border-slate-100 overflow-hidden w-full">
         @if($portfolio->featured_image)<img src="{{ asset('storage/'.$portfolio->featured_image) }}" class="w-full h-72 object-cover"> @endif
         <div class="p-8">
             <div class="flex flex-wrap gap-2 mb-3"><span class="px-3 py-1 rounded-full bg-[#EFF6FF] text-[#0F2A4A] text-xs font-semibold">{{ $portfolio->category?->name ?? 'Tanpa kategori' }}</span><span class="px-3 py-1 rounded-full {{ $portfolio->status==='published' ? 'bg-emerald-50 text-emerald-700' : 'bg-amber-50 text-amber-700' }} text-xs font-semibold">{{ ucfirst($portfolio->status) }}</span>@if($portfolio->is_featured)<span class="px-3 py-1 rounded-full bg-amber-100 text-amber-700 text-xs font-semibold">★ Featured</span>@endif</div>

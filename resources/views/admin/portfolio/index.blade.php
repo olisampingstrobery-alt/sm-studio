@@ -2,7 +2,7 @@
 @section('title','Portfolio')
 @section('header','Portfolio')
 @section('content')
-<div class="bg-white rounded-2xl shadow-card border border-slate-100 overflow-hidden">
+<div class="bg-white rounded-2xl shadow-card border border-slate-100 overflow-hidden w-full max-w-none">
     <div class="p-6 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div><h3 class="font-semibold text-[#0B1D33]">Portfolio</h3><p class="text-sm text-slate-500">Karya terbaik yang tampil di halaman publik.</p></div>
         <a href="{{ route('admin.portfolio.create') }}" class="inline-flex items-center gap-2 bg-[#0F2A4A] hover:bg-[#162F4A] text-white px-5 py-2.5 rounded-xl text-sm font-semibold shadow"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg> Tambah Portfolio</a>

@@ -24,6 +24,7 @@ class TestimonialController extends Controller
 
     public function store(Request $request)
     {
+        $request->merge(['client_id' => $request->filled('client_id') ? $request->client_id : null]);
         $request->validate([
             'name' => 'required|string|max:255',
             'client_id' => 'nullable|exists:clients,id',
@@ -68,6 +69,7 @@ class TestimonialController extends Controller
 
     public function update(Request $request, Testimonial $testimonial)
     {
+        $request->merge(['client_id' => $request->filled('client_id') ? $request->client_id : null]);
         $request->validate([
             'name' => 'required|string|max:255',
             'client_id' => 'nullable|exists:clients,id',

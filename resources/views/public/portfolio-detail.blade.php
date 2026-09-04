@@ -4,7 +4,7 @@
 <section class="bg-slate-900 text-white">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <a href="{{ route('portfolio') }}" class="text-sm text-white/60 hover:text-white">← Kembali ke Karya</a>
-        <div class="mt-4 inline-flex gap-2"><span class="px-3 py-1 rounded-full bg-white/15 text-sm">{{ $portfolio->category?->name ?? 'Karya Siswa' }}</span>@if($portfolio->is_featured)<span class="px-3 py-1 rounded-full bg-amber-500 text-white text-sm">★ Karya Unggulan</span>@endif <span class="px-3 py-1 rounded-full bg-white/10 text-xs">SMK BPPI Baleendah • Unit Produksi PPLG</span></div>
+        <div class="mt-4 inline-flex gap-2"><span class="px-3 py-1 rounded-full bg-white/15 text-sm">{{ $portfolio->client->name ?? $portfolio->client_name ?? 'Klien Kami' }}</span>@if($portfolio->is_featured)<span class="px-3 py-1 rounded-full bg-amber-500 text-white text-sm">★ Karya Unggulan</span>@endif <span class="px-3 py-1 rounded-full bg-white/10 text-xs">SMK BPPI Baleendah • Unit Produksi PPLG</span></div>
         <h1 class="text-3xl font-bold mt-3">{{ $portfolio->title }}</h1>
         <p class="text-white/60 mt-2">{{ $portfolio->client_name ?? $portfolio->client?->name ?? 'Kolaborasi Siswa' }} @if($portfolio->technology) • {{ is_array($portfolio->technology) ? implode(', ', $portfolio->technology) : $portfolio->technology }} @endif</p>
     </div>

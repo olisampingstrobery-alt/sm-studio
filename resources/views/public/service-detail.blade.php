@@ -31,8 +31,9 @@
                 <a href="{{ route('contact') }}" class="mt-4 block text-center py-3 rounded-xl bg-[#0F2A4A] text-white font-semibold">Konsultasi Gratis</a>
             </div>
             <div class="bg-white border border-slate-100 rounded-2xl p-6">
-                <div class="text-sm font-semibold text-[#0B1D33]">Kategori</div>
-                <div class="mt-2"><span class="px-3 py-1 rounded-full bg-slate-100 text-sm">{{ $service->category->name ?? 'Umum' }}</span></div>
+                <div class="text-sm font-semibold text-[#0B1D33]">Dipercaya Klien</div>
+                <div class="mt-2 text-sm text-slate-600">{{ \App\Models\Client::where('is_active',true)->count() }} klien telah bekerja sama — <a href="{{ route('clients') }}" class="text-[#0F2A4A] font-semibold hover:underline">lihat daftar →</a></div>
+                <p class="text-xs text-slate-500 mt-2">Data klien ditambah manual via <span class="font-mono bg-slate-100 px-1 py-0.5 rounded">/admin/clients</span></p>
             </div>
         </div>
     </div>

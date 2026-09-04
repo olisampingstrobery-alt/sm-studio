@@ -21,6 +21,7 @@ class ServiceController extends Controller
     }
     public function store(Request $request)
     {
+        $request->merge(['category_id' => $request->filled('category_id') ? $request->category_id : null]);
         $request->validate([
             'title'=>'required|string|max:255',
             'category_id'=>'nullable|exists:categories,id',
@@ -30,6 +31,7 @@ class ServiceController extends Controller
             'is_active'=>'boolean',
         ]);
         $data = $request->only(['title','category_id','description','icon','detail']);
+        if(empty($data['category_id'])) $data['category_id'] = null;
         $data['slug']=Str::slug($request->title);
         $data['is_active']=$request->boolean('is_active', true);
         $data['benefits']=$request->benefits ? array_filter(explode(',', $request->benefits)) : null;
@@ -47,6 +49,7 @@ class ServiceController extends Controller
     }
     public function update(Request $request, Service $service)
     {
+        $request->merge(['category_id' => $request->filled('category_id') ? $request->category_id : null]);
         $request->validate([
             'title'=>'required|string|max:255',
             'category_id'=>'nullable|exists:categories,id',
@@ -55,6 +58,7 @@ class ServiceController extends Controller
             'detail'=>'nullable|string',
         ]);
         $data = $request->only(['title','category_id','description','icon','detail']);
+        if(empty($data['category_id'])) $data['category_id'] = null;
         $data['slug']=Str::slug($request->title);
         $data['is_active']=$request->boolean('is_active');
         $data['benefits']=$request->benefits ? array_filter(explode(',', $request->benefits)) : null;

@@ -2,15 +2,15 @@
 @section('title','Tambah Portfolio')
 @section('header','Tambah Portfolio')
 @section('content')
-<div class="bg-white rounded-2xl shadow-card border border-slate-100 overflow-hidden max-w-4xl">
-    <div class="px-6 py-5 border-b border-slate-100">
-        <h3 class="font-semibold text-[#0B1D33]">Portfolio Baru</h3>
-        <p class="text-sm text-slate-500">Isi detail karya — akan tampil di <span class="font-medium text-[#0F2A4A]">/portfolio</span> jika status <b>Published</b>. Upload gambar berdampingan di gallery.</p>
+<div class="bg-white rounded-2xl shadow-card border border-slate-100 overflow-hidden w-full max-w-none">
+    <div class="px-4 sm:px-6 lg:px-8 py-5 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+        <div><h3 class="font-semibold text-[#0B1D33] text-base sm:text-lg">Portfolio Baru</h3>
+        <p class="text-xs sm:text-sm text-slate-500 mt-1">Isi detail karya — akan tampil di <span class="font-medium text-[#0F2A4A]">/portfolio</span> jika status <b>Published</b>. Upload gambar berdampingan di gallery.</p></div><a href="{{ route('admin.portfolio.index') }}" class="inline-flex items-center gap-1.5 text-xs font-medium text-[#0F2A4A] hover:underline shrink-0"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m7 7H3"/></svg> Kembali</a>
     </div>
-    <form action="{{ route('admin.portfolio.store') }}" method="POST" enctype="multipart/form-data" class="p-6 space-y-5">
+    <form action="{{ route('admin.portfolio.store') }}" method="POST" enctype="multipart/form-data" class="p-4 sm:p-6 lg:p-8 space-y-6">
         @csrf
-        {{-- Judul & Client berdampingan --}}
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {{-- Judul & Client berdampingan — full width responsive --}}
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <div>
                 <label class="block text-sm font-semibold text-slate-700 mb-1.5">Judul *</label>
                 <input type="text" name="title" required value="{{ old('title') }}" placeholder="Contoh: Rebranding Tokopedia" class="w-full rounded-xl border-slate-200 focus:border-[#0F2A4A] focus:ring-[#0F2A4A]/20 @error('title') border-red-300 @enderror">
@@ -38,7 +38,7 @@
         </div>
 
         {{-- Status & Featured + Technology berdampingan --}}
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             <div>
                 <label class="block text-sm font-semibold text-slate-700 mb-1.5">Status *</label>
                 <select name="status" required class="w-full rounded-xl border-slate-200 focus:border-[#0F2A4A]">
@@ -61,7 +61,7 @@
         </div>
 
         {{-- Gambar berdampingan: Featured + Gallery --}}
-        <div class="grid md:grid-cols-2 gap-5">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <div class="bg-slate-50 rounded-xl border border-slate-200 p-4">
                 <label class="block text-sm font-semibold text-slate-700 mb-1.5">Featured Image *</label>
                 <input type="file" name="featured_image" accept="image/*" class="w-full rounded-xl border-slate-200 bg-white file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:bg-[#0F2A4A] file:text-white file:text-sm @error('featured_image') border-red-300 @enderror">
@@ -82,7 +82,7 @@
         </div>
 
         {{-- Berdampingan 2 kolom untuk detail --}}
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <div><label class="block text-sm font-semibold text-slate-700 mb-1.5">Challenge</label><textarea name="challenge" rows="3" class="w-full rounded-xl border-slate-200">{{ old('challenge') }}</textarea></div>
             <div><label class="block text-sm font-semibold text-slate-700 mb-1.5">Solution</label><textarea name="solution" rows="3" class="w-full rounded-xl border-slate-200">{{ old('solution') }}</textarea></div>
             <div><label class="block text-sm font-semibold text-slate-700 mb-1.5">Process</label><textarea name="process" rows="3" class="w-full rounded-xl border-slate-200">{{ old('process') }}</textarea></div>
@@ -93,9 +93,9 @@
             <div class="rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700"><ul class="list-disc list-inside">@foreach($errors->all() as $e)<li>{{ $e }}</li>@endforeach</ul></div>
         @endif
 
-        <div class="flex justify-end gap-3 pt-4 border-t border-slate-100">
-            <a href="{{ route('admin.portfolio.index') }}" class="px-5 py-2.5 rounded-xl border border-slate-200 text-sm font-medium hover:bg-slate-50">Batal</a>
-            <button type="submit" class="px-6 py-2.5 rounded-xl bg-[#0F2A4A] hover:bg-[#162F4A] text-white font-semibold text-sm">Simpan & Publish</button>
+        <div class="flex flex-col sm:flex-row justify-end gap-3 pt-4 border-t border-slate-100">
+            <a href="{{ route('admin.portfolio.index') }}" class="px-5 py-2.5 rounded-xl border border-slate-200 text-sm font-medium hover:bg-slate-50 text-center order-2 sm:order-1">Batal</a>
+            <button type="submit" class="px-6 py-2.5 rounded-xl bg-[#0F2A4A] hover:bg-[#162F4A] text-white font-semibold text-sm order-1 sm:order-2">Simpan & Publish</button>
         </div>
     </form>
 </div>

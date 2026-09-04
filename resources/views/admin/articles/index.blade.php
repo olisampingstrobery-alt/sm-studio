@@ -2,8 +2,26 @@
 @section('title','Articles')
 @section('header','Articles / Insights')
 @section('content')
-<div class="bg-white rounded-2xl shadow-card border border-slate-100 overflow-hidden">
-    <div class="p-6 border-b flex flex-col sm:flex-row sm:items-center justify-between gap-4"><div><h3 class="font-semibold text-[#0B1D33]">Artikel & Insights</h3><p class="text-sm text-slate-500">Kelola konten blog untuk halaman Insights.</p></div><a href="{{ route('admin.articles.create') }}" class="inline-flex items-center gap-2 bg-[#0F2A4A] text-white px-5 py-2.5 rounded-xl text-sm font-semibold"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg> Tulis Artikel</a></div>
+<div class="w-full max-w-none space-y-6">
+    <div class="bg-gradient-to-br from-[#0B1D33] via-[#0F2A4A] to-[#162F4A] rounded-[24px] p-6 sm:p-8 text-white relative overflow-hidden shadow-card border border-white/10">
+        <div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-[#93C5FD]/15 blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-12 -bottom-12 w-48 h-48 rounded-full bg-[#C5A880]/10 blur-2xl pointer-events-none"></div>
+        <div class="relative flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+            <div>
+                <div class="inline-flex items-center gap-2 bg-white/10 border border-white/15 px-3 py-1.5 rounded-full text-xs font-semibold tracking-widest">INSIGHTS • DARI STUDIO</div>
+                <h2 class="mt-3 text-2xl sm:text-3xl font-bold leading-tight">Artikel & Insights</h2>
+                <p class="text-white/70 mt-2 text-sm sm:text-[15px] max-w-xl leading-relaxed">Tulis insight manual — otomatis tampil di <span class="text-white font-semibold">Home #insights</span> & <span class="text-white font-semibold">/insights</span> jika <b>Publish</b>. Tidak ada dummy, semua 100% dari admin.</p>
+                <div class="mt-3 flex flex-wrap gap-2 text-xs">
+                    <span class="inline-flex items-center gap-1.5 bg-white text-[#0B1D33] px-3 py-1.5 rounded-full font-bold shadow">{{ $articles->total() }} total</span>
+                    <span class="inline-flex items-center gap-1.5 bg-white/10 border border-white/20 px-3 py-1.5 rounded-full font-semibold">{{ \App\Models\Article::where('is_published',true)->count() }} Published</span>
+                    <span class="inline-flex items-center gap-1.5 bg-white/10 border border-white/20 px-3 py-1.5 rounded-full font-semibold">{{ \App\Models\Article::where('is_published',false)->count() }} Draft</span>
+                </div>
+            </div>
+            <a href="{{ route('admin.articles.create') }}" class="inline-flex items-center justify-center gap-2 bg-white text-[#0B1D33] px-6 py-3 rounded-xl text-sm font-bold shadow-lg hover:bg-slate-100 shrink-0"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg> Tulis Artikel</a>
+        </div>
+    </div>
+    <div class="bg-white rounded-2xl shadow-card border border-slate-100 overflow-hidden w-full max-w-none">
+    <div class="p-4 sm:p-6 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4"><div><h3 class="font-semibold text-[#0B1D33]">Daftar Artikel</h3><p class="text-xs text-slate-500 mt-1">Semua artikel manual. Centang Publish agar tampil di publik.</p></div><span class="text-xs font-medium text-slate-400 bg-slate-100 px-3 py-1.5 rounded-full">{{ $articles->total() }} artikel</span></div>
     <div class="p-6">
         <div class="overflow-x-auto">
             <table class="w-full text-sm">
@@ -24,6 +42,7 @@
             </table>
         </div>
         <div class="mt-6">{{ $articles->links() }}</div>
+    </div>
     </div>
 </div>
 @endsection

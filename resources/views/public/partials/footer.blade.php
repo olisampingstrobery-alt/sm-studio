@@ -22,7 +22,8 @@
                     <li><a href="{{ route('about') }}" class="hover:text-white transition">About</a></li>
                     <li><a href="{{ route('services') }}" class="hover:text-white transition">Services</a></li>
                     <li><a href="{{ route('portfolio') }}" class="hover:text-white transition">Portfolio</a></li>
-                    <li><a href="{{ route('insights') }}" class="hover:text-white transition">Insights</a></li>
+                    <li><a href="{{ route('clients') }}" class="hover:text-white transition">Klien Kami</a></li>
+                    <li><a href="{{ route('faq') }}" class="hover:text-white transition">FAQ</a></li>
                 </ul>
             </div>
             {{-- Bantuan — setengah lebar di mobile --}}

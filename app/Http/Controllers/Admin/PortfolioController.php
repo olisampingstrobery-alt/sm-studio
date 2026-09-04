@@ -35,6 +35,12 @@ class PortfolioController extends Controller
      */
     public function store(Request $request)
     {
+        // Normalisasi empty string -> null agar tidak gagal foreign key (Incorrect integer value: '' )
+        $request->merge([
+            'client_id' => $request->filled('client_id') ? $request->client_id : null,
+            'category_id' => $request->filled('category_id') ? $request->category_id : null,
+        ]);
+
         $request->validate([
             'title' => 'required|string|max:255',
             'client_id' => 'nullable|exists:clients,id',
@@ -124,6 +130,12 @@ class PortfolioController extends Controller
      */
     public function update(Request $request, Portfolio $portfolio)
     {
+        // Normalisasi empty string -> null agar update tidak error 1366 Incorrect integer value
+        $request->merge([
+            'client_id' => $request->filled('client_id') ? $request->client_id : null,
+            'category_id' => $request->filled('category_id') ? $request->category_id : null,
+        ]);
+
         $request->validate([
             'title' => 'required|string|max:255',
             'client_id' => 'nullable|exists:clients,id',

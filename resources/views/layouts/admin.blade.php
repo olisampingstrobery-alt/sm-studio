@@ -14,13 +14,13 @@
     {{-- Mobile sidebar backdrop --}}
     <div x-show="sidebarOpen" x-cloak @click="sidebarOpen=false" class="fixed inset-0 z-30 bg-slate-900/50 lg:hidden" x-transition.opacity></div>
 
-    <div class="min-h-screen flex">
+    <div class="min-h-screen flex w-full overflow-x-hidden">
         @include('admin.partials.sidebar')
 
-        <div class="flex-1 flex flex-col min-w-0 lg:ml-72">
+        <div class="flex-1 flex flex-col min-w-0 w-full max-w-full lg:ml-72">
             @include('admin.partials.navbar')
 
-            <main class="flex-1 py-6 px-4 sm:px-6 lg:px-8">
+            <main class="flex-1 w-full max-w-full min-w-0 py-6 px-4 sm:px-6 lg:px-8 overflow-x-hidden">
                 @include('admin.partials.breadcrumb')
 
                 {{-- Flash messages --}}
@@ -42,11 +42,13 @@
                     </div>
                 @endif
 
+                <div class="w-full max-w-none">
                 @yield('content')
                 {{ $slot ?? '' }}
+                </div>
             </main>
 
-            <footer class="py-4 px-6 text-center text-xs text-slate-400 border-t border-slate-200 bg-white">
+            <footer class="py-4 px-4 sm:px-6 text-center text-xs text-slate-400 border-t border-slate-200 bg-white w-full">
                 &copy; {{ date('Y') }} SM Studio — Admin Panel. Dibuat dengan <span class="text-[#0F2A4A] font-semibold">Biru Tua</span> yang elegan.
             </footer>
         </div>

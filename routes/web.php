@@ -47,17 +47,20 @@ Route::get('/services/{slug}', function ($slug) {
 })->name('services.show');
 
 Route::get('/portfolio', function () {
-    $portfolios = \App\Models\Portfolio::where('status','published')->with(['category','client'])->latest()->paginate(9);
-    return view('public.portfolio', compact('portfolios'));
+    $portfolios = \App\Models\Portfolio::where('status','published')->with(['client'])->latest()->paginate(9);
+    $clients = \App\Models\Client::where('is_active', true)->withCount(['portfolios' => fn($q)=> $q->where('status','published')])->orderByDesc('portfolios_count')->get();
+    // keep $categories for backward compatibility if view still expects it, but primary is $clients
+    $categories = \App\Models\Category::where('type','portfolio')->withCount(['portfolios' => fn($q)=> $q->where('status','published')])->orderByDesc('portfolios_count')->get();
+    return view('public.portfolio', compact('portfolios','clients','categories'));
 })->name('portfolio');
 
 Route::get('/portfolio/{slug}', function ($slug) {
-    $portfolio = \App\Models\Portfolio::where('slug', $slug)->with(['client','category','images'])->firstOrFail();
+    $portfolio = \App\Models\Portfolio::where('slug', $slug)->with(['client','images'])->firstOrFail();
     return view('public.portfolio-detail', compact('portfolio'));
 })->name('portfolio.show');
 
 Route::get('/clients', function () {
-    $clients = \App\Models\Client::where('is_active', true)->get();
+    $clients = \App\Models\Client::where('is_active', true)->withCount(['portfolios' => fn($q)=> $q->where('status','published')])->latest()->get();
     return view('public.clients', compact('clients'));
 })->name('clients');
 
@@ -66,14 +69,17 @@ Route::get('/testimonials', function () {
     return view('public.testimonials', compact('testimonials'));
 })->name('testimonials');
 
+// DISEMBUNYIKAN SEMENTARA — Insights tidak tampil di website umum (hapus abort & uncomment untuk tampilkan lagi)
 Route::get('/insights', function () {
-    $articles = \App\Models\Article::where('is_published', true)->latest()->paginate(9);
-    return view('public.insights', compact('articles'));
+    abort(404);
+    // $articles = \App\Models\Article::where('is_published', true)->latest()->paginate(9);
+    // return view('public.insights', compact('articles'));
 })->name('insights');
 
 Route::get('/insights/{slug}', function ($slug) {
-    $article = \App\Models\Article::where('slug', $slug)->firstOrFail();
-    return view('public.insights-detail', compact('article'));
+    abort(404);
+    // $article = \App\Models\Article::where('slug', $slug)->firstOrFail();
+    // return view('public.insights-detail', compact('article'));
 })->name('insights.show');
 
 Route::get('/faq', function () {
@@ -97,6 +103,21 @@ Route::post('/contact', function (\Illuminate\Http\Request $request) {
     \App\Models\Inquiry::create($request->only(['name','email','whatsapp','service','budget','message']) + ['status'=>'pending']);
     return back()->with('success','Pesan Anda telah terkirim! Kami akan segera menghubungi Anda.');
 })->name('contact.store');
+
+// KATEGORI dialihkan ke KLIEN — fitur "bekerja sama dengan siapa saja" kini 100% via Clients (manual lewat admin)
+// Tetap support URL lama /kategori agar tidak 404, tapi redirect permanen ke /clients
+Route::get('/kategori', function () {
+    return redirect()->route('clients', [], 301);
+})->name('categories');
+
+Route::get('/kategori/{slug}', function ($slug) {
+    // cek apakah slug cocok dengan client -> arahkan ke /clients, sonst tetap redirect ke clients
+    $client = \App\Models\Client::where('slug', $slug)->where('is_active', true)->first();
+    if ($client) {
+        return redirect()->route('clients', [], 301);
+    }
+    return redirect()->route('clients', [], 301);
+})->name('categories.show');
 
 /*
 |--------------------------------------------------------------------------
