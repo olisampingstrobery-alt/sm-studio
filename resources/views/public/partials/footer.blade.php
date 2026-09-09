@@ -19,21 +19,21 @@
             <div class="col-span-1">
                 <div class="font-semibold text-white mb-3 sm:mb-4 text-sm sm:text-[15px]">Navigasi</div>
                 <ul class="space-y-2 sm:space-y-2.5 text-[13px] sm:text-sm text-slate-400">
-                    <li><a href="{{ route('about') }}" class="hover:text-white transition">About</a></li>
-                    <li><a href="{{ route('services') }}" class="hover:text-white transition">Services</a></li>
+                    <li><a href="{{ route('home') }}#about" class="hover:text-white transition">About</a></li>
+                    <li><a href="{{ route('home') }}#services" class="hover:text-white transition">Services</a></li>
                     <li><a href="{{ route('portfolio') }}" class="hover:text-white transition">Portfolio</a></li>
-                    <li><a href="{{ route('clients') }}" class="hover:text-white transition">Klien Kami</a></li>
-                    <li><a href="{{ route('faq') }}" class="hover:text-white transition">FAQ</a></li>
+                    <li><a href="{{ route('home') }}#clients" class="hover:text-white transition">Klien Kami</a></li>
+                    <li><a href="{{ route('home') }}#faq" class="hover:text-white transition">FAQ</a></li>
                 </ul>
             </div>
             {{-- Bantuan — setengah lebar di mobile --}}
             <div class="col-span-1">
                 <div class="font-semibold text-white mb-3 sm:mb-4 text-sm sm:text-[15px]">Bantuan</div>
                 <ul class="space-y-2 sm:space-y-2.5 text-[13px] sm:text-sm text-slate-400">
-                    <li><a href="{{ route('faq') }}" class="hover:text-white transition">FAQ</a></li>
+                    <li><a href="{{ route('home') }}#faq" class="hover:text-white transition">FAQ</a></li>
                     <li><a href="{{ route('contact') }}" class="hover:text-white transition">Contact</a></li>
-                    <li><a href="{{ route('testimonials') }}" class="hover:text-white transition">Testimonials</a></li>
-                    <li><a href="{{ route('clients') }}" class="hover:text-white transition">Clients</a></li>
+                    <li><a href="{{ route('home') }}#testimonials" class="hover:text-white transition">Testimonials</a></li>
+                    <li><a href="{{ route('home') }}#clients" class="hover:text-white transition">Clients</a></li>
                 </ul>
             </div>
             {{-- Kontak — full width di mobile, 1 kolom di desktop --}}

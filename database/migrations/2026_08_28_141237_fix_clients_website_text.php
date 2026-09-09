@@ -12,6 +12,9 @@ return new class extends Migration
      */
     public function up(): void
     {
+        if (Schema::getConnection()->getDriverName() !== 'mysql') {
+            return;
+        }
         DB::statement('ALTER TABLE clients MODIFY website TEXT NULL');
         DB::statement('ALTER TABLE clients MODIFY logo VARCHAR(500) NULL');
     }
@@ -21,6 +24,9 @@ return new class extends Migration
      */
     public function down(): void
     {
+        if (Schema::getConnection()->getDriverName() !== 'mysql') {
+            return;
+        }
         DB::statement('ALTER TABLE clients MODIFY website VARCHAR(255) NULL');
         DB::statement('ALTER TABLE clients MODIFY logo VARCHAR(255) NULL');
     }

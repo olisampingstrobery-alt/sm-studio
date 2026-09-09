@@ -23,7 +23,8 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/', function () {
     // Semua halaman tampil di home — tanpa batas ketat, kecuali portfolio tetap preview 3 (ada halaman terpisah)
-    $clients = \App\Models\Client::where('is_active', true)->latest()->get();
+    // Klien terintegrasi di home (tidak pisah halaman) — withCount agar badge portfolio muncul
+    $clients = \App\Models\Client::where('is_active', true)->withCount(['portfolios' => fn($q)=> $q->where('status','published')])->latest()->get();
     $portfolios = \App\Models\Portfolio::where('status','published')->with(['category','client'])->latest()->take(6)->get();
     $services = \App\Models\Service::where('is_active', true)->latest()->get();
     $faqs = \App\Models\Faq::where('is_active', true)->orderBy('order')->get();
@@ -60,8 +61,9 @@ Route::get('/portfolio/{slug}', function ($slug) {
 })->name('portfolio.show');
 
 Route::get('/clients', function () {
-    $clients = \App\Models\Client::where('is_active', true)->withCount(['portfolios' => fn($q)=> $q->where('status','published')])->latest()->get();
-    return view('public.clients', compact('clients'));
+    // Klien kini terintegrasi di Home (#clients) agar semua terhubung — redirect permanen ke home anchor
+    // Halaman lama /clients tetap support (301) tapi tidak tampil terpisah lagi
+    return redirect()->to(route('home').'#clients', 301);
 })->name('clients');
 
 Route::get('/testimonials', function () {
@@ -104,19 +106,18 @@ Route::post('/contact', function (\Illuminate\Http\Request $request) {
     return back()->with('success','Pesan Anda telah terkirim! Kami akan segera menghubungi Anda.');
 })->name('contact.store');
 
-// KATEGORI dialihkan ke KLIEN — fitur "bekerja sama dengan siapa saja" kini 100% via Clients (manual lewat admin)
-// Tetap support URL lama /kategori agar tidak 404, tapi redirect permanen ke /clients
+// KATEGORI dialihkan ke KLIEN — kini Klien terintegrasi di Home (#clients), tidak pisah halaman
+// Tetap support URL lama /kategori agar tidak 404, tapi redirect permanen ke home#clients
 Route::get('/kategori', function () {
-    return redirect()->route('clients', [], 301);
+    return redirect()->to(route('home').'#clients', 301);
 })->name('categories');
 
 Route::get('/kategori/{slug}', function ($slug) {
-    // cek apakah slug cocok dengan client -> arahkan ke /clients, sonst tetap redirect ke clients
     $client = \App\Models\Client::where('slug', $slug)->where('is_active', true)->first();
     if ($client) {
-        return redirect()->route('clients', [], 301);
+        return redirect()->to(route('home').'#client-'.$client->slug, 301);
     }
-    return redirect()->route('clients', [], 301);
+    return redirect()->to(route('home').'#clients', 301);
 })->name('categories.show');
 
 /*
@@ -171,6 +172,10 @@ Route::prefix('admin')->name('admin.')->group(function () {
 // Publik tidak menampilkan link login; hanya admin yang mengetahui /admin/login
 // Ini memenuhi: "bedakan alamat login dan buat umum agar beda tidak di satu halaman atau beda routes"
 require __DIR__.'/auth.php';
+
+// Breeze compatibility: dashboard untuk Feature tests & navigation.blade.php
+// Dashboard umum (auth saja) — admin tetap pakai /admin terpisah
+Route::middleware('auth')->get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
 // Profile (untuk admin yang sudah login)
 Route::middleware('auth')->group(function () {

@@ -120,8 +120,8 @@
                         @endif
 
                         <div class="relative mt-6 pt-5 border-t border-slate-200/60 flex items-center justify-between gap-3">
-                            <a href="{{ route('services.show', $svc->slug) }}" class="inline-flex items-center gap-2 text-sm font-semibold text-[#0F2A4A] group/link">
-                                <span class="relative">Lihat detail <span class="absolute -bottom-1 left-0 w-0 h-px bg-[#0F2A4A] group-hover/link:w-full transition-all duration-300"></span></span>
+                            <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 text-sm font-semibold text-[#0F2A4A] group/link">
+                                <span class="relative">Konsultasi <span class="absolute -bottom-1 left-0 w-0 h-px bg-[#0F2A4A] group-hover/link:w-full transition-all duration-300"></span></span>
                                 <span class="w-7 h-7 rounded-full bg-[#0F2A4A] text-white grid place-items-center text-xs group-hover/link:translate-x-0.5 transition">→</span>
                             </a>
                             <span class="hidden sm:inline text-[10px] tracking-[0.14em] font-bold text-slate-400">SMK BPPI</span>
