@@ -1,7 +1,7 @@
 @extends('layouts.public')
 @section('title','Kontak')
 @section('content')
-<section class="bg-[#0B1D33] text-white relative overflow-hidden">
+<section class="bg-black text-white relative overflow-hidden">
     <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(white 1px, transparent 0); background-size: 28px 28px;"></div>
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16 relative">
         <span class="text-xs tracking-widest font-semibold text-white/60">KONTAK • SMK BPPI BALEENDAH</span>
@@ -25,7 +25,7 @@
                 </div>
                 <div><label class="block text-sm font-semibold text-slate-700 mb-1">Budget (opsional)</label><p class="text-xs text-slate-500 mb-1.5 leading-relaxed">Sampaikan budget yang telah disiapkan agar kami dapat menyesuaikan solusi dengan kebutuhan Anda.</p><select name="budget" class="w-full rounded-xl border-slate-200 focus:border-[#0F2A4A]"><option value="">Pilih range</option><option>< 5jt (starter UMKM)</option><option>5–15jt</option><option>15–30jt</option><option>> 30jt / diskusi</option></select></div>
                 <div><label class="block text-sm font-semibold text-slate-700 mb-1.5">Ceritakan kebutuhanmu *</label><textarea name="message" rows="4" required placeholder="Contoh: Mau bikin website profil UMKM, butuh 4 halaman, ada katalog..." class="w-full rounded-xl border-slate-200 focus:border-[#0F2A4A]">{{ old('message') }}</textarea></div>
-                <button type="submit" class="w-full py-3.5 rounded-xl bg-[#0F2A4A] hover:bg-[#162F4A] text-white font-semibold shadow">Kirim — Konsultasi Gratis</button>
+                <button type="submit" class="w-full py-3.5 rounded-xl bg-black hover:bg-black text-white font-semibold shadow">Kirim — Konsultasi Gratis</button>
                 <p class="text-center text-xs text-slate-400">Dibangun siswa SMK BPPI Baleendah • Respon 1x24 jam • Tanpa kewajiban lanjut</p>
             </form>
         </div>
@@ -35,10 +35,10 @@
                 <div class="mt-4 space-y-3 text-sm">
                     <div class="flex gap-3"><span class="w-9 h-9 rounded-xl bg-white grid place-items-center">📍</span><span>Jl. Adipati Agung No.23, Baleendah, Kec. Baleendah, Kabupaten Bandung, Jawa Barat 40375<br><span class="text-slate-500">Studio siswa — jam sekolah & mentoring</span></span></div>
                     <div class="flex gap-3"><span class="w-9 h-9 rounded-xl bg-white grid place-items-center">✉️</span><span>smstudiobppi@gmail.com<br><span class="text-slate-500">Respon < 1x24 jam</span></span></div>
-                    <div class="flex gap-3"><span class="w-9 h-9 rounded-xl bg-white grid place-items-center">📞</span><span>+62 812-3456-7890<br><span class="text-slate-500">WA / Call — chat aja dulu</span></span></div>
+                    <div class="flex gap-3"><span class="w-9 h-9 rounded-xl bg-white grid place-items-center">📞</span><a href="https://wa.me/6285974371102?text=Halo%20SM%20Studio%2C%20saya%20mau%20konsultasi%20gratis" target="_blank" rel="noopener noreferrer" class="hover:underline leading-tight">+62 859-7437-1102<br><span class="text-slate-500">WA / Call — chat aja dulu</span></a></div>
                 </div>
             </div>
-            <div class="bg-[#0B1D33] rounded-[20px] p-6 text-white">
+            <div class="bg-black rounded-[20px] p-6 text-white">
                 <h3 class="font-semibold">Kenapa Pilih SM STUDIO?</h3>
                 <ul class="mt-3 space-y-2 text-sm text-white/70">
                     <li class="flex gap-2"><span class="text-emerald-400">✓</span> Unit Produksi PPLG, tapi dikurasi mentor — rapi & siap pakai</li>

@@ -1,7 +1,7 @@
 @extends('layouts.public')
 @section('title','Insights')
 @section('content')
-<section class="bg-[#0B1D33] text-white">
+<section class="bg-black text-white">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <span class="text-xs tracking-widest font-semibold text-white/60">INSIGHTS • DARI STUDIO SMK BPPI BALEENDAH</span>
         <h1 class="text-3xl font-bold mt-2">Belajar, Berbagi, Berkarya.</h1>

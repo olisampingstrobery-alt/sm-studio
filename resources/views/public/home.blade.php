@@ -2,10 +2,10 @@
 @section('title','SM STUDIO — Unit Produksi PPLG SMK BPPI Baleendah')
 @section('content')
 {{-- HERO --}}
-<section id="home" class="scroll-mt-20 relative overflow-hidden bg-[#0B1D33] text-white">
+<section id="home" class="scroll-mt-20 relative overflow-hidden bg-black text-white">
     <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 32px 32px;"></div>
-    <div class="absolute -right-32 -top-32 w-[520px] h-[520px] rounded-full bg-[#1A3A5C]/40 blur-3xl"></div>
-    <div class="absolute -left-20 bottom-0 w-[420px] h-[420px] rounded-full bg-[#0F2440]/60 blur-3xl"></div>
+    <div class="absolute -right-32 -top-32 w-[520px] h-[520px] rounded-full bg-white/5 blur-3xl"></div>
+    <div class="absolute -left-20 bottom-0 w-[420px] h-[420px] rounded-full bg-white/5 blur-3xl"></div>
     <div class="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16 lg:py-24">
         <div class="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
             <div>
@@ -29,7 +29,7 @@
                     <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 border border-slate-100 max-w-[280px] hidden sm:block">
                         <div class="flex items-center gap-3"><span class="w-10 h-10 rounded-xl bg-emerald-500 text-white grid place-items-center">✓</span><div><div class="font-bold text-[#0B1D33] text-sm">Project Selesai ✓</div><div class="text-xs text-slate-500">Website profil UMKM — dikerjakan tim siswa, review bareng guru.</div></div></div>
                     </div>
-                    <div class="absolute -top-4 -right-4 bg-[#0F2A4A] text-white rounded-2xl px-5 py-4 shadow-xl hidden sm:block">
+                    <div class="absolute -top-4 -right-4 bg-black text-white rounded-2xl px-5 py-4 shadow-xl hidden sm:block">
                         <div class="text-xs text-white/70">Karya Terbaru</div><div class="font-bold">SMK BPPI • Web & Branding</div><div class="text-xs text-white/60">Siswa + Mentor — siap pakai</div>
                     </div>
                 </div>
@@ -49,12 +49,12 @@
                 <span class="hidden lg:inline-flex items-center justify-center text-xs font-extrabold tracking-[0.14em] text-[#0F2A4A] bg-white border-2 border-[#BFDBFE] px-5 py-2.5 rounded-full">TENTANG KAMI</span>
                 <h2 class="mt-3 text-2xl sm:text-3xl lg:text-[32px] font-display font-extrabold leading-[1.1] tracking-tight text-[#0B1D33]">Karya siswa SMK<br class="hidden sm:block">yang profesional & berdampak.</h2>
                 <p class="mt-4 text-sm sm:text-[15px] leading-7 text-slate-600">Kami hadir untuk membuktikan bahwa <span class="font-semibold text-[#0B1D33]">karya siswa SMK juga bisa profesional, relevan, dan berdampak nyata</span>. SM STUDIO adalah wadah Unit Produksi PPLG — belajar lewat project nyata, kolaborasi tim, didampingi mentor.</p>
-                <div class="mt-6 relative overflow-hidden rounded-[20px] bg-gradient-to-br from-[#0F2A4A] via-[#0F2A4A] to-[#162F4A] p-6 text-white border border-white/10">
-                    <div class="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-[#93C5FD]/15 blur-2xl"></div>
+                <div class="mt-6 relative overflow-hidden rounded-[20px] bg-gradient-to-br from-black via-zinc-900 to-black p-6 text-white border border-white/10">
+                    <div class="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-white/5 blur-2xl"></div>
                     <div class="flex items-start gap-4 relative"><span class="w-10 h-10 rounded-xl bg-white text-[#0F2A4A] grid place-items-center shrink-0">◎</span><div><div class="text-[11px] tracking-[0.16em] font-bold text-white/60">VISI KAMI</div><p class="mt-2 text-sm leading-relaxed text-white/90">Menjadi <span class="font-semibold text-white">student-led digital studio</span> yang dipercaya UMKM, sekolah, dan bisnis lokal — <span class="font-semibold text-white">kolaboratif, profesional, siap pakai.</span></p></div></div>
                 </div>
                 <div class="mt-4 flex flex-wrap gap-3">
-                    <a href="#portfolio" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0F2A4A] text-white text-sm font-semibold hover:bg-[#162F4A] transition">Lihat karya nyata →</a>
+                    <a href="#portfolio" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-black text-white text-sm font-semibold hover:bg-black transition">Lihat karya nyata →</a>
                     <a href="#services" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-slate-200 text-[#0B1D33] text-sm font-semibold hover:bg-slate-50">Lihat layanan</a>
                 </div>
             </div>
@@ -79,13 +79,13 @@
 
 {{-- KLIEN & KOLABORASI — terintegrasi di Home, tidak terpotong: 1 section menyatu (header jadi card rounded inset, bukan blok full-width) --}}
 <section id="clients" class="scroll-mt-20 py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white via-[#F8FAFC] to-white border-y border-slate-100 relative overflow-hidden">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-[#0F2A4A]/[0.04] rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute bottom-0 right-0 w-72 h-72 bg-[#DBEAFE]/25 rounded-full blur-3xl pointer-events-none hidden lg:block"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] bg-white/[0.04] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-72 h-72 bg-white/5 rounded-full blur-3xl pointer-events-none hidden lg:block"></div>
     <div class="absolute -left-20 top-20 w-64 h-64 bg-[#C5A880]/[0.06] rounded-full blur-3xl pointer-events-none hidden lg:block"></div>
     <div class="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        {{-- header dark — kini jadi card rounded inset biar tidak kesannya kepotong --}}
-        <div class="relative overflow-hidden rounded-[24px] sm:rounded-[28px] bg-gradient-to-br from-[#0B1D33] via-[#0F2A4A] to-[#162F4A] border border-white/10 shadow-xl p-6 sm:p-8 lg:p-10 text-white">
-            <div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-[#93C5FD]/15 blur-3xl pointer-events-none"></div>
+        {{-- header dark — kini jadi card rounded inset biar tidak kesannya kepotong — force hitam solid biar teks putih kebaca --}}
+        <div class="relative overflow-hidden rounded-[24px] sm:rounded-[28px] bg-[#0B1D33] bg-gradient-to-br from-black via-zinc-900 to-black border border-white/10 shadow-xl p-6 sm:p-8 lg:p-10 text-white" style="background-color:#0B1D33">
+            <div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
             <div class="absolute -left-20 -bottom-20 w-48 h-48 rounded-full bg-[#C5A880]/15 blur-3xl pointer-events-none"></div>
             <div class="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-white/10 to-transparent hidden lg:block pointer-events-none"></div>
             <div class="relative">
@@ -186,7 +186,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 {{-- SERVICES PREVIEW --}}
 <section id="services" class="scroll-mt-20 py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white via-[#F8FAFC] to-white relative overflow-hidden">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-[#0F2A4A]/[0.03] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-white/[0.03] rounded-full blur-3xl pointer-events-none"></div>
     <div class="absolute bottom-0 right-0 w-72 h-72 bg-[#C5A880]/10 rounded-full blur-3xl pointer-events-none hidden lg:block"></div>
     <div class="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col lg:flex-row lg:items-start gap-5 lg:gap-10 xl:gap-14">
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         @php
             $cardStyles = [
-                ['icon'=>'💻','grad'=>'from-[#EFF6FF] via-[#F8FAFC] to-white','border'=>'border-[#BFDBFE]/50','iconBg'=>'from-[#0F2A4A] via-[#1A4B7A] to-[#2563EB]','blob'=>'bg-blue-500/10'],
+                ['icon'=>'💻','grad'=>'from-[#EFF6FF] via-[#F8FAFC] to-white','border'=>'border-[#BFDBFE]/50','iconBg'=>'from-black via-zinc-800 to-zinc-900','blob'=>'bg-blue-500/10'],
                 ['icon'=>'🎨','grad'=>'from-violet-50 via-white to-white','border'=>'border-violet-200/40','iconBg'=>'from-violet-600 to-indigo-600','blob'=>'bg-violet-500/10'],
                 ['icon'=>'📈','grad'=>'from-emerald-50/70 via-white to-white','border'=>'border-emerald-200/40','iconBg'=>'from-emerald-600 to-teal-600','blob'=>'bg-emerald-500/10'],
                 ['icon'=>'🛠️','grad'=>'from-amber-50/70 via-white to-white','border'=>'border-amber-200/40','iconBg'=>'from-amber-500 to-orange-600','blob'=>'bg-amber-500/10'],
@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="absolute -top-10 -right-10 w-36 h-36 rounded-full {{ $st['blob'] }} blur-2xl group-hover:scale-110 transition duration-500"></div>
                         <div class="relative flex items-start justify-between">
                             <span class="w-[52px] h-[52px] rounded-2xl bg-gradient-to-br {{ $st['iconBg'] }} text-white grid place-items-center text-[20px] shadow-lg shadow-slate-900/10 ring-1 ring-white/20 group-hover:scale-105 group-hover:rotate-[-2deg] transition duration-300">{{ $svc->icon ?? $st['icon'] }}</span>
-                            <span class="w-9 h-9 rounded-full bg-white border border-slate-200 grid place-items-center text-slate-400 group-hover:bg-[#0F2A4A] group-hover:text-white group-hover:border-[#0F2A4A] group-hover:rotate-45 transition-all duration-300 shadow-sm">
+                            <span class="w-9 h-9 rounded-full bg-white border border-slate-200 grid place-items-center text-slate-400 group-hover:bg-black group-hover:text-white group-hover:border-black group-hover:rotate-45 transition-all duration-300 shadow-sm">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
                             </span>
                         </div>
@@ -232,8 +232,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="relative text-[13.5px] leading-relaxed text-slate-500 mt-2 line-clamp-3">{{ $svc->description }}</p>
                         <div class="relative mt-6 pt-5 border-t border-slate-200/60 flex items-center justify-between gap-3">
                             <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 text-sm font-semibold text-[#0F2A4A] group/link">
-                                <span class="relative">Konsultasi <span class="absolute -bottom-1 left-0 w-0 h-px bg-[#0F2A4A] group-hover/link:w-full transition-all duration-300"></span></span>
-                                <span class="w-7 h-7 rounded-full bg-[#0F2A4A] text-white grid place-items-center text-xs group-hover/link:translate-x-0.5 transition">→</span>
+                                <span class="relative">Konsultasi <span class="absolute -bottom-1 left-0 w-0 h-px bg-black group-hover/link:w-full transition-all duration-300"></span></span>
+                                <span class="w-7 h-7 rounded-full bg-black text-white grid place-items-center text-xs group-hover/link:translate-x-0.5 transition">→</span>
                             </a>
                             <span class="hidden sm:inline text-[10px] tracking-[0.14em] font-bold text-slate-400">SMK BPPI</span>
                         </div>
@@ -249,7 +249,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="absolute -top-10 -right-10 w-36 h-36 rounded-full {{ $st['blob'] }} blur-2xl group-hover:scale-110 transition duration-500"></div>
                         <div class="relative flex items-start justify-between">
                             <span class="w-[52px] h-[52px] rounded-2xl bg-gradient-to-br {{ $st['iconBg'] }} text-white grid place-items-center text-[20px] shadow-lg shadow-slate-900/10 ring-1 ring-white/20 group-hover:scale-105 group-hover:rotate-[-2deg] transition duration-300">{{ $st['icon'] }}</span>
-                            <span class="w-9 h-9 rounded-full bg-white border border-slate-200 grid place-items-center text-slate-400 group-hover:bg-[#0F2A4A] group-hover:text-white group-hover:border-[#0F2A4A] group-hover:rotate-45 transition-all duration-300 shadow-sm">
+                            <span class="w-9 h-9 rounded-full bg-white border border-slate-200 grid place-items-center text-slate-400 group-hover:bg-black group-hover:text-white group-hover:border-black group-hover:rotate-45 transition-all duration-300 shadow-sm">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
                             </span>
                         </div>
@@ -260,8 +260,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="relative text-[13.5px] leading-relaxed text-slate-500 mt-2">{{ $s['d'] }}</p>
                         <div class="relative mt-6 pt-5 border-t border-slate-200/60 flex items-center justify-between">
                             <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 text-sm font-semibold text-[#0F2A4A] group/link">
-                                <span class="relative">Konsultasi <span class="absolute -bottom-1 left-0 w-0 h-px bg-[#0F2A4A] group-hover/link:w-full transition-all duration-300"></span></span>
-                                <span class="w-7 h-7 rounded-full bg-[#0F2A4A] text-white grid place-items-center text-xs group-hover/link:translate-x-0.5 transition">→</span>
+                                <span class="relative">Konsultasi <span class="absolute -bottom-1 left-0 w-0 h-px bg-black group-hover/link:w-full transition-all duration-300"></span></span>
+                                <span class="w-7 h-7 rounded-full bg-black text-white grid place-items-center text-xs group-hover/link:translate-x-0.5 transition">→</span>
                             </a>
                             <span class="text-[10px] tracking-[0.14em] font-bold text-slate-400">SMK BPPI</span>
                         </div>
@@ -275,8 +275,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 {{-- PORTFOLIO PREVIEW — sedikit warna biar tidak flat (tetap ada Lihat semua) --}}
 <section id="portfolio" class="scroll-mt-20 py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-white via-[#F8FAFC] to-white border-y border-slate-100 relative overflow-hidden">
-    <div class="absolute top-0 right-0 w-[500px] h-[300px] bg-[#EFF6FF]/40 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute bottom-0 left-0 w-72 h-72 bg-[#DBEAFE]/25 rounded-full blur-3xl pointer-events-none hidden lg:block"></div>
+    <div class="absolute top-0 right-0 w-[500px] h-[300px] bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-0 w-72 h-72 bg-white/5 rounded-full blur-3xl pointer-events-none hidden lg:block"></div>
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
@@ -307,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <div class="w-full h-full grid place-items-center text-slate-400 text-sm bg-gradient-to-br {{ $pst['grad'] }}">No Image</div>
                             @endif
                             <span class="absolute top-3 left-3 text-xs font-semibold text-[#0F2A4A] bg-white/90 backdrop-blur border border-slate-200 px-2.5 py-1 rounded-full shadow-sm">{{ $pf->client->name ?? $pf->client_name ?? 'Client' }}</span>
-                            <span class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white border border-slate-200 grid place-items-center text-slate-400 group-hover:bg-[#0F2A4A] group-hover:text-white group-hover:border-[#0F2A4A] group-hover:rotate-45 transition-all duration-300 shadow-sm text-xs">↗</span>
+                            <span class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white border border-slate-200 grid place-items-center text-slate-400 group-hover:bg-black group-hover:text-white group-hover:border-black group-hover:rotate-45 transition-all duration-300 shadow-sm text-xs">↗</span>
                             <div class="absolute -top-10 -right-10 w-36 h-36 rounded-full {{ $pst['blob'] }} blur-2xl opacity-60 group-hover:scale-110 transition duration-500 pointer-events-none"></div>
                             <span class="absolute bottom-3 right-3 font-display font-extrabold text-[32px] leading-none tracking-tight text-white/80 drop-shadow select-none">{{ str_pad($idx+1,2,'0',STR_PAD_LEFT) }}</span>
                         </div>
@@ -315,7 +315,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <h3 class="font-semibold text-[16px] leading-tight text-[#0B1D33] line-clamp-2 group-hover:text-[#0F2A4A] transition">{{ $pf->title }}</h3>
                             <p class="text-xs text-slate-500 mt-2">{{ $pf->client_name ?? $pf->client?->name ?? 'Client' }}</p>
                             <div class="mt-4 pt-4 border-t border-slate-200/60 flex items-center justify-between">
-                                <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0F2A4A]">Lihat detail <span class="w-6 h-6 rounded-full bg-[#0F2A4A] text-white grid place-items-center text-[10px]">→</span></span>
+                                <span class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0F2A4A]">Lihat detail <span class="w-6 h-6 rounded-full bg-black text-white grid place-items-center text-[10px]">→</span></span>
                                 <span class="text-[10px] tracking-[0.14em] font-bold text-slate-400">SMK BPPI</span>
                             </div>
                         </div>
@@ -334,7 +334,7 @@ document.addEventListener('DOMContentLoaded', () => {
 {{-- INSIGHTS PREVIEW — DISEMBUNYIKAN SEMENTARA (website umum) — hapus @if(false)/@endif untuk tampilkan lagi --}}
 @if(false)
 <section id="insights" class="scroll-mt-20 py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#F8FAFC] via-[#EFF6FF]/20 to-[#F8FAFC]/50 relative overflow-hidden">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[250px] bg-[#BFDBFE]/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[250px] bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
@@ -362,7 +362,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <div class="w-full h-full grid place-items-center bg-gradient-to-br {{ $ist['grad'] }} text-slate-400 text-sm">No Cover</div>
                             @endif
                             <span class="absolute top-3 left-3 text-xs font-semibold text-[#0F2A4A] bg-white/90 backdrop-blur border border-slate-200 px-2.5 py-1 rounded-full shadow-sm">{{ $a->category?->name ?? 'Insight' }}</span>
-                            <span class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white border border-slate-200 grid place-items-center text-slate-400 group-hover:bg-[#0F2A4A] group-hover:text-white group-hover:border-[#0F2A4A] group-hover:rotate-45 transition-all duration-300 shadow-sm text-xs">↗</span>
+                            <span class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white border border-slate-200 grid place-items-center text-slate-400 group-hover:bg-black group-hover:text-white group-hover:border-black group-hover:rotate-45 transition-all duration-300 shadow-sm text-xs">↗</span>
                             <div class="absolute -top-10 -right-10 w-36 h-36 rounded-full {{ $ist['blob'] }} blur-2xl opacity-60 group-hover:scale-110 transition duration-500 pointer-events-none"></div>
                         </div>
                         <div class="p-6 flex-1 flex flex-col bg-gradient-to-br {{ $ist['grad'] }}">
@@ -370,7 +370,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p class="text-sm text-slate-500 mt-2 line-clamp-2">{{ $a->excerpt ?? \Illuminate\Support\Str::limit(strip_tags($a->content),90) }}</p>
                             <div class="mt-4 pt-4 border-t border-slate-200/60 flex items-center justify-between">
                                 <span class="text-xs text-slate-400">{{ $a->created_at?->format('d M Y') }} • {{ $a->user?->name ?? 'Admin' }}</span>
-                                <span class="inline-flex items-center gap-1 text-xs font-semibold text-[#0F2A4A]">Baca <span class="w-6 h-6 rounded-full bg-[#0F2A4A] text-white grid place-items-center text-[10px]">→</span></span>
+                                <span class="inline-flex items-center gap-1 text-xs font-semibold text-[#0F2A4A]">Baca <span class="w-6 h-6 rounded-full bg-black text-white grid place-items-center text-[10px]">→</span></span>
                             </div>
                         </div>
                     </div>
@@ -387,7 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <a href="{{ route('insights') }}" class="px-5 py-2.5 rounded-full bg-white border border-slate-200 text-sm font-semibold text-[#0B1D33] hover:bg-slate-50">Lihat halaman Insights →</a>
                             @auth
                                 @if(auth()->user()->role==='admin')
-                                    <a href="{{ route('admin.articles.create') }}" class="px-5 py-2.5 rounded-full bg-[#0F2A4A] text-white text-sm font-semibold hover:bg-[#162F4A] shadow">+ Tulis Insight di Admin</a>
+                                    <a href="{{ route('admin.articles.create') }}" class="px-5 py-2.5 rounded-full bg-black text-white text-sm font-semibold hover:bg-black shadow">+ Tulis Insight di Admin</a>
                                 @endif
                             @endauth
                         </div>
@@ -401,8 +401,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 {{-- FAQ PREVIEW — diberi warna tipis biar tidak flat --}}
 <section id="faq" class="scroll-mt-20 py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#F8FAFC] via-[#EFF6FF]/40 to-white border-y border-slate-100 relative overflow-hidden">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[320px] bg-[#BFDBFE]/20 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute bottom-0 right-0 w-72 h-72 bg-[#93C5FD]/10 rounded-full blur-3xl pointer-events-none hidden lg:block"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[320px] bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-72 h-72 bg-white/5 rounded-full blur-3xl pointer-events-none hidden lg:block"></div>
     <div class="absolute -left-20 top-20 w-64 h-64 bg-[#C5A880]/[0.06] rounded-full blur-3xl pointer-events-none hidden lg:block"></div>
     <div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
@@ -439,12 +439,12 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
 </section>
 
-{{-- CTA --}}
+{{-- CTA — force hitam solid biar teks putih kebaca (bug di screenshot: background keputihan) --}}
 <section class="py-8 sm:py-10 bg-[#F8FAFC]">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-gradient-to-br from-[#0B1D33] via-[#0F2A4A] to-[#162F4A] rounded-[24px] sm:rounded-[28px] p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row items-center justify-between gap-6 text-white relative overflow-hidden shadow-xl border border-white/10">
+        <div class="bg-[#0B1D33] bg-gradient-to-br from-black via-zinc-900 to-black rounded-[24px] sm:rounded-[28px] p-6 sm:p-8 lg:p-10 flex flex-col lg:flex-row items-center justify-between gap-6 text-white relative overflow-hidden shadow-xl border border-white/10" style="background-color:#0B1D33">
             <div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-[#C5A880]/20 blur-2xl"></div>
-            <div class="absolute -left-20 -bottom-20 w-48 h-48 rounded-full bg-[#93C5FD]/10 blur-2xl"></div>
+            <div class="absolute -left-20 -bottom-20 w-48 h-48 rounded-full bg-white/5 blur-2xl"></div>
             <div class="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-white/10 to-transparent hidden lg:block"></div>
             <div class="relative text-center lg:text-left"><h3 class="text-xl sm:text-2xl font-bold leading-tight">Ada ide? Kami siap bantu wujudkan.</h3><p class="text-white/70 mt-2 text-sm sm:text-[15px] leading-relaxed">SMK BPPI Baleendah • Dibangun siswa, didampingi mentor — konsultasi pertama gratis 30 menit.</p></div>
             <a href="{{ route('contact') }}" class="relative w-full lg:w-auto text-center bg-white text-[#0B1D33] px-7 py-3.5 rounded-full font-semibold hover:bg-[#C5A880] hover:text-white transition shadow-lg whitespace-nowrap">Mulai Konsultasi Gratis</a>

@@ -22,7 +22,7 @@
             </div>
             <div class="bg-slate-50 rounded-xl border border-slate-200 p-3">
                 <label class="block text-sm font-semibold text-slate-700 mb-1.5">Cover Image</label>
-                <input type="file" name="featured_image" accept="image/*" class="w-full rounded-xl border-slate-200 bg-white file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:bg-[#0F2A4A] file:text-white file:text-sm @error('featured_image') border-red-300 @enderror">
+                <input type="file" name="featured_image" accept="image/*" class="w-full rounded-xl border-slate-200 bg-white file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:bg-black file:text-white file:text-sm @error('featured_image') border-red-300 @enderror">
                 @error('featured_image')<p class="text-xs text-red-600 mt-1">{{ $message }}</p>@enderror
                 <p class="text-[11px] text-slate-500 mt-1">Rasio 16:9, max 4MB. Tampil cover di /insights berdampingan.</p>
             </div>
@@ -46,7 +46,7 @@
             <label class="relative inline-flex items-center cursor-pointer">
                 <input type="hidden" name="is_published" value="0">
                 <input type="checkbox" name="is_published" value="1" @checked(old('is_published', true)) class="sr-only peer">
-                <div class="w-11 h-6 bg-slate-200 rounded-full peer peer-checked:bg-[#0F2A4A] after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full"></div>
+                <div class="w-11 h-6 bg-slate-200 rounded-full peer peer-checked:bg-black after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full"></div>
             </label>
             <div>
                 <span class="text-sm font-medium">Publish langsung — tampil di publik</span>
@@ -60,7 +60,7 @@
 
         <div class="flex flex-col sm:flex-row justify-end gap-3 pt-4 border-t border-slate-100">
             <a href="{{ route('admin.articles.index') }}" class="px-5 py-2.5 rounded-xl border border-slate-200 text-sm font-medium hover:bg-slate-50 text-center order-2 sm:order-1">Batal</a>
-            <button type="submit" class="px-6 py-2.5 rounded-xl bg-[#0F2A4A] hover:bg-[#162F4A] text-white font-semibold text-sm shadow order-1 sm:order-2">Simpan Artikel</button>
+            <button type="submit" class="px-6 py-2.5 rounded-xl bg-black hover:bg-black text-white font-semibold text-sm shadow order-1 sm:order-2">Simpan Artikel</button>
         </div>
     </form>
 </div>

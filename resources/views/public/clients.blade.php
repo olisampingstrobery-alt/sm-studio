@@ -1,7 +1,7 @@
 @extends('layouts.public')
 @section('title','Klien Kami')
 @section('content')
-<section class="bg-[#0B1D33] text-white">
+<section class="bg-black text-white">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
         <span class="text-[11px] sm:text-xs tracking-widest font-semibold text-white/60">KLIEN & KOLABORASI • SMK BPPI BALEENDAH</span>
         <h1 class="text-2xl sm:text-3xl lg:text-[32px] font-bold mt-2 leading-tight">Kolaborasi Nyata, Kepercayaan Nyata.</h1>

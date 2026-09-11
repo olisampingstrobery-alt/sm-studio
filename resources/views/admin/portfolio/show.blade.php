@@ -17,7 +17,7 @@
                 @if($portfolio->result)<h4 class="font-semibold mt-6">Result</h4><p class="whitespace-pre-line text-slate-600">{{ $portfolio->result }}</p>@endif
             </div>
             @if($portfolio->images->count())<div class="mt-8"><h4 class="font-semibold mb-3">Gallery</h4><div class="grid grid-cols-2 md:grid-cols-3 gap-4">@foreach($portfolio->images as $img)<img src="{{ asset('storage/'.$img->image) }}" class="rounded-xl object-cover h-40 w-full">@endforeach</div></div>@endif
-            <div class="mt-8 flex gap-3"><a href="{{ route('admin.portfolio.edit',$portfolio) }}" class="px-5 py-2.5 rounded-xl bg-[#0F2A4A] text-white font-semibold">Edit</a><a href="{{ route('admin.portfolio.index') }}" class="px-5 py-2.5 rounded-xl border">Kembali</a></div>
+            <div class="mt-8 flex gap-3"><a href="{{ route('admin.portfolio.edit',$portfolio) }}" class="px-5 py-2.5 rounded-xl bg-black text-white font-semibold">Edit</a><a href="{{ route('admin.portfolio.index') }}" class="px-5 py-2.5 rounded-xl border">Kembali</a></div>
         </div>
     </div>
 </div>

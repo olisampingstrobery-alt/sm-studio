@@ -1,7 +1,7 @@
 @extends('layouts.public')
 @section('title','FAQ')
 @section('content')
-<section class="bg-[#0B1D33] text-white">
+<section class="bg-black text-white">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <span class="text-xs tracking-widest font-semibold text-white/60">FAQ • SMK BPPI BALEENDAH</span>
         <h1 class="text-3xl font-bold mt-2">Yang Sering Ditanyakan.</h1>
@@ -48,7 +48,7 @@
         </noscript>
         <div class="mt-12 bg-[#EFF6FF] border border-[#BFDBFE] rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div><div class="font-semibold text-[#0B1D33]">Masih ragu? Ngobrol dulu aja</div><div class="text-sm text-slate-600">Tim siswa + mentor SMK BPPI Baleendah siap jelasin dengan bahasa santai, bukan kaku.</div></div>
-            <a href="{{ route('contact') }}" class="px-6 py-3 rounded-full bg-[#0F2A4A] text-white font-semibold hover:bg-[#162F4A] transition">Konsultasi Gratis</a>
+            <a href="{{ route('contact') }}" class="px-6 py-3 rounded-full bg-black text-white font-semibold hover:bg-black transition">Konsultasi Gratis</a>
         </div>
     </div>
 </section>

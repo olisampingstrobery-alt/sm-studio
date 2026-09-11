@@ -48,7 +48,7 @@
 
             <div class="flex flex-col sm:flex-row justify-end gap-3 pt-6 border-t border-slate-100">
                 <a href="{{ route('admin.categories.index') }}" class="px-5 py-2.5 rounded-xl border border-slate-200 text-sm font-medium hover:bg-slate-50 text-center order-2 sm:order-1">Batal</a>
-                <button type="submit" class="px-6 py-2.5 rounded-xl bg-[#0F2A4A] hover:bg-[#162F4A] text-white font-semibold text-sm shadow order-1 sm:order-2">Update Kategori</button>
+                <button type="submit" class="px-6 py-2.5 rounded-xl bg-black hover:bg-black text-white font-semibold text-sm shadow order-1 sm:order-2">Update Kategori</button>
             </div>
         </form>
     </div>

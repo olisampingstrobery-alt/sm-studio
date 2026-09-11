@@ -55,7 +55,7 @@
             <label class="relative inline-flex items-center cursor-pointer">
                 <input type="hidden" name="is_active" value="0">
                 <input type="checkbox" name="is_active" value="1" @checked(old('is_active', true)) class="sr-only peer">
-                <div class="w-11 h-6 bg-slate-200 rounded-full peer peer-checked:bg-[#0F2A4A] after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full"></div>
+                <div class="w-11 h-6 bg-slate-200 rounded-full peer peer-checked:bg-black after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full"></div>
             </label>
             <div>
                 <span class="text-sm font-medium text-slate-700">Aktif — tampilkan di publik</span>
@@ -71,7 +71,7 @@
 
         <div class="flex justify-end gap-3 pt-4 border-t border-slate-100">
             <a href="{{ route('admin.clients.index') }}" class="px-5 py-2.5 rounded-xl border border-slate-200 text-sm font-medium hover:bg-slate-50">Batal</a>
-            <button type="submit" class="px-6 py-2.5 rounded-xl bg-[#0F2A4A] hover:bg-[#162F4A] text-white font-semibold text-sm shadow">Simpan & Tampilkan di Publik</button>
+            <button type="submit" class="px-6 py-2.5 rounded-xl bg-black hover:bg-black text-white font-semibold text-sm shadow">Simpan & Tampilkan di Publik</button>
         </div>
     </form>
 </div>

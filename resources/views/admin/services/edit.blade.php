@@ -38,14 +38,14 @@
                 <div class="flex items-center gap-3">
                     <label class="relative inline-flex items-center cursor-pointer">
                         <input type="checkbox" name="is_active" value="1" @checked($service->is_active) class="sr-only peer">
-                        <div class="w-11 h-6 bg-slate-200 peer-focus:ring-4 peer-focus:ring-[#0F2A4A]/20 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#0F2A4A]"></div>
+                        <div class="w-11 h-6 bg-slate-200 peer-focus:ring-4 peer-focus:ring-[#0F2A4A]/20 rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-black"></div>
                     </label>
                     <span class="text-sm font-medium">Aktif</span>
                 </div>
             </div>
             <div class="flex justify-end gap-3 pt-4 border-t">
                 <a href="{{ route('admin.services.index') }}" class="px-5 py-2.5 rounded-xl border border-slate-200 font-medium">Batal</a>
-                <button type="submit" class="px-6 py-2.5 rounded-xl bg-[#0F2A4A] text-white font-semibold">Update</button>
+                <button type="submit" class="px-6 py-2.5 rounded-xl bg-black text-white font-semibold">Update</button>
             </div>
         </form>
     </div>

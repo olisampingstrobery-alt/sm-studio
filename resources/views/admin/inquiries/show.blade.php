@@ -27,7 +27,7 @@
                 <div><label class="block text-sm font-semibold mb-1.5">Status</label><select name="status" class="w-full rounded-xl border-slate-200"><option value="pending" @selected($inquiry->status=='pending')>Pending</option><option value="contacted" @selected($inquiry->status=='contacted')>Contacted</option><option value="completed" @selected($inquiry->status=='completed')>Completed</option><option value="rejected" @selected($inquiry->status=='rejected')>Rejected</option></select></div>
                 <div><label class="block text-sm font-semibold mb-1.5">Catatan</label><input type="text" name="notes" value="{{ $inquiry->notes }}" placeholder="Catatan internal" class="w-full rounded-xl border-slate-200"></div>
             </div>
-            <div class="flex justify-end gap-3"><a href="{{ route('admin.inquiries.index') }}" class="px-5 py-2.5 rounded-xl border">Kembali</a><button class="px-6 py-2.5 rounded-xl bg-[#0F2A4A] text-white font-semibold">Simpan</button></div>
+            <div class="flex justify-end gap-3"><a href="{{ route('admin.inquiries.index') }}" class="px-5 py-2.5 rounded-xl border">Kembali</a><button class="px-6 py-2.5 rounded-xl bg-black text-white font-semibold">Simpan</button></div>
         </form>
     </div>
 </div>

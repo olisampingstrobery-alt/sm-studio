@@ -15,10 +15,10 @@
                 <div class="md:col-span-2"><label class="block text-sm font-semibold mb-1.5">Alamat</label><input type="text" name="contact_address" value="{{ ($settings->get('contact') ?? collect())->where('key','contact_address')->first()?->value ?? '' }}" placeholder="Jl. Contoh No. 123, Jakarta" class="w-full rounded-xl border-slate-200"></div>
                 <div class="md:col-span-2"><label class="block text-sm font-semibold mb-1.5">Deskripsi Singkat (About)</label><textarea name="site_description" rows="3" class="w-full rounded-xl border-slate-200">{{ ($settings->get('general') ?? collect())->where('key','site_description')->first()?->value ?? '' }}</textarea></div>
             </div>
-            <div class="flex justify-end pt-4 border-t"><button class="px-6 py-2.5 rounded-xl bg-[#0F2A4A] text-white font-semibold">Simpan Pengaturan</button></div>
+            <div class="flex justify-end pt-4 border-t"><button class="px-6 py-2.5 rounded-xl bg-black text-white font-semibold">Simpan Pengaturan</button></div>
         </form>
     </div>
-    <div class="bg-[#0B1D33] rounded-2xl p-6 text-white flex items-center gap-4">
+    <div class="bg-black rounded-2xl p-6 text-white flex items-center gap-4">
         <span class="w-10 h-10 rounded-xl bg-white/15 grid place-items-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>
         <div><div class="font-semibold">Tips</div><div class="text-sm text-white/70">Perubahan akan langsung tampil di website publik setelah disimpan.</div></div>
     </div>

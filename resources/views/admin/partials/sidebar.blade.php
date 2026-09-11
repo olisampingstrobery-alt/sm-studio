@@ -13,7 +13,7 @@ $nav = [
 @endphp
 
 <aside :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'"
-       class="fixed inset-y-0 left-0 z-40 w-72 bg-[#0B1D33] text-slate-200 flex flex-col transition-transform duration-300 ease-in-out border-r border-white/10">
+       class="fixed inset-y-0 left-0 z-40 w-72 bg-black text-slate-200 flex flex-col transition-transform duration-300 ease-in-out border-r border-white/10">
     {{-- Brand --}}
     <div class="h-16 flex items-center gap-3 px-6 border-b border-white/10 shrink-0">
         <div class="w-9 h-9 rounded-xl bg-white text-[#0B1D33] grid place-items-center font-black text-sm shadow">SM</div>
@@ -46,13 +46,13 @@ $nav = [
                {{ $item['active'] ? 'bg-white text-[#0B1D33] shadow' : 'text-slate-300 hover:bg-white/10 hover:text-white' }}">
                 <svg class="w-5 h-5 shrink-0 {{ $item['active'] ? 'text-[#0F2A4A]' : 'text-slate-400 group-hover:text-white' }}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ $item['icon'] }}"/></svg>
                 <span>{{ $item['label'] }}</span>
-                @if($item['active'])<span class="ml-auto w-1.5 h-1.5 rounded-full bg-[#0F2A4A]"></span>@endif
+                @if($item['active'])<span class="ml-auto w-1.5 h-1.5 rounded-full bg-black"></span>@endif
             </a>
         @endforeach
     </nav>
 
     <div class="p-3 border-t border-white/10">
-        <div class="rounded-xl bg-gradient-to-br from-[#1A3A5C] to-[#0F2A4A] p-4 text-white relative overflow-hidden">
+        <div class="rounded-xl bg-gradient-to-br from-[#1A3A5C] to-black p-4 text-white relative overflow-hidden">
             <div class="absolute -right-6 -top-6 w-20 h-20 rounded-full bg-white/10"></div>
             <div class="text-xs font-semibold tracking-wide opacity-90">Butuh bantuan?</div>
             <div class="text-sm font-bold mt-1">Dokumentasi SM Studio</div>

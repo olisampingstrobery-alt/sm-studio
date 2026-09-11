@@ -17,11 +17,11 @@
         @if($service->benefits)
             <div class="mt-6">
                 <h4 class="font-semibold text-sm text-[#0B1D33] mb-2">Benefits</h4>
-                <div class="flex flex-wrap gap-2">@foreach((array)$service->benefits as $b)<span class="px-3 py-1.5 rounded-full bg-[#0F2A4A] text-white text-xs font-medium">{{ $b }}</span>@endforeach</div>
+                <div class="flex flex-wrap gap-2">@foreach((array)$service->benefits as $b)<span class="px-3 py-1.5 rounded-full bg-black text-white text-xs font-medium">{{ $b }}</span>@endforeach</div>
             </div>
         @endif
         <div class="mt-8 flex gap-3">
-            <a href="{{ route('admin.services.edit', $service) }}" class="px-5 py-2.5 rounded-xl bg-[#0F2A4A] text-white font-semibold">Edit</a>
+            <a href="{{ route('admin.services.edit', $service) }}" class="px-5 py-2.5 rounded-xl bg-black text-white font-semibold">Edit</a>
             <a href="{{ route('admin.services.index') }}" class="px-5 py-2.5 rounded-xl border border-slate-200 font-medium">Kembali</a>
         </div>
     </div>

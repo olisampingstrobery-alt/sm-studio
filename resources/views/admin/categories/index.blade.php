@@ -16,8 +16,8 @@
 @endphp
 <div class="w-full max-w-none space-y-6">
     {{-- Header hero --}}
-    <div class="bg-gradient-to-br from-[#0B1D33] via-[#0F2A4A] to-[#162F4A] rounded-[24px] p-6 sm:p-8 text-white relative overflow-hidden shadow-card border border-white/10">
-        <div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-[#93C5FD]/15 blur-3xl pointer-events-none"></div>
+    <div class="bg-gradient-to-br from-black via-zinc-900 to-black rounded-[24px] p-6 sm:p-8 text-white relative overflow-hidden shadow-card border border-white/10">
+        <div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
         <div class="absolute -left-12 -bottom-12 w-48 h-48 rounded-full bg-[#C5A880]/10 blur-2xl pointer-events-none"></div>
         <div class="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-white/10 to-transparent hidden lg:block"></div>
         <div class="relative flex flex-col lg:flex-row lg:items-center justify-between gap-6">
@@ -44,7 +44,7 @@
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
         @php
             $statCards = [
-                ['label'=>'Total Kategori','value'=>$counts['all'] + ($categories->total() ? 0 : 0),'icon'=>'◈','grad'=>'from-[#EFF6FF] to-white','border'=>'border-[#BFDBFE]/50','iconBg'=>'from-[#0F2A4A] to-[#2563EB]','text'=>'text-[#0F2A4A]'],
+                ['label'=>'Total Kategori','value'=>$counts['all'] + ($categories->total() ? 0 : 0),'icon'=>'◈','grad'=>'from-[#EFF6FF] to-white','border'=>'border-[#BFDBFE]/50','iconBg'=>'from-black to-zinc-900','text'=>'text-[#0F2A4A]'],
                 ['label'=>'Service','value'=>$counts['service'],'icon'=>'💼','grad'=>'from-sky-50 to-white','border'=>'border-sky-200/40','iconBg'=>'from-sky-600 to-blue-600','text'=>'text-sky-700'],
                 ['label'=>'Portfolio','value'=>$counts['portfolio'],'icon'=>'🎨','grad'=>'from-violet-50 to-white','border'=>'border-violet-200/40','iconBg'=>'from-violet-600 to-indigo-600','text'=>'text-violet-700'],
                 ['label'=>'Article','value'=>$counts['article'],'icon'=>'📰','grad'=>'from-amber-50 to-white','border'=>'border-amber-200/40','iconBg'=>'from-amber-500 to-orange-500','text'=>'text-amber-700'],
@@ -83,7 +83,7 @@
                     <input type="text" id="catSearch" placeholder="Cari kategori..." class="bg-transparent border-0 focus:ring-0 text-sm w-48 placeholder:text-slate-400 p-0" onkeyup="filterCat()">
                 </div>
                 <div class="flex items-center gap-1.5 flex-wrap">
-                    <button onclick="filterType('all')" data-type="all" class="cat-filter active px-3 py-1.5 rounded-full bg-[#0F2A4A] text-white text-xs font-semibold">Semua</button>
+                    <button onclick="filterType('all')" data-type="all" class="cat-filter active px-3 py-1.5 rounded-full bg-black text-white text-xs font-semibold">Semua</button>
                     <button onclick="filterType('service')" data-type="service" class="cat-filter px-3 py-1.5 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold border">Service</button>
                     <button onclick="filterType('portfolio')" data-type="portfolio" class="cat-filter px-3 py-1.5 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold border">Portfolio</button>
                     <button onclick="filterType('article')" data-type="article" class="cat-filter px-3 py-1.5 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold border">Article</button>
@@ -154,7 +154,7 @@
                                 <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#EFF6FF] to-white border border-[#BFDBFE]/50 grid place-items-center mx-auto text-2xl">◈</div>
                                 <h4 class="font-semibold text-[#0B1D33] mt-4">Belum ada kategori</h4>
                                 <p class="text-sm text-slate-500 mt-1">Buat kategori pertama biar filter di website umum tidak kosong. Contoh: <span class="font-mono text-xs bg-slate-100 px-1.5 py-0.5 rounded">Website</span>, <span class="font-mono text-xs bg-slate-100 px-1.5 py-0.5 rounded">Branding</span>, <span class="font-mono text-xs bg-slate-100 px-1.5 py-0.5 rounded">Company Profile</span>.</p>
-                                <a href="{{ route('admin.categories.create') }}" class="mt-4 inline-flex items-center gap-2 bg-[#0F2A4A] text-white px-5 py-2.5 rounded-xl text-sm font-semibold">+ Buat Kategori Pertama</a>
+                                <a href="{{ route('admin.categories.create') }}" class="mt-4 inline-flex items-center gap-2 bg-black text-white px-5 py-2.5 rounded-xl text-sm font-semibold">+ Buat Kategori Pertama</a>
                             </div>
                         </td></tr>
                         @endforelse
@@ -171,8 +171,8 @@
 <script>
 function filterType(type){
   document.querySelectorAll('.cat-filter').forEach(b=>{
-    b.classList.remove('bg-[#0F2A4A]','text-white'); b.classList.add('bg-slate-100','text-slate-600','border');
-    if(b.dataset.type===type){ b.classList.remove('bg-slate-100','text-slate-600','border'); b.classList.add('bg-[#0F2A4A]','text-white'); }
+    b.classList.remove('bg-black','text-white'); b.classList.add('bg-slate-100','text-slate-600','border');
+    if(b.dataset.type===type){ b.classList.remove('bg-slate-100','text-slate-600','border'); b.classList.add('bg-black','text-white'); }
   });
   document.querySelectorAll('#catTable tbody tr').forEach(r=>{
     if(!r.dataset.type) return;

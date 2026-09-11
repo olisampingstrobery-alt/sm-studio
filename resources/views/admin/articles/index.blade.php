@@ -3,8 +3,8 @@
 @section('header','Articles / Insights')
 @section('content')
 <div class="w-full max-w-none space-y-6">
-    <div class="bg-gradient-to-br from-[#0B1D33] via-[#0F2A4A] to-[#162F4A] rounded-[24px] p-6 sm:p-8 text-white relative overflow-hidden shadow-card border border-white/10">
-        <div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-[#93C5FD]/15 blur-3xl pointer-events-none"></div>
+    <div class="bg-gradient-to-br from-black via-zinc-900 to-black rounded-[24px] p-6 sm:p-8 text-white relative overflow-hidden shadow-card border border-white/10">
+        <div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
         <div class="absolute -left-12 -bottom-12 w-48 h-48 rounded-full bg-[#C5A880]/10 blur-2xl pointer-events-none"></div>
         <div class="relative flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             <div>

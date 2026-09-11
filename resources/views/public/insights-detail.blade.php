@@ -17,7 +17,7 @@
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         @if($article->excerpt)<p class="text-lg text-slate-600 italic border-l-4 border-[#0F2A4A] pl-4 bg-slate-50 py-4 rounded-r-xl">{{ $article->excerpt }}</p>@endif
         <div class="prose prose-slate max-w-none mt-8 whitespace-pre-line leading-relaxed text-slate-700">{{ $article->content }}</div>
-        <div class="mt-12 p-6 bg-[#0B1D33] rounded-2xl text-white flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="mt-12 p-6 bg-black rounded-2xl text-white flex flex-col sm:flex-row items-center justify-between gap-4">
             <div><div class="font-semibold">Butuh bantuan serupa?</div><div class="text-sm text-white/70">Tim siswa SMK BPPI Baleendah siap bantu — ngobrol dulu gratis.</div></div>
             <a href="{{ route('contact') }}" class="px-6 py-3 rounded-full bg-white text-[#0B1D33] font-semibold">Konsultasi Gratis</a>
         </div>

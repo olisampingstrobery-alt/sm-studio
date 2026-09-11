@@ -17,10 +17,10 @@
 @endphp
 
 {{-- HERO --}}
-<section class="relative overflow-hidden bg-[#0B1D33] text-white">
+<section class="relative overflow-hidden bg-black text-white">
     <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 28px 28px;"></div>
-    <div class="absolute -right-24 -top-24 w-[560px] h-[560px] rounded-full bg-[#1A3A5C]/30 blur-3xl pointer-events-none"></div>
-    <div class="absolute -left-20 bottom-0 w-[420px] h-[420px] rounded-full bg-[#0F2440]/50 blur-3xl pointer-events-none"></div>
+    <div class="absolute -right-24 -top-24 w-[560px] h-[560px] rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+    <div class="absolute -left-20 bottom-0 w-[420px] h-[420px] rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
     <div class="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <nav class="flex items-center gap-2 text-xs text-white/60">
             <a href="{{ route('home') }}" class="hover:text-white">Home</a><span>/</span>
@@ -88,7 +88,7 @@
                             <div class="h-48 bg-slate-100 overflow-hidden shrink-0 relative">
                                 @if($pf->featured_image)<img src="{{ asset('storage/'.$pf->featured_image) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">@else<div class="w-full h-full grid place-items-center text-slate-400 text-sm">No Image</div>@endif
                                 <span class="absolute top-3 left-3 text-xs font-semibold text-[#0F2A4A] bg-white/90 backdrop-blur border border-slate-200 px-2.5 py-1 rounded-full shadow-sm">{{ $category->name }}</span>
-                                <span class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white border border-slate-200 grid place-items-center text-slate-400 group-hover:bg-[#0F2A4A] group-hover:text-white group-hover:border-[#0F2A4A] group-hover:rotate-45 transition shadow-sm text-xs">-></span>
+                                <span class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white border border-slate-200 grid place-items-center text-slate-400 group-hover:bg-black group-hover:text-white group-hover:border-black group-hover:rotate-45 transition shadow-sm text-xs">-></span>
                             </div>
                             <div class="p-6 flex-1 flex flex-col">
                                 <h3 class="font-semibold text-[#0B1D33] line-clamp-2 group-hover:text-[#0F2A4A]">{{ $pf->title }}</h3>
@@ -130,7 +130,7 @@
                             <span class="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-600 to-blue-600 text-white grid place-items-center text-xl shadow">{{ $svc->icon ?? 'S' }}</span>
                             <h3 class="font-semibold text-[#0B1D33] mt-4">{{ $svc->title }}</h3>
                             <p class="text-sm text-slate-500 mt-2 line-clamp-3">{{ $svc->description }}</p>
-                            <a href="{{ route('services.show', $svc->slug) }}" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0F2A4A]">Lihat layanan <span class="w-6 h-6 rounded-full bg-[#0F2A4A] text-white grid place-items-center text-[10px]">-></span></a>
+                            <a href="{{ route('services.show', $svc->slug) }}" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0F2A4A]">Lihat layanan <span class="w-6 h-6 rounded-full bg-black text-white grid place-items-center text-[10px]">-></span></a>
                         </div>
                     </div>
                     @endforeach
@@ -185,14 +185,14 @@
             <p class="text-sm text-slate-500 mt-1">Jelajahi kategori lain dengan tipe yang sama.</p>
             <div class="mt-4 flex flex-wrap gap-2">
                 @foreach($relatedCategories as $rc)
-                <a href="{{ route('categories.show', $rc->slug) }}" class="px-4 py-2 rounded-full bg-[#F8FAFC] border border-slate-200 text-sm font-medium hover:bg-[#0F2A4A] hover:text-white hover:border-[#0F2A4A] transition">{{ $rc->name }}</a>
+                <a href="{{ route('categories.show', $rc->slug) }}" class="px-4 py-2 rounded-full bg-[#F8FAFC] border border-slate-200 text-sm font-medium hover:bg-black hover:text-white hover:border-[#0F2A4A] transition">{{ $rc->name }}</a>
                 @endforeach
             </div>
         </div>
         @endif
 
         {{-- CTA --}}
-        <div class="bg-gradient-to-br from-[#0B1D33] via-[#0F2A4A] to-[#162F4A] rounded-[24px] p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-6 text-white relative overflow-hidden shadow-xl border border-white/10">
+        <div class="bg-gradient-to-br from-black via-zinc-900 to-black rounded-[24px] p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-6 text-white relative overflow-hidden shadow-xl border border-white/10">
             <div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-white/10 blur-3xl pointer-events-none"></div>
             <div class="relative">
                 <h3 class="text-xl font-bold">Tertarik kategori {{ $category->name }}?</h3>

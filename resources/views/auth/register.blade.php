@@ -1,6 +1,6 @@
 <x-guest-layout>
     <div class="min-h-screen flex">
-        <div class="hidden lg:flex lg:w-1/2 bg-[#0B1D33] text-white p-10 flex-col justify-between relative overflow-hidden">
+        <div class="hidden lg:flex lg:w-1/2 bg-black text-white p-10 flex-col justify-between relative overflow-hidden">
             <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(white 1px, transparent 0); background-size: 24px 24px;"></div>
             <div>
                 <div class="flex items-center gap-3"><span class="w-10 h-10 rounded-xl bg-white text-[#0B1D33] grid place-items-center font-black">SM</span><span class="font-bold">SM STUDIO</span></div>

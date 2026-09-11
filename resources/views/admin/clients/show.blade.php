@@ -17,7 +17,7 @@
             <div class="bg-slate-50 rounded-xl p-4"><div class="text-xs text-slate-500">Slug</div><div class="font-medium text-[#0B1D33]">{{ $client->slug }}</div></div>
             <div class="bg-slate-50 rounded-xl p-4"><div class="text-xs text-slate-500">Dibuat</div><div class="font-medium">{{ $client->created_at->format('d M Y') }}</div></div>
         </div>
-        <div class="mt-8 flex gap-3"><a href="{{ route('admin.clients.edit',$client) }}" class="px-5 py-2.5 rounded-xl bg-[#0F2A4A] text-white font-semibold">Edit</a><a href="{{ route('admin.clients.index') }}" class="px-5 py-2.5 rounded-xl border">Kembali</a></div>
+        <div class="mt-8 flex gap-3"><a href="{{ route('admin.clients.edit',$client) }}" class="px-5 py-2.5 rounded-xl bg-black text-white font-semibold">Edit</a><a href="{{ route('admin.clients.index') }}" class="px-5 py-2.5 rounded-xl border">Kembali</a></div>
     </div>
 </div>
 @endsection

@@ -16,7 +16,7 @@
                 <input type="text" placeholder="Cari..." class="bg-transparent border-0 focus:ring-0 text-sm w-40 placeholder:text-slate-400 p-0">
             </div>
 
-            <a href="{{ route('home') }}" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-[#0F2A4A] text-white text-xs font-semibold hover:bg-[#162F4A] transition">
+            <a href="{{ route('home') }}" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-black text-white text-xs font-semibold hover:bg-black transition">
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                 Lihat Website
             </a>

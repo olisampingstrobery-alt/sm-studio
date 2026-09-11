@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Masuk — SM Studio Admin</title>
+    {{-- Favicon — SM Studio --}}
+    <link rel="icon" href="{{ asset('favicon.ico') }}" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="{{ asset('favicon.svg') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon-16x16.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}">
+    <link rel="manifest" href="{{ asset('site.webmanifest') }}">
+    <meta name="theme-color" content="#0B1D33">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600|outfit:600,700&display=swap" rel="stylesheet" />
     @vite(['resources/css/app.css', 'resources/js/app.jsx'])
@@ -14,7 +22,7 @@
     <header class="h-[52px] shrink-0 bg-white border-b border-slate-200">
         <div class="max-w-[960px] mx-auto h-full px-4 sm:px-6 flex items-center justify-between">
             <a href="{{ route('home') }}" class="flex items-center gap-2.5">
-                <span class="w-[30px] h-[30px] rounded-[8px] bg-[#0B1D33] text-white grid place-items-center text-[12px] font-bold tracking-tight leading-none">SM</span>
+                <span class="w-[30px] h-[30px] rounded-[8px] bg-black text-white grid place-items-center text-[12px] font-bold tracking-tight leading-none">SM</span>
                 <span class="text-[13px] font-semibold tracking-tight text-[#0B1D33]">SM STUDIO</span>
                 <span class="hidden sm:inline text-[10px] tracking-[0.14em] text-slate-400 font-medium ml-1 pl-3 border-l border-slate-200">ADMIN</span>
             </a>
@@ -40,7 +48,7 @@
 
             {{-- Card — white, hairline border, accent top line tipis --}}
             <div class="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
-                <div class="h-[3px] w-full bg-[#0B1D33]"></div>
+                <div class="h-[3px] w-full bg-black"></div>
                 <div class="p-6 sm:p-7">
                     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -89,7 +97,7 @@
                             <span class="text-[13px] text-slate-600 group-hover:text-slate-700">Ingat saya di perangkat ini</span>
                         </label>
 
-                        <button type="submit" class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-[#0B1D33] hover:bg-[#0F2440] active:bg-[#071425] text-white text-[14px] font-medium py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-[#0B1D33]/20 focus:ring-offset-2">
+                        <button type="submit" class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-black hover:bg-[#0F2440] active:bg-[#071425] text-white text-[14px] font-medium py-2.5 transition-colors focus:outline-none focus:ring-2 focus:ring-[#0B1D33]/20 focus:ring-offset-2">
                             Masuk
                             <svg class="w-4 h-4 opacity-70" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
                         </button>

@@ -9,6 +9,6 @@
         <span class="sm:ml-auto inline-flex self-start sm:self-auto px-3 py-1 rounded-full text-xs font-bold {{ $testimonial->is_active ? 'bg-emerald-50 text-emerald-700 border border-emerald-200' : 'bg-slate-100 text-slate-500' }}">{{ $testimonial->is_active ? 'AKTIF' : 'NON-AKTIF' }}</span>
     </div>
     <blockquote class="mt-6 bg-[#F8FAFC] border-l-4 border-[#0F2A4A] p-4 sm:p-5 rounded-xl text-slate-700 leading-relaxed text-sm sm:text-base break-words">“{{ $testimonial->content }}”</blockquote>
-    <div class="mt-6 flex flex-col-reverse sm:flex-row gap-3"><a href="{{ route('admin.testimonials.index') }}" class="w-full sm:w-auto text-center px-5 py-2.5 rounded-xl border border-slate-200 text-sm font-medium hover:bg-slate-50">Kembali</a><a href="{{ route('admin.testimonials.edit',$testimonial) }}" class="w-full sm:w-auto text-center px-5 py-2.5 rounded-xl bg-[#0F2A4A] text-white font-semibold text-sm hover:bg-[#162F4A]">Edit</a></div>
+    <div class="mt-6 flex flex-col-reverse sm:flex-row gap-3"><a href="{{ route('admin.testimonials.index') }}" class="w-full sm:w-auto text-center px-5 py-2.5 rounded-xl border border-slate-200 text-sm font-medium hover:bg-slate-50">Kembali</a><a href="{{ route('admin.testimonials.edit',$testimonial) }}" class="w-full sm:w-auto text-center px-5 py-2.5 rounded-xl bg-black text-white font-semibold text-sm hover:bg-black">Edit</a></div>
 </div>
 @endsection

@@ -64,7 +64,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <div class="bg-slate-50 rounded-xl border border-slate-200 p-4">
                 <label class="block text-sm font-semibold text-slate-700 mb-1.5">Featured Image *</label>
-                <input type="file" name="featured_image" accept="image/*" class="w-full rounded-xl border-slate-200 bg-white file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:bg-[#0F2A4A] file:text-white file:text-sm @error('featured_image') border-red-300 @enderror">
+                <input type="file" name="featured_image" accept="image/*" class="w-full rounded-xl border-slate-200 bg-white file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:bg-black file:text-white file:text-sm @error('featured_image') border-red-300 @enderror">
                 @error('featured_image')<p class="text-xs text-red-600 mt-1">{{ $message }}</p>@enderror
                 <p class="text-xs text-slate-500 mt-2">Cover utama di /portfolio (rasio 16:9 ideal). Max 4MB.</p>
             </div>
@@ -95,7 +95,7 @@
 
         <div class="flex flex-col sm:flex-row justify-end gap-3 pt-4 border-t border-slate-100">
             <a href="{{ route('admin.portfolio.index') }}" class="px-5 py-2.5 rounded-xl border border-slate-200 text-sm font-medium hover:bg-slate-50 text-center order-2 sm:order-1">Batal</a>
-            <button type="submit" class="px-6 py-2.5 rounded-xl bg-[#0F2A4A] hover:bg-[#162F4A] text-white font-semibold text-sm order-1 sm:order-2">Simpan & Publish</button>
+            <button type="submit" class="px-6 py-2.5 rounded-xl bg-black hover:bg-black text-white font-semibold text-sm order-1 sm:order-2">Simpan & Publish</button>
         </div>
     </form>
 </div>

@@ -41,7 +41,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
             <div class="bg-slate-50 rounded-xl border border-slate-200 p-4 w-full overflow-hidden">
                 <label class="block text-sm font-semibold text-slate-700 mb-1.5">Featured Image</label>
-                <input type="file" name="featured_image" accept="image/*" class="w-full rounded-xl border-slate-200 bg-white file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:bg-[#0F2A4A] file:text-white file:text-sm @error('featured_image') border-red-300 @enderror">
+                <input type="file" name="featured_image" accept="image/*" class="w-full rounded-xl border-slate-200 bg-white file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:bg-black file:text-white file:text-sm @error('featured_image') border-red-300 @enderror">
                 @error('featured_image')<p class="text-xs text-red-600 mt-1">{{ $message }}</p>@enderror
                 @if($portfolio->featured_image)
                     <div class="mt-3 flex items-center gap-3"><img src="{{ asset('storage/'.$portfolio->featured_image) }}" class="w-24 h-24 rounded-xl object-cover border bg-white"><span class="text-xs text-slate-500">Saat ini — kosongkan jika tidak ganti</span></div>
@@ -69,7 +69,7 @@
             <div class="rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-sm text-red-700"><ul class="list-disc list-inside">@foreach($errors->all() as $e)<li>{{ $e }}</li>@endforeach</ul></div>
         @endif
 
-        <div class="flex flex-col sm:flex-row justify-end gap-3 pt-4 border-t border-slate-100"><a href="{{ route('admin.portfolio.index') }}" class="px-5 py-2.5 rounded-xl border border-slate-200 text-sm font-medium text-center order-2 sm:order-1">Batal</a><button type="submit" class="px-6 py-2.5 rounded-xl bg-[#0F2A4A] hover:bg-[#162F4A] text-white font-semibold text-sm order-1 sm:order-2">Update & Tampilkan</button></div>
+        <div class="flex flex-col sm:flex-row justify-end gap-3 pt-4 border-t border-slate-100"><a href="{{ route('admin.portfolio.index') }}" class="px-5 py-2.5 rounded-xl border border-slate-200 text-sm font-medium text-center order-2 sm:order-1">Batal</a><button type="submit" class="px-6 py-2.5 rounded-xl bg-black hover:bg-black text-white font-semibold text-sm order-1 sm:order-2">Update & Tampilkan</button></div>
     </form>
     {{-- Form hapus gallery dibuat di luar form update agar tidak nested (nested form = outer form broken & update tidak ter-submit) --}}
     @if($portfolio->images->count())

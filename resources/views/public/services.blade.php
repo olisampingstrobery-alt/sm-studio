@@ -2,9 +2,9 @@
 @section('title','Layanan')
 @section('content')
 {{-- HEADER — samain kaya Portfolio (dark) --}}
-<section class="relative overflow-hidden bg-[#0B1D33] text-white">
+<section class="relative overflow-hidden bg-black text-white">
     <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 28px 28px;"></div>
-    <div class="absolute -top-24 -right-24 w-[520px] h-[520px] rounded-full bg-[#1A4B7A]/30 blur-3xl"></div>
+    <div class="absolute -top-24 -right-24 w-[520px] h-[520px] rounded-full bg-white/5 blur-3xl"></div>
     <div class="absolute -bottom-32 -left-32 w-[420px] h-[420px] rounded-full bg-[#C5A880]/10 blur-3xl"></div>
     <div class="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14 lg:py-16">
         <div class="grid lg:grid-cols-[1.15fr_0.85fr] gap-8 lg:gap-12 items-center">
@@ -21,7 +21,7 @@
                     Pilih layanan yang kamu butuh — website, branding, sampai konten. Dikerjakan tim siswa <span class="font-semibold text-white">SMK BPPI Baleendah</span> yang kolaboratif, dibimbing mentor, dan fokus ke hasil yang rapi & siap pakai.
                 </p>
                 <div class="mt-6 flex flex-wrap gap-2.5">
-                    <span class="inline-flex items-center gap-2 bg-white text-[#0B1D33] text-xs font-semibold px-3.5 py-2 rounded-full shadow-sm"><span class="w-5 h-5 rounded-full bg-[#0F2A4A]/10 grid place-items-center text-[10px] text-[#0F2A4A]">✓</span> 6 Layanan siap pakai</span>
+                    <span class="inline-flex items-center gap-2 bg-white text-[#0B1D33] text-xs font-semibold px-3.5 py-2 rounded-full shadow-sm"><span class="w-5 h-5 rounded-full bg-black/10 grid place-items-center text-[10px] text-[#0F2A4A]">✓</span> 6 Layanan siap pakai</span>
                     <span class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white text-xs font-semibold px-3.5 py-2 rounded-full backdrop-blur">Kolaborasi Siswa + Mentor</span>
                     <span class="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white text-xs font-semibold px-3.5 py-2 rounded-full backdrop-blur">Revisi & support ramah</span>
                 </div>
@@ -29,7 +29,7 @@
             {{-- mini highlight card stack (desktop) --}}
             <div class="hidden lg:block relative">
                 <div class="relative bg-white rounded-[24px] border border-slate-200 p-4 shadow-soft">
-                    <div class="rounded-[16px] bg-gradient-to-br from-[#0B1D33] via-[#0F2A4A] to-[#162F4A] p-5 text-white relative overflow-hidden">
+                    <div class="rounded-[16px] bg-gradient-to-br from-black via-zinc-900 to-black p-5 text-white relative overflow-hidden">
                         <div class="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-white/10 blur-2xl"></div>
                         <div class="absolute -left-10 -bottom-10 w-32 h-32 rounded-full bg-[#C5A880]/20 blur-2xl"></div>
                         <div class="relative flex items-center gap-3">
@@ -62,13 +62,13 @@
 
 {{-- SERVICES GRID --}}
 <section class="py-10 sm:py-14 lg:py-16 bg-white relative overflow-hidden">
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[720px] h-[320px] bg-[#0F2A4A]/[0.03] rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[720px] h-[320px] bg-white/[0.03] rounded-full blur-3xl pointer-events-none"></div>
     <div class="absolute bottom-0 right-0 w-72 h-72 bg-[#C5A880]/[0.07] rounded-full blur-3xl pointer-events-none hidden lg:block"></div>
 
     <div class="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         @php
             $cardStyles = [
-                ['icon'=>'💻','grad'=>'from-[#EFF6FF] via-[#F8FAFC] to-white','border'=>'border-[#BFDBFE]/50','iconBg'=>'from-[#0F2A4A] via-[#1A4B7A] to-[#2563EB]','blob'=>'bg-blue-500/10'],
+                ['icon'=>'💻','grad'=>'from-[#EFF6FF] via-[#F8FAFC] to-white','border'=>'border-[#BFDBFE]/50','iconBg'=>'from-black via-zinc-800 to-zinc-900','blob'=>'bg-blue-500/10'],
                 ['icon'=>'🎨','grad'=>'from-violet-50 via-white to-white','border'=>'border-violet-200/40','iconBg'=>'from-violet-600 to-indigo-600','blob'=>'bg-violet-500/10'],
                 ['icon'=>'📈','grad'=>'from-emerald-50/70 via-white to-white','border'=>'border-emerald-200/40','iconBg'=>'from-emerald-600 to-teal-600','blob'=>'bg-emerald-500/10'],
                 ['icon'=>'🛠️','grad'=>'from-amber-50/70 via-white to-white','border'=>'border-amber-200/40','iconBg'=>'from-amber-500 to-orange-600','blob'=>'bg-amber-500/10'],
@@ -99,7 +99,7 @@
                             <span class="w-[52px] h-[52px] rounded-2xl bg-gradient-to-br {{ $st['iconBg'] }} text-white grid place-items-center text-[20px] shadow-lg shadow-slate-900/10 ring-1 ring-white/20 group-hover:scale-105 group-hover:rotate-[-2deg] transition duration-300">
                                 {{ $svc->icon ?? $st['icon'] }}
                             </span>
-                            <span class="w-9 h-9 rounded-full bg-white border border-slate-200 grid place-items-center text-slate-400 group-hover:bg-[#0F2A4A] group-hover:text-white group-hover:border-[#0F2A4A] group-hover:rotate-45 transition-all duration-300 shadow-sm">
+                            <span class="w-9 h-9 rounded-full bg-white border border-slate-200 grid place-items-center text-slate-400 group-hover:bg-black group-hover:text-white group-hover:border-black group-hover:rotate-45 transition-all duration-300 shadow-sm">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
                             </span>
                         </div>
@@ -121,8 +121,8 @@
 
                         <div class="relative mt-6 pt-5 border-t border-slate-200/60 flex items-center justify-between gap-3">
                             <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 text-sm font-semibold text-[#0F2A4A] group/link">
-                                <span class="relative">Konsultasi <span class="absolute -bottom-1 left-0 w-0 h-px bg-[#0F2A4A] group-hover/link:w-full transition-all duration-300"></span></span>
-                                <span class="w-7 h-7 rounded-full bg-[#0F2A4A] text-white grid place-items-center text-xs group-hover/link:translate-x-0.5 transition">→</span>
+                                <span class="relative">Konsultasi <span class="absolute -bottom-1 left-0 w-0 h-px bg-black group-hover/link:w-full transition-all duration-300"></span></span>
+                                <span class="w-7 h-7 rounded-full bg-black text-white grid place-items-center text-xs group-hover/link:translate-x-0.5 transition">→</span>
                             </a>
                             <span class="hidden sm:inline text-[10px] tracking-[0.14em] font-bold text-slate-400">SMK BPPI</span>
                         </div>
@@ -138,7 +138,7 @@
 
                             <div class="relative flex items-start justify-between">
                                 <span class="w-[52px] h-[52px] rounded-2xl bg-gradient-to-br {{ $st['iconBg'] }} text-white grid place-items-center text-[20px] shadow-lg shadow-slate-900/10 ring-1 ring-white/20 group-hover:scale-105 group-hover:rotate-[-2deg] transition duration-300">{{ $st['icon'] }}</span>
-                                <span class="w-9 h-9 rounded-full bg-white border border-slate-200 grid place-items-center text-slate-400 group-hover:bg-[#0F2A4A] group-hover:text-white group-hover:border-[#0F2A4A] group-hover:rotate-45 transition-all duration-300 shadow-sm">
+                                <span class="w-9 h-9 rounded-full bg-white border border-slate-200 grid place-items-center text-slate-400 group-hover:bg-black group-hover:text-white group-hover:border-black group-hover:rotate-45 transition-all duration-300 shadow-sm">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
                                 </span>
                             </div>
@@ -151,8 +151,8 @@
 
                             <div class="relative mt-6 pt-5 border-t border-slate-200/60 flex items-center justify-between">
                                 <a href="{{ route('contact') }}" class="inline-flex items-center gap-2 text-sm font-semibold text-[#0F2A4A] group/link">
-                                    <span class="relative">Konsultasi <span class="absolute -bottom-1 left-0 w-0 h-px bg-[#0F2A4A] group-hover/link:w-full transition-all duration-300"></span></span>
-                                    <span class="w-7 h-7 rounded-full bg-[#0F2A4A] text-white grid place-items-center text-xs group-hover/link:translate-x-0.5 transition">→</span>
+                                    <span class="relative">Konsultasi <span class="absolute -bottom-1 left-0 w-0 h-px bg-black group-hover/link:w-full transition-all duration-300"></span></span>
+                                    <span class="w-7 h-7 rounded-full bg-black text-white grid place-items-center text-xs group-hover/link:translate-x-0.5 transition">→</span>
                                 </a>
                                 <span class="text-[10px] tracking-[0.14em] font-bold text-slate-400">SMK BPPI</span>
                             </div>
@@ -174,10 +174,10 @@
 {{-- CTA --}}
 <section class="pb-10 sm:pb-14 bg-white">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="relative overflow-hidden rounded-[24px] sm:rounded-[28px] bg-gradient-to-br from-[#0B1D33] via-[#0F2A4A] to-[#162F4A] p-[1px]">
-            <div class="rounded-[23px] sm:rounded-[27px] bg-gradient-to-br from-[#0B1D33] via-[#0F2A4A] to-[#162F4A] p-6 sm:p-8 lg:p-10 relative overflow-hidden">
+        <div class="relative overflow-hidden rounded-[24px] sm:rounded-[28px] bg-gradient-to-br from-black via-zinc-900 to-black p-[1px]">
+            <div class="rounded-[23px] sm:rounded-[27px] bg-gradient-to-br from-black via-zinc-900 to-black p-6 sm:p-8 lg:p-10 relative overflow-hidden">
                 <div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-[#C5A880]/15 blur-2xl"></div>
-                <div class="absolute -left-20 -bottom-20 w-48 h-48 rounded-full bg-[#93C5FD]/10 blur-2xl"></div>
+                <div class="absolute -left-20 -bottom-20 w-48 h-48 rounded-full bg-white/5 blur-2xl"></div>
                 <div class="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-white/10 to-transparent hidden lg:block"></div>
                 <div class="relative flex flex-col lg:flex-row items-center justify-between gap-6 text-white">
                     <div class="text-center lg:text-left">
