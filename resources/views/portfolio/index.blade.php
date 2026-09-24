@@ -9,7 +9,7 @@
 <div class="bg-white rounded-lg shadow">
     <div class="p-6 border-b border-gray-200 flex justify-between items-center">
         <h3 class="text-lg font-semibold">All Portfolio</h3>
-        <a href="{{ route('admin.portfolio.create') }}" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
+        <a href="{{ route('admin.portfolio.create') }}" class="bg-[#0F2A4A] text-white px-4 py-2 rounded-lg hover:bg-[#0F2A4A]">
             + Add New Portfolio
         </a>
     </div>
@@ -67,7 +67,7 @@
                         </td>
                         <td class="py-3">
                             <div class="flex space-x-2">
-                                <a href="{{ route('admin.portfolio.show', $portfolio) }}" class="text-blue-600 hover:text-blue-800">
+                                <a href="{{ route('admin.portfolio.show', $portfolio) }}" class="text-[#0F2A4A] hover:text-[#0B1D33]">
                                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>

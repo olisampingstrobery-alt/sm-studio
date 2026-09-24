@@ -1,7 +1,7 @@
 @extends('layouts.public')
 @section('title','Portfolio')
 @section('content')
-<section class="relative overflow-hidden bg-gradient-to-br from-black via-zinc-900 to-black text-white border-b border-white/10">
+<section class="relative overflow-hidden bg-gradient-to-br from-[#0F2A4A] via-[#0B1D33] to-[#071425] text-white border-b border-white/10">
     <div class="absolute inset-0 opacity-[0.07]" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 32px 32px;"></div>
     <div class="absolute -right-24 -top-24 w-[560px] h-[560px] rounded-full bg-[#93C5FD]/12 blur-3xl pointer-events-none"></div>
     <div class="absolute -left-32 bottom-0 w-[480px] h-[480px] rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
@@ -15,24 +15,24 @@
 <section class="py-10 sm:py-12 bg-gradient-to-b from-[#F8FAFC] via-[#EFF6FF]/30 to-white border-y border-slate-100 relative overflow-hidden">
     <div class="absolute top-0 right-0 w-[520px] h-[320px] bg-[#EFF6FF]/50 rounded-full blur-3xl pointer-events-none"></div>
     <div class="absolute bottom-0 left-0 w-72 h-72 bg-white/5 rounded-full blur-3xl pointer-events-none hidden lg:block"></div>
-    <div class="absolute -left-20 top-24 w-64 h-64 bg-[#C5A880]/[0.04] rounded-full blur-3xl pointer-events-none hidden lg:block"></div>
+    <div class="absolute -left-20 top-24 w-64 h-64 bg-[#93C5FD]/[0.04] rounded-full blur-3xl pointer-events-none hidden lg:block"></div>
     <div class="relative max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         {{-- Klien chips — sudah bekerja sama dengan siapa saja (manual via admin/clients) --}}
         @if(isset($clients) && $clients->count())
         <div class="bg-white/90 backdrop-blur rounded-[20px] border border-[#BFDBFE]/40 p-4 sm:p-5 flex flex-col lg:flex-row lg:items-center justify-between gap-4 shadow-soft mb-8">
             <div class="flex items-center gap-3 shrink-0">
-                <span class="w-9 h-9 rounded-xl bg-black text-white grid place-items-center shadow">◈</span>
+                <span class="w-9 h-9 rounded-xl bg-[#0B1D33] text-white grid place-items-center shadow">◈</span>
                 <div>
                     <div class="text-sm font-bold text-[#0B1D33]">Sudah Bekerja Sama Dengan</div>
                     <div class="text-xs text-slate-500">{{ $clients->count() }} klien / mitra — data manual via admin</div>
                 </div>
             </div>
             <div class="flex flex-wrap gap-2">
-                <a href="{{ route('portfolio') }}" class="px-4 py-2 rounded-full bg-black text-white text-xs font-bold shadow">Semua ({{ \App\Models\Portfolio::where('status','published')->count() }})</a>
+                <a href="{{ route('portfolio') }}" class="px-4 py-2 rounded-full bg-[#0B1D33] text-white text-xs font-bold shadow">Semua ({{ \App\Models\Portfolio::where('status','published')->count() }})</a>
                 @foreach($clients as $cl)
                     @php $cnt = $cl->portfolios_count ?? 0; @endphp
                     <a href="{{ route('home') }}#client-{{ $cl->slug }}" class="group inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F8FAFC] border border-slate-200 text-xs font-semibold text-slate-700 hover:bg-white hover:border-[#BFDBFE] hover:text-[#0F2A4A] hover:shadow-sm transition">
-                        <span class="w-2 h-2 rounded-full bg-emerald-500 group-hover:bg-black"></span>
+                        <span class="w-2 h-2 rounded-full bg-[#0F2A4A] group-hover:bg-[#0B1D33]"></span>
                         {{ $cl->name }}
                         <span class="bg-white border px-1.5 py-0.5 rounded-full text-[10px] font-bold">{{ $cnt }}</span>
                     </a>
@@ -61,9 +61,9 @@
             <noscript>
                 @php
                     $noscriptStyles = [
-                        ['grad'=>'from-[#EFF6FF] via-[#F8FAFC] to-white','border'=>'border-[#BFDBFE]/50','blob'=>'bg-blue-500/10'],
-                        ['grad'=>'from-violet-50 via-white to-white','border'=>'border-violet-200/40','blob'=>'bg-violet-500/10'],
-                        ['grad'=>'from-emerald-50/70 via-white to-white','border'=>'border-emerald-200/40','blob'=>'bg-emerald-500/10'],
+                        ['grad'=>'from-[#EFF6FF] via-[#F8FAFC] to-white','border'=>'border-[#BFDBFE]/50','blob'=>'bg-[#0F2A4A]/10'],
+                        ['grad'=>'from-[#EFF6FF] via-white to-white','border'=>'border-[#BFDBFE]/40','blob'=>'bg-[#0F2A4A]/10'],
+                        ['grad'=>'from-[#EFF6FF]/70 via-white to-white','border'=>'border-[#BFDBFE]/40','blob'=>'bg-[#0F2A4A]/10'],
                     ];
                 @endphp
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
@@ -71,8 +71,8 @@
                     @php $nst = $noscriptStyles[$idx % count($noscriptStyles)]; @endphp
                     <a href="{{ route('portfolio.show', $pf->slug ?? $pf->id) }}" class="group relative flex flex-col overflow-hidden rounded-[24px] border {{ $nst['border'] }} bg-gradient-to-br {{ $nst['grad'] }} p-[1.2px] hover:shadow-[0_12px_32px_-12px_rgba(15,42,74,0.18)] hover:-translate-y-1 transition-all duration-300">
                         <div class="relative flex flex-col h-full rounded-[22px] bg-white overflow-hidden">
-                            <div class="h-48 bg-slate-100 overflow-hidden relative">@if($pf->featured_image)<img src="{{ asset('storage/'.$pf->featured_image) }}" class="w-full h-full object-cover">@elseif(isset($pf->images) && $pf->images->count())<img src="{{ asset('storage/'.$pf->images->first()->image) }}" class="w-full h-full object-cover">@else<div class="w-full h-full grid place-items-center text-slate-400 text-sm bg-gradient-to-br {{ $nst['grad'] }}">No Image</div>@endif<span class="absolute top-3 left-3 text-xs font-semibold text-[#0F2A4A] bg-white/90 backdrop-blur border border-slate-200 px-2.5 py-1 rounded-full shadow-sm">{{ $pf->client->name ?? $pf->client_name ?? 'Client' }}</span><span class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white border border-slate-200 grid place-items-center text-slate-400 group-hover:bg-black group-hover:text-white transition shadow-sm text-xs">↗</span></div>
-                            <div class="p-6 flex-1 flex flex-col bg-gradient-to-br {{ $nst['grad'] }}"><h3 class="font-semibold text-[16px] leading-tight text-[#0B1D33] line-clamp-2">{{ $pf->title }}</h3><p class="text-xs text-slate-500 mt-1.5 truncate">{{ $pf->client_name ?? $pf->client?->name ?? 'Client' }}</p><div class="mt-4 pt-4 border-t border-slate-200/60 flex items-center justify-between"><span class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0F2A4A]">Lihat detail <span class="w-6 h-6 rounded-full bg-black text-white grid place-items-center text-[10px]">→</span></span><span class="text-[10px] tracking-[0.14em] font-bold text-slate-400">SMK BPPI</span></div></div>
+                            <div class="h-48 bg-slate-100 overflow-hidden relative">@if($pf->featured_image)<img src="{{ asset('storage/'.$pf->featured_image) }}" class="w-full h-full object-cover">@elseif(isset($pf->images) && $pf->images->count())<img src="{{ asset('storage/'.$pf->images->first()->image) }}" class="w-full h-full object-cover">@else<div class="w-full h-full grid place-items-center text-slate-400 text-sm bg-gradient-to-br {{ $nst['grad'] }}">No Image</div>@endif<span class="absolute top-3 left-3 text-xs font-semibold text-[#0F2A4A] bg-white/90 backdrop-blur border border-slate-200 px-2.5 py-1 rounded-full shadow-sm">{{ $pf->client->name ?? $pf->client_name ?? 'Client' }}</span><span class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white border border-slate-200 grid place-items-center text-slate-400 group-hover:bg-[#0B1D33] group-hover:text-white transition shadow-sm text-xs">↗</span></div>
+                            <div class="p-6 flex-1 flex flex-col bg-gradient-to-br {{ $nst['grad'] }}"><h3 class="font-semibold text-[16px] leading-tight text-[#0B1D33] line-clamp-2">{{ $pf->title }}</h3><p class="text-xs text-slate-500 mt-1.5 truncate">{{ $pf->client_name ?? $pf->client?->name ?? 'Client' }}</p><div class="mt-4 pt-4 border-t border-slate-200/60 flex items-center justify-between"><span class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#0F2A4A]">Lihat detail <span class="w-6 h-6 rounded-full bg-[#0B1D33] text-white grid place-items-center text-[10px]">→</span></span><span class="text-[10px] tracking-[0.14em] font-bold text-slate-400">SMK BPPI</span></div></div>
                         </div>
                     </a>
                     @endforeach

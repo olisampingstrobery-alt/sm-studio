@@ -6,7 +6,7 @@
     <div class="bg-white rounded-2xl shadow-card border border-slate-100 overflow-hidden w-full">
         <div class="px-4 sm:px-6 lg:px-8 py-6 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-gradient-to-r from-[#F8FAFC] to-white">
             <div class="flex items-center gap-3">
-                <span class="w-10 h-10 rounded-xl bg-amber-500 text-white grid place-items-center shadow">✎</span>
+                <span class="w-10 h-10 rounded-xl bg-[#0F2A4A] text-white grid place-items-center shadow">✎</span>
                 <div>
                     <h3 class="font-bold text-[#0B1D33]">Edit: {{ $category->name }}</h3>
                     <p class="text-xs text-slate-500 mt-1">Slug: <span class="font-mono bg-slate-100 px-1.5 py-0.5 rounded">{{ $category->slug }}</span> • Tipe: <span class="px-2 py-0.5 rounded-full bg-[#EFF6FF] text-[#0F2A4A] border text-xs font-semibold">{{ ucfirst($category->type) }}</span></p>
@@ -34,11 +34,11 @@
                 </div>
             </div>
 
-            <div class="bg-amber-50/70 rounded-xl border border-amber-200 p-4 flex gap-3">
-                <span class="w-8 h-8 rounded-lg bg-amber-500 text-white grid place-items-center shrink-0">!</span>
-                <div class="text-sm text-amber-800">
+            <div class="bg-[#EFF6FF]/70 rounded-xl border border-[#BFDBFE] p-4 flex gap-3">
+                <span class="w-8 h-8 rounded-lg bg-[#0F2A4A] text-white grid place-items-center shrink-0">!</span>
+                <div class="text-sm text-[#0B1D33]">
                     <div class="font-semibold">Perhatian saat ganti nama/tipe</div>
-                    <p class="text-xs mt-1 text-amber-700 leading-relaxed">Slug akan diperbarui otomatis. Link lama <span class="font-mono bg-white px-1 py-0.5 rounded border">/kategori/{{ $category->slug }}</span> akan 404. Pastikan tidak ada portfolio/service yang masih memakai kategori ini jika ingin hapus tipe.</p>
+                    <p class="text-xs mt-1 text-[#0F2A4A] leading-relaxed">Slug akan diperbarui otomatis. Link lama <span class="font-mono bg-white px-1 py-0.5 rounded border">/kategori/{{ $category->slug }}</span> akan 404. Pastikan tidak ada portfolio/service yang masih memakai kategori ini jika ingin hapus tipe.</p>
                 </div>
             </div>
 
@@ -48,7 +48,7 @@
 
             <div class="flex flex-col sm:flex-row justify-end gap-3 pt-6 border-t border-slate-100">
                 <a href="{{ route('admin.categories.index') }}" class="px-5 py-2.5 rounded-xl border border-slate-200 text-sm font-medium hover:bg-slate-50 text-center order-2 sm:order-1">Batal</a>
-                <button type="submit" class="px-6 py-2.5 rounded-xl bg-black hover:bg-black text-white font-semibold text-sm shadow order-1 sm:order-2">Update Kategori</button>
+                <button type="submit" class="px-6 py-2.5 rounded-xl bg-[#0B1D33] hover:bg-[#0B1D33] text-white font-semibold text-sm shadow order-1 sm:order-2">Update Kategori</button>
             </div>
         </form>
     </div>

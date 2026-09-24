@@ -5,12 +5,12 @@ import React, { memo, useMemo } from 'react';
  * Performa: cegah re-render, lazy decode, CLS aman (width/height)
  */
 const styles = [
-    { grad: 'from-[#EFF6FF] via-[#F8FAFC] to-white', border: 'border-[#BFDBFE]/50', blob: 'bg-blue-500/10' },
-    { grad: 'from-violet-50 via-white to-white', border: 'border-violet-200/40', blob: 'bg-violet-500/10' },
-    { grad: 'from-emerald-50/70 via-white to-white', border: 'border-emerald-200/40', blob: 'bg-emerald-500/10' },
-    { grad: 'from-amber-50/70 via-white to-white', border: 'border-amber-200/40', blob: 'bg-amber-500/10' },
-    { grad: 'from-rose-50/60 via-white to-white', border: 'border-rose-200/40', blob: 'bg-rose-500/10' },
-    { grad: 'from-sky-50/60 via-white to-white', border: 'border-sky-200/40', blob: 'bg-sky-500/10' },
+    { grad: 'from-[#EFF6FF] via-[#F8FAFC] to-white', border: 'border-[#BFDBFE]/50', blob: 'bg-[#0F2A4A]/10' },
+    { grad: 'from-[#EFF6FF] via-white to-white', border: 'border-[#BFDBFE]/40', blob: 'bg-[#0F2A4A]/10' },
+    { grad: 'from-[#EFF6FF]/70 via-white to-white', border: 'border-[#BFDBFE]/40', blob: 'bg-[#0F2A4A]/10' },
+    { grad: 'from-[#EFF6FF]/70 via-white to-white', border: 'border-[#BFDBFE]/40', blob: 'bg-[#0F2A4A]/10' },
+    { grad: 'from-[#EFF6FF]/60 via-white to-white', border: 'border-[#BFDBFE]/40', blob: 'bg-[#0F2A4A]/10' },
+    { grad: 'from-[#EFF6FF]/60 via-white to-white', border: 'border-[#BFDBFE]/40', blob: 'bg-[#0F2A4A]/10' },
 ];
 
 const Card = memo(function Card({ t, idx = 0 }) {
@@ -30,7 +30,7 @@ const Card = memo(function Card({ t, idx = 0 }) {
                 <span className="absolute top-5 right-6 font-display font-extrabold text-[36px] leading-none tracking-tight text-slate-900/[0.035] group-hover:text-slate-900/[0.06] transition select-none">{String(idx + 1).padStart(2, '0')}</span>
                 <div className={`absolute -top-10 -right-10 w-36 h-36 rounded-full ${st.blob} blur-2xl group-hover:scale-110 transition duration-500 pointer-events-none`}></div>
                 <div className="relative flex items-center justify-between">
-                    <div className="text-amber-400 text-sm tracking-wide" aria-label={`Rating ${t.rating ?? 5} dari 5`}>
+                    <div className="text-[#0F2A4A] text-sm tracking-wide" aria-label={`Rating ${t.rating ?? 5} dari 5`}>
                         {stars}
                     </div>
                     <span className="text-[11px] font-semibold tracking-widest text-slate-500 bg-white border border-slate-200 px-2 py-1 rounded-full shadow-sm">

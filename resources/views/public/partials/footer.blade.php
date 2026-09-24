@@ -1,4 +1,4 @@
-<footer class="bg-black text-slate-300">
+<footer class="bg-[#0B1D33] text-slate-300">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {{-- Grid: mobile 2 kolom untuk Navigasi+Bantuan sejajar, brand & kontak full width --}}
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
@@ -36,7 +36,7 @@
                 <div class="font-semibold text-white mb-3 sm:mb-4 text-sm sm:text-[15px]">Bantuan</div>
                 <ul class="space-y-2 sm:space-y-2.5 text-[13px] sm:text-sm text-slate-400">
                     <li><a href="{{ route('home') }}#faq" class="hover:text-white transition">FAQ</a></li>
-                    <li><a href="{{ route('contact') }}" class="hover:text-white transition">Contact</a></li>
+                    <li><a href="{{ route('home') }}#contact" class="hover:text-white transition">Contact</a></li>
                     <li><a href="{{ route('home') }}#testimonials" class="hover:text-white transition">Testimonials</a></li>
                     <li><a href="{{ route('home') }}#clients" class="hover:text-white transition">Clients</a></li>
                 </ul>

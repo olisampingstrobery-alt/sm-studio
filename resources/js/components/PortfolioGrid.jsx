@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 
 const cardStyles = [
-    { grad: 'from-[#EFF6FF] via-[#F8FAFC] to-white', border: 'border-[#BFDBFE]/50', blob: 'bg-blue-500/10', badge: 'bg-[#EFF6FF] border-[#BFDBFE]/50 text-[#0F2A4A]' },
-    { grad: 'from-violet-50 via-white to-white', border: 'border-violet-200/40', blob: 'bg-violet-500/10', badge: 'bg-violet-50 border-violet-200/50 text-violet-700' },
-    { grad: 'from-emerald-50/70 via-white to-white', border: 'border-emerald-200/40', blob: 'bg-emerald-500/10', badge: 'bg-emerald-50 border-emerald-200/50 text-emerald-700' },
+    { grad: 'from-[#EFF6FF] via-[#F8FAFC] to-white', border: 'border-[#BFDBFE]/50', blob: 'bg-[#0F2A4A]/10', badge: 'bg-[#EFF6FF] border-[#BFDBFE]/50 text-[#0F2A4A]' },
+    { grad: 'from-[#EFF6FF] via-white to-white', border: 'border-[#BFDBFE]/40', blob: 'bg-[#0F2A4A]/10', badge: 'bg-[#EFF6FF] border-[#BFDBFE]/50 text-[#0F2A4A]' },
+    { grad: 'from-[#EFF6FF]/70 via-white to-white', border: 'border-[#BFDBFE]/40', blob: 'bg-[#0F2A4A]/10', badge: 'bg-[#EFF6FF] border-[#BFDBFE]/50 text-[#0F2A4A]' },
 ];
 
 const Card = memo(function Card({ p, idx = 0 }) {
@@ -50,7 +50,7 @@ const Card = memo(function Card({ p, idx = 0 }) {
                         {String(idx + 1).padStart(2, '0')}
                     </span>
                     {p.is_featured ? (
-                        <span className="absolute bottom-3 left-3 text-[11px] font-bold text-amber-700 bg-amber-50 border border-amber-200 px-2.5 py-1 rounded-full shadow-sm">
+                        <span className="absolute bottom-3 left-3 text-[11px] font-bold text-[#0F2A4A] bg-[#EFF6FF] border border-[#BFDBFE] px-2.5 py-1 rounded-full shadow-sm">
                             ★ Featured
                         </span>
                     ) : null}

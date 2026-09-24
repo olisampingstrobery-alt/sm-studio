@@ -16,9 +16,9 @@
 @endphp
 <div class="w-full max-w-none space-y-6">
     {{-- Header hero --}}
-    <div class="bg-gradient-to-br from-black via-zinc-900 to-black rounded-[24px] p-6 sm:p-8 text-white relative overflow-hidden shadow-card border border-white/10">
+    <div class="bg-gradient-to-br from-[#0F2A4A] via-[#0B1D33] to-[#071425] rounded-[24px] p-6 sm:p-8 text-white relative overflow-hidden shadow-card border border-white/10">
         <div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
-        <div class="absolute -left-12 -bottom-12 w-48 h-48 rounded-full bg-[#C5A880]/10 blur-2xl pointer-events-none"></div>
+        <div class="absolute -left-12 -bottom-12 w-48 h-48 rounded-full bg-[#93C5FD]/10 blur-2xl pointer-events-none"></div>
         <div class="absolute top-0 left-1/2 w-px h-full bg-gradient-to-b from-transparent via-white/10 to-transparent hidden lg:block"></div>
         <div class="relative flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             <div>
@@ -26,9 +26,9 @@
                 <h2 class="mt-3 text-2xl sm:text-3xl font-bold leading-tight">Kelola Kategori</h2>
                 <p class="text-white/70 mt-2 text-sm sm:text-[15px] max-w-xl leading-relaxed">Atur pengelompokan untuk <span class="text-white font-semibold">Services, Portfolio, Articles</span>. Kategori yang rapi bikin filter di website umum jadi cantik & SEO-friendly. Perubahan langsung tampil di chip kategori & halaman detail.</p>
                 <div class="mt-4 flex flex-wrap gap-2 text-xs">
-                    <span class="inline-flex items-center gap-1.5 bg-white/10 border border-white/15 px-3 py-1.5 rounded-full"><span class="w-2 h-2 rounded-full bg-emerald-400"></span> {{ $counts['service'] }} Service</span>
-                    <span class="inline-flex items-center gap-1.5 bg-white/10 border border-white/15 px-3 py-1.5 rounded-full"><span class="w-2 h-2 rounded-full bg-violet-400"></span> {{ $counts['portfolio'] }} Portfolio</span>
-                    <span class="inline-flex items-center gap-1.5 bg-white/10 border border-white/15 px-3 py-1.5 rounded-full"><span class="w-2 h-2 rounded-full bg-amber-400"></span> {{ $counts['article'] }} Article</span>
+                    <span class="inline-flex items-center gap-1.5 bg-white/10 border border-white/15 px-3 py-1.5 rounded-full"><span class="w-2 h-2 rounded-full bg-[#0F2A4A]"></span> {{ $counts['service'] }} Service</span>
+                    <span class="inline-flex items-center gap-1.5 bg-white/10 border border-white/15 px-3 py-1.5 rounded-full"><span class="w-2 h-2 rounded-full bg-[#0F2A4A]"></span> {{ $counts['portfolio'] }} Portfolio</span>
+                    <span class="inline-flex items-center gap-1.5 bg-white/10 border border-white/15 px-3 py-1.5 rounded-full"><span class="w-2 h-2 rounded-full bg-[#0F2A4A]"></span> {{ $counts['article'] }} Article</span>
                 </div>
             </div>
             <div class="flex flex-col sm:flex-row gap-3 shrink-0">
@@ -44,10 +44,10 @@
     <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
         @php
             $statCards = [
-                ['label'=>'Total Kategori','value'=>$counts['all'] + ($categories->total() ? 0 : 0),'icon'=>'◈','grad'=>'from-[#EFF6FF] to-white','border'=>'border-[#BFDBFE]/50','iconBg'=>'from-black to-zinc-900','text'=>'text-[#0F2A4A]'],
-                ['label'=>'Service','value'=>$counts['service'],'icon'=>'💼','grad'=>'from-sky-50 to-white','border'=>'border-sky-200/40','iconBg'=>'from-sky-600 to-blue-600','text'=>'text-sky-700'],
-                ['label'=>'Portfolio','value'=>$counts['portfolio'],'icon'=>'🎨','grad'=>'from-violet-50 to-white','border'=>'border-violet-200/40','iconBg'=>'from-violet-600 to-indigo-600','text'=>'text-violet-700'],
-                ['label'=>'Article','value'=>$counts['article'],'icon'=>'📰','grad'=>'from-amber-50 to-white','border'=>'border-amber-200/40','iconBg'=>'from-amber-500 to-orange-500','text'=>'text-amber-700'],
+                ['label'=>'Total Kategori','value'=>$counts['all'] + ($categories->total() ? 0 : 0),'icon'=>'◈','grad'=>'from-[#EFF6FF] to-white','border'=>'border-[#BFDBFE]/50','iconBg'=>'from-[#0F2A4A] to-[#071425]','text'=>'text-[#0F2A4A]'],
+                ['label'=>'Service','value'=>$counts['service'],'icon'=>'💼','grad'=>'from-[#EFF6FF] to-white','border'=>'border-[#BFDBFE]/40','iconBg'=>'from-[#0F2A4A] to-[#0F2A4A]','text'=>'text-[#0F2A4A]'],
+                ['label'=>'Portfolio','value'=>$counts['portfolio'],'icon'=>'🎨','grad'=>'from-[#EFF6FF] to-white','border'=>'border-[#BFDBFE]/40','iconBg'=>'from-[#0F2A4A] to-[#0F2A4A]','text'=>'text-[#0F2A4A]'],
+                ['label'=>'Article','value'=>$counts['article'],'icon'=>'📰','grad'=>'from-[#EFF6FF] to-white','border'=>'border-[#BFDBFE]/40','iconBg'=>'from-[#0F2A4A] to-[#0F2A4A]','text'=>'text-[#0F2A4A]'],
             ];
         @endphp
         @foreach($statCards as $s)
@@ -61,7 +61,7 @@
                 </div>
             </div>
             <div class="mt-3 text-[11px] text-slate-500 bg-white/70 border border-slate-200/50 px-2.5 py-1 rounded-full inline-flex items-center gap-1">
-                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Sinkron ke website umum
+                <span class="w-1.5 h-1.5 rounded-full bg-[#0F2A4A]"></span> Sinkron ke website umum
             </div>
         </div>
         @endforeach
@@ -83,7 +83,7 @@
                     <input type="text" id="catSearch" placeholder="Cari kategori..." class="bg-transparent border-0 focus:ring-0 text-sm w-48 placeholder:text-slate-400 p-0" onkeyup="filterCat()">
                 </div>
                 <div class="flex items-center gap-1.5 flex-wrap">
-                    <button onclick="filterType('all')" data-type="all" class="cat-filter active px-3 py-1.5 rounded-full bg-black text-white text-xs font-semibold">Semua</button>
+                    <button onclick="filterType('all')" data-type="all" class="cat-filter active px-3 py-1.5 rounded-full bg-[#0B1D33] text-white text-xs font-semibold">Semua</button>
                     <button onclick="filterType('service')" data-type="service" class="cat-filter px-3 py-1.5 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold border">Service</button>
                     <button onclick="filterType('portfolio')" data-type="portfolio" class="cat-filter px-3 py-1.5 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold border">Portfolio</button>
                     <button onclick="filterType('article')" data-type="article" class="cat-filter px-3 py-1.5 rounded-full bg-slate-100 text-slate-600 text-xs font-semibold border">Article</button>
@@ -107,9 +107,9 @@
                         @forelse($categories as $cat)
                         @php
                             $typeStyles = [
-                                'service' => 'bg-sky-50 text-sky-700 border-sky-200',
-                                'portfolio' => 'bg-violet-50 text-violet-700 border-violet-200',
-                                'article' => 'bg-amber-50 text-amber-700 border-amber-200',
+                                'service' => 'bg-[#EFF6FF] text-[#0F2A4A] border-[#BFDBFE]',
+                                'portfolio' => 'bg-[#EFF6FF] text-[#0F2A4A] border-[#BFDBFE]',
+                                'article' => 'bg-[#EFF6FF] text-[#0F2A4A] border-[#BFDBFE]',
                                 'general' => 'bg-slate-100 text-slate-700 border-slate-200',
                             ];
                             $style = $typeStyles[$cat->type] ?? 'bg-slate-100 text-slate-700 border-slate-200';
@@ -135,14 +135,14 @@
                             <td class="py-3.5 px-2"><span class="px-3 py-1 rounded-full border text-xs font-bold {{ $style }}">{{ ucfirst($cat->type) }}</span></td>
                             <td class="py-3.5 px-2">
                                 @if($used>0)
-                                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> {{ $used }} dipakai</span>
+                                    <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#EFF6FF] text-[#0F2A4A] border border-[#BFDBFE] text-xs font-semibold"><span class="w-1.5 h-1.5 rounded-full bg-[#0F2A4A]"></span> {{ $used }} dipakai</span>
                                 @else
                                     <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-slate-100 text-slate-500 border text-xs">Belum dipakai</span>
                                 @endif
                             </td>
                             <td class="py-3.5 px-6">
                                 <div class="flex justify-end gap-1.5">
-                                    <a href="{{ route('admin.categories.edit',$cat) }}" class="w-8 h-8 rounded-lg bg-amber-50 text-amber-600 grid place-items-center hover:bg-amber-100 hover:scale-105 transition" title="Edit"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg></a>
+                                    <a href="{{ route('admin.categories.edit',$cat) }}" class="w-8 h-8 rounded-lg bg-[#EFF6FF] text-[#0F2A4A] grid place-items-center hover:bg-[#DBEAFE] hover:scale-105 transition" title="Edit"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg></a>
                                     <a href="{{ url('/kategori/'.$cat->slug) }}" target="_blank" class="w-8 h-8 rounded-lg bg-[#EFF6FF] text-[#0F2A4A] grid place-items-center hover:bg-[#DBEAFE] transition" title="Lihat di publik"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>
                                     <form action="{{ route('admin.categories.destroy',$cat) }}" method="POST" onsubmit="return confirm('Hapus kategori \'{{ $cat->name }}\'? Konten terkait jadi Tanpa Kategori.')">@csrf @method('DELETE')<button class="w-8 h-8 rounded-lg bg-red-50 text-red-600 grid place-items-center hover:bg-red-100 hover:scale-105 transition" title="Hapus"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/></svg></button></form>
                                 </div>
@@ -154,7 +154,7 @@
                                 <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#EFF6FF] to-white border border-[#BFDBFE]/50 grid place-items-center mx-auto text-2xl">◈</div>
                                 <h4 class="font-semibold text-[#0B1D33] mt-4">Belum ada kategori</h4>
                                 <p class="text-sm text-slate-500 mt-1">Buat kategori pertama biar filter di website umum tidak kosong. Contoh: <span class="font-mono text-xs bg-slate-100 px-1.5 py-0.5 rounded">Website</span>, <span class="font-mono text-xs bg-slate-100 px-1.5 py-0.5 rounded">Branding</span>, <span class="font-mono text-xs bg-slate-100 px-1.5 py-0.5 rounded">Company Profile</span>.</p>
-                                <a href="{{ route('admin.categories.create') }}" class="mt-4 inline-flex items-center gap-2 bg-black text-white px-5 py-2.5 rounded-xl text-sm font-semibold">+ Buat Kategori Pertama</a>
+                                <a href="{{ route('admin.categories.create') }}" class="mt-4 inline-flex items-center gap-2 bg-[#0B1D33] text-white px-5 py-2.5 rounded-xl text-sm font-semibold">+ Buat Kategori Pertama</a>
                             </div>
                         </td></tr>
                         @endforelse
@@ -171,8 +171,8 @@
 <script>
 function filterType(type){
   document.querySelectorAll('.cat-filter').forEach(b=>{
-    b.classList.remove('bg-black','text-white'); b.classList.add('bg-slate-100','text-slate-600','border');
-    if(b.dataset.type===type){ b.classList.remove('bg-slate-100','text-slate-600','border'); b.classList.add('bg-black','text-white'); }
+    b.classList.remove('bg-[#0B1D33]','text-white'); b.classList.add('bg-slate-100','text-slate-600','border');
+    if(b.dataset.type===type){ b.classList.remove('bg-slate-100','text-slate-600','border'); b.classList.add('bg-[#0B1D33]','text-white'); }
   });
   document.querySelectorAll('#catTable tbody tr').forEach(r=>{
     if(!r.dataset.type) return;

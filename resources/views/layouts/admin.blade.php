@@ -33,8 +33,8 @@
 
                 {{-- Flash messages --}}
                 @if(session('success'))
-                    <div class="mb-6 rounded-xl bg-emerald-50 border border-emerald-200 px-4 py-3 flex items-center gap-3 text-emerald-800" role="alert">
-                        <span class="shrink-0 w-8 h-8 rounded-full bg-emerald-500 text-white grid place-items-center">
+                    <div class="mb-6 rounded-xl bg-[#EFF6FF] border border-[#BFDBFE] px-4 py-3 flex items-center gap-3 text-[#0B1D33]" role="alert">
+                        <span class="shrink-0 w-8 h-8 rounded-full bg-[#0F2A4A] text-white grid place-items-center">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
                         </span>
                         <span class="text-sm font-medium">{{ session('success') }}</span>
@@ -44,7 +44,7 @@
                     <div class="mb-6 rounded-xl bg-red-50 border border-red-200 px-4 py-3 text-red-800 text-sm">{{ session('error') }}</div>
                 @endif
                 @if($errors->any())
-                    <div class="mb-6 rounded-xl bg-amber-50 border border-amber-200 px-4 py-3 text-amber-800 text-sm">
+                    <div class="mb-6 rounded-xl bg-[#EFF6FF] border border-[#BFDBFE] px-4 py-3 text-[#0B1D33] text-sm">
                         <div class="font-semibold text-xs tracking-wide">Periksa input:</div>
                         <ul class="list-disc list-inside mt-1">@foreach($errors->all() as $e)<li>{{ $e }}</li>@endforeach</ul>
                     </div>

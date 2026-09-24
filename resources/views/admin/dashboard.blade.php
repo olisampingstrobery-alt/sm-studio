@@ -7,10 +7,10 @@
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         @php
             $cards = [
-                ['label'=>'Services','value'=>$stats['services'] ?? 0,'icon'=>'M19.428 15.428a2 2 0 00-1.022-.547','color'=>'bg-black','trend'=>'+12%'],
+                ['label'=>'Services','value'=>$stats['services'] ?? 0,'icon'=>'M19.428 15.428a2 2 0 00-1.022-.547','color'=>'bg-[#0B1D33]','trend'=>'+12%'],
                 ['label'=>'Portfolio','value'=>$stats['portfolio'] ?? 0,'icon'=>'M4 16l4.586-4.586','color'=>'bg-[#1A3A5C]','trend'=>'+8%'],
                 ['label'=>'Clients','value'=>$stats['clients'] ?? 0,'icon'=>'M17 20h5v-2','color'=>'bg-[#0F2440]','trend'=>'+5%'],
-                ['label'=>'Inquiries','value'=>$stats['inquiries'] ?? 0,'icon'=>'M3 8l7.89 5.26','color'=>'bg-amber-500','trend'=>$stats['pending_inquiries'] ?? 0 . ' pending'],
+                ['label'=>'Inquiries','value'=>$stats['inquiries'] ?? 0,'icon'=>'M3 8l7.89 5.26','color'=>'bg-[#0F2A4A]','trend'=>$stats['pending_inquiries'] ?? 0 . ' pending'],
             ];
         @endphp
         @foreach($cards as $c)
@@ -19,7 +19,7 @@
                     <div>
                         <div class="text-xs font-semibold tracking-widest text-slate-400 uppercase">{{ $c['label'] }}</div>
                         <div class="mt-2 text-3xl font-bold text-[#0B1D33]">{{ $c['value'] }}</div>
-                        <div class="mt-1 text-xs font-medium text-emerald-600 bg-emerald-50 inline-flex px-2 py-0.5 rounded-full">{{ $c['trend'] }}</div>
+                        <div class="mt-1 text-xs font-medium text-[#0F2A4A] bg-[#EFF6FF] inline-flex px-2 py-0.5 rounded-full">{{ $c['trend'] }}</div>
                     </div>
                     <span class="w-11 h-11 rounded-xl {{ $c['color'] }} text-white grid place-items-center shadow">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="{{ $c['icon'] }}"/></svg>
@@ -44,7 +44,7 @@
                             <div class="text-sm font-semibold text-slate-800 truncate">{{ $inq->name }} <span class="font-normal text-slate-500">— {{ $inq->email }}</span></div>
                             <div class="text-xs text-slate-500 truncate">{{ Str::limit($inq->message, 60) }}</div>
                         </div>
-                        <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full {{ $inq->status==='pending' ? 'bg-amber-100 text-amber-700' : 'bg-emerald-100 text-emerald-700' }}">{{ ucfirst($inq->status) }}</span>
+                        <span class="text-[11px] font-semibold px-2.5 py-1 rounded-full {{ $inq->status==='pending' ? 'bg-[#DBEAFE] text-[#0F2A4A]' : 'bg-[#DBEAFE] text-[#0F2A4A]' }}">{{ ucfirst($inq->status) }}</span>
                     </div>
                 @empty
                     <div class="p-10 text-center text-sm text-slate-400">Belum ada inquiries.</div>
@@ -54,7 +54,7 @@
 
         {{-- Quick Actions & Portfolio --}}
         <div class="space-y-6">
-            <div class="bg-black rounded-2xl p-6 text-white relative overflow-hidden">
+            <div class="bg-[#0B1D33] rounded-2xl p-6 text-white relative overflow-hidden">
                 <div class="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-white/10"></div>
                 <h4 class="font-semibold relative">Aksi Cepat</h4>
                 <p class="text-sm text-white/70 mt-1 relative">Kelola konten lebih cepat.</p>

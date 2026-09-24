@@ -1,10 +1,10 @@
 @props(['type' => 'info', 'dismissible' => false])
 @php
 $map = [
-    'success' => 'bg-emerald-50 border-emerald-200 text-emerald-800',
+    'success' => 'bg-[#EFF6FF] border-[#BFDBFE] text-[#0B1D33]',
     'error'   => 'bg-red-50 border-red-200 text-red-800',
-    'warning' => 'bg-amber-50 border-amber-200 text-amber-800',
-    'info'    => 'bg-sky-50 border-sky-200 text-sky-800',
+    'warning' => 'bg-[#EFF6FF] border-[#BFDBFE] text-[#0B1D33]',
+    'info'    => 'bg-[#EFF6FF] border-[#BFDBFE] text-[#0B1D33]',
 ];
 $cls = $map[$type] ?? $map['info'];
 @endphp
@@ -17,6 +17,6 @@ $cls = $map[$type] ?? $map['info'];
     </div>
     <div class="flex-1 text-sm font-medium">{{ $slot }}</div>
     @if($dismissible)
-        <button onclick="this.parentElement.remove()" class="shrink-0 p-1 rounded-lg hover:bg-black/5"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
+        <button onclick="this.parentElement.remove()" class="shrink-0 p-1 rounded-lg hover:bg-[#0B1D33]/5"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg></button>
     @endif
 </div>

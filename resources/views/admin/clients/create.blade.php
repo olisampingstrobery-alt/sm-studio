@@ -38,7 +38,7 @@
                 <label class="block text-sm font-semibold text-slate-700 mb-1.5">Logo</label>
                 <input type="file" name="logo" accept="image/*,.svg" class="w-full rounded-xl border-slate-200 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:bg-slate-100 file:text-sm @error('logo') border-red-300 @enderror">
                 @error('logo')<p class="text-xs text-red-600 mt-1">{{ $message }}</p>@enderror
-                <p class="text-xs text-slate-500 mt-1">PNG/SVG/WebP, max 2MB. Background transparan lebih baik. <span class="font-medium text-emerald-600">Wajib agar muncul berdampingan rapi di publik.</span></p>
+                <p class="text-xs text-slate-500 mt-1">PNG/SVG/WebP, max 2MB. Background transparan lebih baik. <span class="font-medium text-[#0F2A4A]">Wajib agar muncul berdampingan rapi di publik.</span></p>
             </div>
             <div class="bg-slate-50 rounded-xl border border-dashed border-slate-200 p-4 flex flex-col justify-center">
                 <span class="text-xs font-semibold text-slate-500">Preview di website umum</span>
@@ -55,7 +55,7 @@
             <label class="relative inline-flex items-center cursor-pointer">
                 <input type="hidden" name="is_active" value="0">
                 <input type="checkbox" name="is_active" value="1" @checked(old('is_active', true)) class="sr-only peer">
-                <div class="w-11 h-6 bg-slate-200 rounded-full peer peer-checked:bg-black after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full"></div>
+                <div class="w-11 h-6 bg-slate-200 rounded-full peer peer-checked:bg-[#0B1D33] after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:after:translate-x-full"></div>
             </label>
             <div>
                 <span class="text-sm font-medium text-slate-700">Aktif — tampilkan di publik</span>
@@ -71,7 +71,7 @@
 
         <div class="flex justify-end gap-3 pt-4 border-t border-slate-100">
             <a href="{{ route('admin.clients.index') }}" class="px-5 py-2.5 rounded-xl border border-slate-200 text-sm font-medium hover:bg-slate-50">Batal</a>
-            <button type="submit" class="px-6 py-2.5 rounded-xl bg-black hover:bg-black text-white font-semibold text-sm shadow">Simpan & Tampilkan di Publik</button>
+            <button type="submit" class="px-6 py-2.5 rounded-xl bg-[#0B1D33] hover:bg-[#0B1D33] text-white font-semibold text-sm shadow">Simpan & Tampilkan di Publik</button>
         </div>
     </form>
 </div>

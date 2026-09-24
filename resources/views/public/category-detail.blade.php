@@ -4,9 +4,9 @@
 @section('content')
 @php
     $typeMeta = [
-        'portfolio' => ['label'=>'Portfolio','icon'=>'P','grad'=>'from-violet-600 to-indigo-600','light'=>'from-violet-50 via-white to-white','border'=>'border-violet-200/40','blob'=>'bg-violet-500/10','chip'=>'bg-violet-50 text-violet-700 border-violet-200'],
-        'service' => ['label'=>'Services','icon'=>'S','grad'=>'from-sky-600 to-blue-600','light'=>'from-sky-50 via-white to-white','border'=>'border-sky-200/40','blob'=>'bg-sky-500/10','chip'=>'bg-sky-50 text-sky-700 border-sky-200'],
-        'article' => ['label'=>'Articles','icon'=>'A','grad'=>'from-amber-500 to-orange-500','light'=>'from-amber-50 via-white to-white','border'=>'border-amber-200/40','blob'=>'bg-amber-500/10','chip'=>'bg-amber-50 text-amber-700 border-amber-200'],
+        'portfolio' => ['label'=>'Portfolio','icon'=>'P','grad'=>'from-[#0F2A4A] to-[#0F2A4A]','light'=>'from-[#EFF6FF] via-white to-white','border'=>'border-[#BFDBFE]/40','blob'=>'bg-[#0F2A4A]/10','chip'=>'bg-[#EFF6FF] text-[#0F2A4A] border-[#BFDBFE]'],
+        'service' => ['label'=>'Services','icon'=>'S','grad'=>'from-[#0F2A4A] to-[#0F2A4A]','light'=>'from-[#EFF6FF] via-white to-white','border'=>'border-[#BFDBFE]/40','blob'=>'bg-[#0F2A4A]/10','chip'=>'bg-[#EFF6FF] text-[#0F2A4A] border-[#BFDBFE]'],
+        'article' => ['label'=>'Articles','icon'=>'A','grad'=>'from-[#0F2A4A] to-[#0F2A4A]','light'=>'from-[#EFF6FF] via-white to-white','border'=>'border-[#BFDBFE]/40','blob'=>'bg-[#0F2A4A]/10','chip'=>'bg-[#EFF6FF] text-[#0F2A4A] border-[#BFDBFE]'],
         'general' => ['label'=>'General','icon'=>'G','grad'=>'from-slate-700 to-slate-900','light'=>'from-slate-50 via-white to-white','border'=>'border-slate-200/50','blob'=>'bg-slate-500/10','chip'=>'bg-slate-100 text-slate-700 border-slate-200'],
     ];
     $meta = $typeMeta[$category->type] ?? $typeMeta['general'];
@@ -17,7 +17,7 @@
 @endphp
 
 {{-- HERO --}}
-<section class="relative overflow-hidden bg-black text-white">
+<section class="relative overflow-hidden bg-[#0B1D33] text-white">
     <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 1px 1px, white 1px, transparent 0); background-size: 28px 28px;"></div>
     <div class="absolute -right-24 -top-24 w-[560px] h-[560px] rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
     <div class="absolute -left-20 bottom-0 w-[420px] h-[420px] rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
@@ -34,7 +34,7 @@
                     <div class="flex flex-wrap items-center gap-2">
                         <span class="px-3 py-1 rounded-full bg-white/10 border border-white/15 text-xs font-bold tracking-widest backdrop-blur">{{ strtoupper($category->type) }}</span>
                         <span class="px-3 py-1 rounded-full bg-white text-[#0B1D33] text-xs font-semibold">/{{ $category->slug }}</span>
-                        <span class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500 text-white text-xs font-bold"><span class="w-1.5 h-1.5 rounded-full bg-white"></span> {{ $totalAll }} konten</span>
+                        <span class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#0F2A4A] text-white text-xs font-bold"><span class="w-1.5 h-1.5 rounded-full bg-white"></span> {{ $totalAll }} konten</span>
                     </div>
                     <h1 class="mt-3 text-3xl sm:text-4xl lg:text-5xl font-bold leading-[0.95] tracking-tight">{{ $category->name }}</h1>
                     <p class="mt-3 text-sm sm:text-[15px] text-white/70 max-w-2xl leading-relaxed">Kategori <span class="text-white font-semibold">{{ ucfirst($category->type) }}</span> - {{ $category->type=='portfolio' ? 'kumpulan karya nyata siswa SMK BPPI Baleendah yang bisa kamu jadikan referensi.' : ($category->type=='service' ? 'layanan siap pakai yang ditawarkan studio, dibimbing mentor.' : ($category->type=='article' ? 'artikel & wawasan seputar kategori ini.' : 'koleksi lintas konten.')) }}</p>
@@ -72,23 +72,23 @@
         {{-- Portfolio --}}
         <div id="portfolios" class="scroll-mt-24">
             <div class="flex items-center gap-3 mb-5">
-                <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-violet-600 to-indigo-600 text-white grid place-items-center shadow">P</span>
+                <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0F2A4A] to-[#0F2A4A] text-white grid place-items-center shadow">P</span>
                 <div>
                     <h2 class="font-bold text-[#0B1D33] text-lg">Portfolio - {{ $category->name }}</h2>
                     <p class="text-xs text-slate-500">Karya publish di kategori ini</p>
                 </div>
-                <span class="ml-auto px-3 py-1 rounded-full bg-violet-50 text-violet-700 border border-violet-200 text-xs font-bold">{{ $totalPortfolio }} karya</span>
+                <span class="ml-auto px-3 py-1 rounded-full bg-[#EFF6FF] text-[#0F2A4A] border border-[#BFDBFE] text-xs font-bold">{{ $totalPortfolio }} karya</span>
             </div>
             @if($portfolios->count())
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     @foreach($portfolios as $idx=>$pf)
-                    @php $pst = ['grad'=>'from-violet-50 via-white to-white','border'=>'border-violet-200/40','blob'=>'bg-violet-500/10']; @endphp
-                    <a href="{{ route('portfolio.show', $pf->slug) }}" class="group relative flex flex-col overflow-hidden rounded-[24px] border border-violet-200/40 bg-gradient-to-br from-violet-50 via-white to-white p-[1.2px] hover:shadow-[0_12px_32px_-12px_rgba(15,42,74,0.18)] hover:-translate-y-1.5 transition-all duration-300">
+                    @php $pst = ['grad'=>'from-[#EFF6FF] via-white to-white','border'=>'border-[#BFDBFE]/40','blob'=>'bg-[#0F2A4A]/10']; @endphp
+                    <a href="{{ route('portfolio.show', $pf->slug) }}" class="group relative flex flex-col overflow-hidden rounded-[24px] border border-[#BFDBFE]/40 bg-gradient-to-br from-[#EFF6FF] via-white to-white p-[1.2px] hover:shadow-[0_12px_32px_-12px_rgba(15,42,74,0.18)] hover:-translate-y-1.5 transition-all duration-300">
                         <div class="relative flex flex-col h-full rounded-[22px] bg-white overflow-hidden">
                             <div class="h-48 bg-slate-100 overflow-hidden shrink-0 relative">
                                 @if($pf->featured_image)<img src="{{ asset('storage/'.$pf->featured_image) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">@else<div class="w-full h-full grid place-items-center text-slate-400 text-sm">No Image</div>@endif
                                 <span class="absolute top-3 left-3 text-xs font-semibold text-[#0F2A4A] bg-white/90 backdrop-blur border border-slate-200 px-2.5 py-1 rounded-full shadow-sm">{{ $category->name }}</span>
-                                <span class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white border border-slate-200 grid place-items-center text-slate-400 group-hover:bg-black group-hover:text-white group-hover:border-black group-hover:rotate-45 transition shadow-sm text-xs">-></span>
+                                <span class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white border border-slate-200 grid place-items-center text-slate-400 group-hover:bg-[#0B1D33] group-hover:text-white group-hover:border-[#0B1D33] group-hover:rotate-45 transition shadow-sm text-xs">-></span>
                             </div>
                             <div class="p-6 flex-1 flex flex-col">
                                 <h3 class="font-semibold text-[#0B1D33] line-clamp-2 group-hover:text-[#0F2A4A]">{{ $pf->title }}</h3>
@@ -105,7 +105,7 @@
                 <div class="mt-6">{{ $portfolios->links() }}</div>
             @else
                 <div class="bg-white rounded-2xl border border-dashed border-slate-300 p-8 text-center">
-                    <div class="w-12 h-12 rounded-xl bg-violet-50 border border-violet-200 grid place-items-center mx-auto text-violet-600">P</div>
+                    <div class="w-12 h-12 rounded-xl bg-[#EFF6FF] border border-[#BFDBFE] grid place-items-center mx-auto text-[#0F2A4A]">P</div>
                     <p class="text-sm text-slate-500 mt-3">Belum ada portfolio publish di kategori <span class="font-semibold text-[#0B1D33]">{{ $category->name }}</span>. Tambah via <span class="font-mono text-xs bg-slate-100 px-1 py-0.5 rounded">/admin/portfolio</span> dan pilih kategori ini.</p>
                 </div>
             @endif
@@ -114,23 +114,23 @@
         {{-- Services --}}
         <div id="services" class="scroll-mt-24">
             <div class="flex items-center gap-3 mb-5">
-                <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-600 to-blue-600 text-white grid place-items-center shadow">S</span>
+                <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0F2A4A] to-[#0F2A4A] text-white grid place-items-center shadow">S</span>
                 <div>
                     <h2 class="font-bold text-[#0B1D33] text-lg">Services - {{ $category->name }}</h2>
                     <p class="text-xs text-slate-500">Layanan aktif di kategori ini</p>
                 </div>
-                <span class="ml-auto px-3 py-1 rounded-full bg-sky-50 text-sky-700 border border-sky-200 text-xs font-bold">{{ $totalService }} layanan</span>
+                <span class="ml-auto px-3 py-1 rounded-full bg-[#EFF6FF] text-[#0F2A4A] border border-[#BFDBFE] text-xs font-bold">{{ $totalService }} layanan</span>
             </div>
             @if($services->count())
                 <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                     @foreach($services as $svc)
-                    <div class="group relative flex flex-col overflow-hidden rounded-[24px] border border-sky-200/40 bg-gradient-to-br from-sky-50 via-white to-white p-[1.2px] hover:shadow-[0_12px_32px_-12px_rgba(15,42,74,0.18)] hover:-translate-y-1.5 transition">
+                    <div class="group relative flex flex-col overflow-hidden rounded-[24px] border border-[#BFDBFE]/40 bg-gradient-to-br from-[#EFF6FF] via-white to-white p-[1.2px] hover:shadow-[0_12px_32px_-12px_rgba(15,42,74,0.18)] hover:-translate-y-1.5 transition">
                         <div class="relative flex flex-col h-full rounded-[22px] bg-white p-6">
-                            <div class="absolute -top-10 -right-10 w-36 h-36 rounded-full bg-sky-500/10 blur-2xl pointer-events-none"></div>
-                            <span class="w-12 h-12 rounded-2xl bg-gradient-to-br from-sky-600 to-blue-600 text-white grid place-items-center text-xl shadow">{{ $svc->icon ?? 'S' }}</span>
+                            <div class="absolute -top-10 -right-10 w-36 h-36 rounded-full bg-[#0F2A4A]/10 blur-2xl pointer-events-none"></div>
+                            <span class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#0F2A4A] to-[#0F2A4A] text-white grid place-items-center text-xl shadow">{{ $svc->icon ?? 'S' }}</span>
                             <h3 class="font-semibold text-[#0B1D33] mt-4">{{ $svc->title }}</h3>
                             <p class="text-sm text-slate-500 mt-2 line-clamp-3">{{ $svc->description }}</p>
-                            <a href="{{ route('services.show', $svc->slug) }}" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0F2A4A]">Lihat layanan <span class="w-6 h-6 rounded-full bg-black text-white grid place-items-center text-[10px]">-></span></a>
+                            <a href="{{ route('services.show', $svc->slug) }}" class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#0F2A4A]">Lihat layanan <span class="w-6 h-6 rounded-full bg-[#0B1D33] text-white grid place-items-center text-[10px]">-></span></a>
                         </div>
                     </div>
                     @endforeach
@@ -145,20 +145,20 @@
         {{-- Articles --}}
         <div id="articles" class="scroll-mt-24">
             <div class="flex items-center gap-3 mb-5">
-                <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 text-white grid place-items-center shadow">A</span>
+                <span class="w-9 h-9 rounded-xl bg-gradient-to-br from-[#0F2A4A] to-[#0F2A4A] text-white grid place-items-center shadow">A</span>
                 <div>
                     <h2 class="font-bold text-[#0B1D33] text-lg">Articles - {{ $category->name }}</h2>
                     <p class="text-xs text-slate-500">Artikel publish di kategori ini</p>
                 </div>
-                <span class="ml-auto px-3 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200 text-xs font-bold">{{ $totalArticle }} artikel</span>
+                <span class="ml-auto px-3 py-1 rounded-full bg-[#EFF6FF] text-[#0F2A4A] border border-[#BFDBFE] text-xs font-bold">{{ $totalArticle }} artikel</span>
             </div>
             @if($articles->count())
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     @foreach($articles as $a)
-                    <a href="{{ route('insights.show', $a->slug) }}" class="group relative flex flex-col overflow-hidden rounded-[24px] border border-amber-200/40 bg-gradient-to-br from-amber-50 via-white to-white p-[1.2px] hover:shadow-[0_12px_32px_-12px_rgba(15,42,74,0.18)] hover:-translate-y-1.5 transition">
+                    <a href="{{ route('insights.show', $a->slug) }}" class="group relative flex flex-col overflow-hidden rounded-[24px] border border-[#BFDBFE]/40 bg-gradient-to-br from-[#EFF6FF] via-white to-white p-[1.2px] hover:shadow-[0_12px_32px_-12px_rgba(15,42,74,0.18)] hover:-translate-y-1.5 transition">
                         <div class="relative flex flex-col h-full rounded-[22px] bg-white overflow-hidden">
                             <div class="h-44 bg-slate-100 overflow-hidden relative">
-                                @if($a->featured_image)<img src="{{ asset('storage/'.$a->featured_image) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">@else<div class="w-full h-full grid place-items-center bg-gradient-to-br from-amber-50 to-white text-slate-400">No Cover</div>@endif
+                                @if($a->featured_image)<img src="{{ asset('storage/'.$a->featured_image) }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">@else<div class="w-full h-full grid place-items-center bg-gradient-to-br from-[#EFF6FF] to-white text-slate-400">No Cover</div>@endif
                                 <span class="absolute top-3 left-3 text-xs font-semibold bg-white/90 backdrop-blur border px-2.5 py-1 rounded-full">{{ $category->name }}</span>
                             </div>
                             <div class="p-6 flex-1">
@@ -185,14 +185,14 @@
             <p class="text-sm text-slate-500 mt-1">Jelajahi kategori lain dengan tipe yang sama.</p>
             <div class="mt-4 flex flex-wrap gap-2">
                 @foreach($relatedCategories as $rc)
-                <a href="{{ route('categories.show', $rc->slug) }}" class="px-4 py-2 rounded-full bg-[#F8FAFC] border border-slate-200 text-sm font-medium hover:bg-black hover:text-white hover:border-[#0F2A4A] transition">{{ $rc->name }}</a>
+                <a href="{{ route('categories.show', $rc->slug) }}" class="px-4 py-2 rounded-full bg-[#F8FAFC] border border-slate-200 text-sm font-medium hover:bg-[#0B1D33] hover:text-white hover:border-[#0F2A4A] transition">{{ $rc->name }}</a>
                 @endforeach
             </div>
         </div>
         @endif
 
         {{-- CTA --}}
-        <div class="bg-gradient-to-br from-black via-zinc-900 to-black rounded-[24px] p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-6 text-white relative overflow-hidden shadow-xl border border-white/10">
+        <div class="bg-gradient-to-br from-[#0F2A4A] via-[#0B1D33] to-[#071425] rounded-[24px] p-6 sm:p-8 flex flex-col lg:flex-row items-center justify-between gap-6 text-white relative overflow-hidden shadow-xl border border-white/10">
             <div class="absolute -right-16 -top-16 w-64 h-64 rounded-full bg-white/10 blur-3xl pointer-events-none"></div>
             <div class="relative">
                 <h3 class="text-xl font-bold">Tertarik kategori {{ $category->name }}?</h3>

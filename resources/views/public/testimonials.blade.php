@@ -1,7 +1,7 @@
 @extends('layouts.public')
 @section('title','Testimoni')
 @section('content')
-<section class="bg-black text-white">
+<section class="bg-[#0B1D33] text-white">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <span class="text-xs tracking-widest font-semibold text-white/60">TESTIMONI • SMK BPPI BALEENDAH</span>
         <h1 class="text-3xl font-bold mt-2">Kata Mereka yang Sudah Kolaborasi.</h1>
@@ -17,7 +17,7 @@
         <div id="testimonials-page-root" class="island-loading min-h-[220px]" data-props='@json($testimonialsPagePayload)'>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 opacity-60 animate-pulse">
                 @forelse(($testimonials ?? collect())->take(6) as $t)
-                <div class="bg-white rounded-[20px] border border-slate-100 p-7"><div class="h-4 w-20 bg-amber-100 rounded"></div><div class="h-4 bg-slate-100 rounded mt-3"></div></div>
+                <div class="bg-white rounded-[20px] border border-slate-100 p-7"><div class="h-4 w-20 bg-[#DBEAFE] rounded"></div><div class="h-4 bg-slate-100 rounded mt-3"></div></div>
                 @empty
                 <div class="col-span-full bg-white rounded-[20px] border border-dashed border-slate-300 p-10 sm:p-12 text-center max-w-xl mx-auto">
                     <div class="w-14 h-14 rounded-full bg-[#EFF6FF] text-[#0F2A4A] grid place-items-center mx-auto text-xl">💬</div>

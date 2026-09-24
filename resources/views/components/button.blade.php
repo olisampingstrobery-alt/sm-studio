@@ -2,7 +2,7 @@
 @php
 $base = 'inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition text-sm px-5 py-2.5';
 $variants = [
-    'primary' => 'bg-black text-white hover:bg-black shadow-sm hover:shadow',
+    'primary' => 'bg-[#0B1D33] text-white hover:bg-[#0B1D33] shadow-sm hover:shadow',
     'secondary' => 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-50',
     'ghost' => 'text-slate-600 hover:bg-slate-100',
     'danger' => 'bg-red-600 text-white hover:bg-red-700',

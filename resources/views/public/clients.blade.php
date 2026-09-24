@@ -1,7 +1,7 @@
 @extends('layouts.public')
 @section('title','Klien Kami')
 @section('content')
-<section class="bg-black text-white">
+<section class="bg-[#0B1D33] text-white">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
         <span class="text-[11px] sm:text-xs tracking-widest font-semibold text-white/60">KLIEN & KOLABORASI • SMK BPPI BALEENDAH</span>
         <h1 class="text-2xl sm:text-3xl lg:text-[32px] font-bold mt-2 leading-tight">Kolaborasi Nyata, Kepercayaan Nyata.</h1>
@@ -15,12 +15,12 @@
                 @foreach($clients as $client)
                 @php
                     // Warna box sesuai foto/nama — hash hue biar tiap client punya tint pastel unik, nanti saat ada foto/logo tetap harmonis
-                    $hue = abs(crc32($client->name . ($client->industry ?? ''))) % 360;
-                    $bgOuter = "hsl($hue 85% 98%)";
-                    $bgInner = "hsl($hue 80% 96%)";
-                    $bdOuter = "hsl($hue 65% 88%)";
-                    $bdInner = "hsl($hue 60% 86%)";
-                    $txt = "hsl($hue 45% 28%)";
+                    // Biru tua seragam
+                    $bgOuter = "#EFF6FF";
+                    $bgInner = "#DBEAFE";
+                    $bdOuter = "#BFDBFE";
+                    $bdInner = "#BFDBFE";
+                    $txt = "#0F2A4A";
                 @endphp
                 <div id="client-{{ $client->slug }}" class="rounded-xl sm:rounded-2xl p-4 sm:p-5 lg:p-6 xl:p-8 flex flex-col items-center justify-center text-center hover:shadow-soft hover:-translate-y-0.5 transition-all duration-300 group border shadow-sm scroll-mt-24 min-h-[180px] sm:min-h-[200px]"
                      style="background: {{ $bgOuter }}; border-color: {{ $bdOuter }};" data-client-box>
@@ -80,17 +80,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 if(!cnt) return;
                 r=Math.round(r/cnt); g=Math.round(g/cnt); b=Math.round(b/cnt);
                 // pastel kan biar tetap soft (campur putih 70%)
-                const pr = Math.round((r*0.35)+200), pg=Math.round((g*0.35)+200), pb=Math.round((b*0.35)+200);
-                const br = Math.round((r*0.45)+155), bg=Math.round((g*0.45)+155), bb=Math.round((b*0.45)+155);
-                box.style.background = `rgb(${pr} ${pg} ${pb})`;
-                box.style.borderColor = `rgb(${br} ${bg} ${bb})`;
+                box.style.background = '#EFF6FF';
+                box.style.borderColor = '#BFDBFE';
                 const inner = box.querySelector('[data-client-inner]');
                 if(inner){
-                    const ir=Math.round((r*0.25)+210), ig=Math.round((g*0.25)+210), ib=Math.round((b*0.25)+210);
-                    const bir=Math.round((r*0.35)+175), big=Math.round((g*0.35)+175), bib=Math.round((b*0.35)+175);
-                    inner.style.background = `rgb(${ir} ${ig} ${ib})`;
-                    inner.style.borderColor = `rgb(${bir} ${big} ${bib})`;
+                    inner.style.background = '#DBEAFE';
+                    inner.style.borderColor = '#BFDBFE';
                 }
+            }
             } catch(e){}
         };
         if(img.complete) apply(); else img.addEventListener('load', apply, {once:true});

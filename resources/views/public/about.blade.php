@@ -1,7 +1,7 @@
 @extends('layouts.public')
 @section('title','Tentang Kami')
 @section('content')
-<section class="bg-black text-white relative overflow-hidden">
+<section class="bg-[#0B1D33] text-white relative overflow-hidden">
     <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(white 1px, transparent 0); background-size: 28px 28px;"></div>
     <div class="absolute -right-32 -top-32 w-[520px] h-[520px] rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
     <div class="absolute -left-20 bottom-0 w-[420px] h-[420px] rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
@@ -27,9 +27,9 @@
 
             <div class="mt-7 sm:mt-8 space-y-5">
                 {{-- VISI --}}
-                <div class="relative overflow-hidden rounded-[20px] sm:rounded-[24px] bg-gradient-to-br from-black via-zinc-900 to-black p-6 sm:p-7 text-white border border-white/10 shadow-soft">
+                <div class="relative overflow-hidden rounded-[20px] sm:rounded-[24px] bg-gradient-to-br from-[#0F2A4A] via-[#0B1D33] to-[#071425] p-6 sm:p-7 text-white border border-white/10 shadow-soft">
                     <div class="absolute -right-10 -top-10 w-40 h-40 rounded-full bg-white/5 blur-2xl pointer-events-none"></div>
-                    <div class="absolute -left-10 -bottom-10 w-32 h-32 rounded-full bg-[#C5A880]/10 blur-2xl pointer-events-none"></div>
+                    <div class="absolute -left-10 -bottom-10 w-32 h-32 rounded-full bg-[#93C5FD]/10 blur-2xl pointer-events-none"></div>
                     <div class="relative flex items-start gap-4">
                         <span class="w-10 h-10 rounded-xl bg-white text-[#0F2A4A] grid place-items-center shrink-0 shadow-md text-[15px] leading-none">◎</span>
                         <div class="min-w-0 flex-1 pt-0.5">
@@ -52,28 +52,28 @@
                         <div class="hidden sm:block absolute left-[15px] top-[14px] bottom-[14px] w-px bg-slate-200"></div>
                         <ul class="relative space-y-5">
                         <li class="flex gap-4 items-start">
-                            <span class="w-8 h-8 rounded-xl bg-black text-white grid place-items-center shrink-0 text-[13px] font-bold shadow-sm mt-[2px] leading-none ring-4 ring-white">1</span>
+                            <span class="w-8 h-8 rounded-xl bg-[#0B1D33] text-white grid place-items-center shrink-0 text-[13px] font-bold shadow-sm mt-[2px] leading-none ring-4 ring-white">1</span>
                             <div class="min-w-0 flex-1">
                                 <div class="font-bold text-[13.5px] sm:text-sm text-[#0B1D33] leading-snug">Belajar melalui project nyata</div>
                                 <p class="text-[13px] sm:text-[13.5px] leading-relaxed text-slate-600 mt-1.5 text-pretty">Siswa mengembangkan kemampuan dengan mengerjakan kebutuhan nyata bersama tim, dengan pendampingan guru dan partner.</p>
                             </div>
                         </li>
                         <li class="flex gap-4 items-start">
-                            <span class="w-8 h-8 rounded-xl bg-black text-white grid place-items-center shrink-0 text-[13px] font-bold shadow-sm mt-[2px] leading-none ring-4 ring-white">2</span>
+                            <span class="w-8 h-8 rounded-xl bg-[#0B1D33] text-white grid place-items-center shrink-0 text-[13px] font-bold shadow-sm mt-[2px] leading-none ring-4 ring-white">2</span>
                             <div class="min-w-0 flex-1">
                                 <div class="font-bold text-[13.5px] sm:text-sm text-[#0B1D33] leading-snug">Menggabungkan desain, teknologi, dan komunikasi</div>
                                 <p class="text-[13px] sm:text-[13.5px] leading-relaxed text-slate-600 mt-1.5 text-pretty">Setiap project dikerjakan dengan pendekatan yang kreatif, fungsional, dan mudah dipahami.</p>
                             </div>
                         </li>
                         <li class="flex gap-4 items-start">
-                            <span class="w-8 h-8 rounded-xl bg-black text-white grid place-items-center shrink-0 text-[13px] font-bold shadow-sm mt-[2px] leading-none ring-4 ring-white">3</span>
+                            <span class="w-8 h-8 rounded-xl bg-[#0B1D33] text-white grid place-items-center shrink-0 text-[13px] font-bold shadow-sm mt-[2px] leading-none ring-4 ring-white">3</span>
                             <div class="min-w-0 flex-1">
                                 <div class="font-bold text-[13.5px] sm:text-sm text-[#0B1D33] leading-snug">Berorientasi pada kebutuhan klien</div>
                                 <p class="text-[13px] sm:text-[13.5px] leading-relaxed text-slate-600 mt-1.5 text-pretty">Kami tidak hanya membuat karya, tetapi memahami kebutuhan dan tujuan setiap project.</p>
                             </div>
                         </li>
                         <li class="flex gap-4 items-start">
-                            <span class="w-8 h-8 rounded-xl bg-black text-white grid place-items-center shrink-0 text-[13px] font-bold shadow-sm mt-[2px] leading-none ring-4 ring-white">4</span>
+                            <span class="w-8 h-8 rounded-xl bg-[#0B1D33] text-white grid place-items-center shrink-0 text-[13px] font-bold shadow-sm mt-[2px] leading-none ring-4 ring-white">4</span>
                             <div class="min-w-0 flex-1">
                                 <div class="font-bold text-[13.5px] sm:text-sm text-[#0B1D33] leading-snug">Mengutamakan hasil yang rapi dan siap digunakan</div>
                                 <p class="text-[13px] sm:text-[13.5px] leading-relaxed text-slate-600 mt-1.5 text-pretty">Setiap pekerjaan dikerjakan dengan proses yang terarah agar menghasilkan solusi digital yang relevan dan dapat diandalkan.</p>
@@ -90,12 +90,12 @@
             <div class="relative overflow-hidden rounded-[20px] sm:rounded-[24px] border border-slate-200 bg-white p-1.5 sm:p-2 shadow-soft">
                 <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80" alt="Tim SM Studio" class="rounded-[14px] sm:rounded-[16px] w-full h-[240px] sm:h-[340px] lg:h-[360px] object-cover object-center">
                 <div class="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 bg-white/95 backdrop-blur border border-slate-200 rounded-2xl p-3 sm:p-4 shadow-lg flex items-center gap-3">
-                    <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-emerald-500 text-white grid place-items-center shrink-0">✓</span>
+                    <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#0F2A4A] text-white grid place-items-center shrink-0">✓</span>
                     <div class="min-w-0 leading-tight">
                         <div class="text-[13px] sm:text-sm font-bold text-[#0B1D33] truncate">Kolaborasi siswa + mentor</div>
                         <div class="text-[11px] sm:text-xs text-slate-500 truncate">Review bareng, hasil tetap profesional</div>
                     </div>
-                    <span class="ml-auto hidden sm:inline-flex text-[11px] font-semibold tracking-widest text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full shrink-0">SIAP PAKAI</span>
+                    <span class="ml-auto hidden sm:inline-flex text-[11px] font-semibold tracking-widest text-[#0F2A4A] bg-[#EFF6FF] border border-[#BFDBFE] px-2.5 py-1 rounded-full shrink-0">SIAP PAKAI</span>
                 </div>
             </div>
 
@@ -109,7 +109,7 @@
             </div>
 
             <div class="bg-white border border-slate-200 rounded-2xl p-4 sm:p-5 flex gap-3.5 items-start shadow-sm">
-                <span class="w-9 h-9 rounded-xl bg-black text-white grid place-items-center shrink-0 leading-none">“</span>
+                <span class="w-9 h-9 rounded-xl bg-[#0B1D33] text-white grid place-items-center shrink-0 leading-none">“</span>
                 <p class="text-[13px] sm:text-sm leading-relaxed text-slate-600 text-pretty">
                     <span class="font-semibold text-[#0B1D33]">Bukan “masih belajar”, tapi “sudah berkarya”.</span> Setiap project direview bareng mentor — biar kualitas tetap profesional dan kamu nyaman kolaborasi dengan kami.
                 </p>

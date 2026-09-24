@@ -4,8 +4,8 @@
 @section('content')
 
 {{-- HERO DARK — minimal, rapi, spacious --}}
-<section class="relative overflow-hidden bg-black text-white">
-    <div class="absolute inset-0 bg-gradient-to-br from-black via-[#0F2440] to-[#0B1D33]"></div>
+<section class="relative overflow-hidden bg-[#0B1D33] text-white">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#0F2A4A] via-[#0F2440] to-[#0B1D33]"></div>
     <div class="absolute -right-40 -top-40 w-[640px] h-[640px] rounded-full bg-[#1E3A5F]/25 blur-[80px] pointer-events-none"></div>
     <div class="absolute -left-32 bottom-[-60px] w-[520px] h-[520px] rounded-full bg-white/5 blur-[70px] pointer-events-none"></div>
 
@@ -25,17 +25,17 @@
 
         <div class="mt-8 flex flex-wrap items-center gap-3">
             <span class="inline-flex items-center gap-2.5 bg-white text-[#0B1D33] pl-2 pr-5 py-2.5 rounded-full text-sm font-bold shadow-lg">
-                <span class="w-7 h-7 rounded-full bg-black text-white grid place-items-center text-xs font-black">{{ $stats['total'] }}</span>
+                <span class="w-7 h-7 rounded-full bg-[#0B1D33] text-white grid place-items-center text-xs font-black">{{ $stats['total'] }}</span>
                 Total {{ $stats['total'] }} Kategori
             </span>
             <a href="#type-portfolio" class="inline-flex items-center gap-2 bg-white/[0.07] border border-white/15 px-4 py-2.5 rounded-full text-sm font-medium text-white/80 hover:bg-white/10 backdrop-blur transition">
-                <span class="w-2 h-2 rounded-full bg-violet-400"></span> {{ $stats['portfolio'] }} Portfolio
+                <span class="w-2 h-2 rounded-full bg-[#0F2A4A]"></span> {{ $stats['portfolio'] }} Portfolio
             </a>
             <a href="#type-service" class="inline-flex items-center gap-2 bg-white/[0.07] border border-white/15 px-4 py-2.5 rounded-full text-sm font-medium text-white/80 hover:bg-white/10 backdrop-blur transition">
-                <span class="w-2 h-2 rounded-full bg-sky-400"></span> {{ $stats['service'] }} Service
+                <span class="w-2 h-2 rounded-full bg-[#0F2A4A]"></span> {{ $stats['service'] }} Service
             </a>
             <a href="#type-article" class="inline-flex items-center gap-2 bg-white/[0.07] border border-white/15 px-4 py-2.5 rounded-full text-sm font-medium text-white/80 hover:bg-white/10 backdrop-blur transition">
-                <span class="w-2 h-2 rounded-full bg-amber-400"></span> {{ $stats['article'] }} Article
+                <span class="w-2 h-2 rounded-full bg-[#0F2A4A]"></span> {{ $stats['article'] }} Article
             </a>
             <span class="hidden sm:inline-flex items-center gap-1.5 text-xs text-white/40 ml-1">Klik untuk lompat →</span>
         </div>
@@ -57,10 +57,10 @@
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-7">
         @php
             $miniStats = [
-                ['label'=>'Kategori','value'=>$stats['total'],'sub'=>'Total kategori','dot'=>'bg-black','icon'=>'M4 6h16M4 12h16M4 18h7'],
-                ['label'=>'Portfolio','value'=>\App\Models\Portfolio::where('status','published')->count(),'sub'=>'Karya publish','dot'=>'bg-violet-500','icon'=>'M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5z'],
-                ['label'=>'Services','value'=>\App\Models\Service::where('is_active',true)->count(),'sub'=>'Layanan aktif','dot'=>'bg-sky-500','icon'=>'M11.42 15.148L17.25 21A2.5 2.5 0 0021 17.25l-5.652-5.652M11.42 15.148L21 3l-3-3L4.5 13.5 2 21l8.5-2L14 12.75l-2.58-2.58z'],
-                ['label'=>'Articles','value'=>\App\Models\Article::where('is_published',true)->count(),'sub'=>'Artikel tayang','dot'=>'bg-amber-500','icon'=>'M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h2.25'],
+                ['label'=>'Kategori','value'=>$stats['total'],'sub'=>'Total kategori','dot'=>'bg-[#0B1D33]','icon'=>'M4 6h16M4 12h16M4 18h7'],
+                ['label'=>'Portfolio','value'=>\App\Models\Portfolio::where('status','published')->count(),'sub'=>'Karya publish','dot'=>'bg-[#0F2A4A]','icon'=>'M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5z'],
+                ['label'=>'Services','value'=>\App\Models\Service::where('is_active',true)->count(),'sub'=>'Layanan aktif','dot'=>'bg-[#0F2A4A]','icon'=>'M11.42 15.148L17.25 21A2.5 2.5 0 0021 17.25l-5.652-5.652M11.42 15.148L21 3l-3-3L4.5 13.5 2 21l8.5-2L14 12.75l-2.58-2.58z'],
+                ['label'=>'Articles','value'=>\App\Models\Article::where('is_published',true)->count(),'sub'=>'Artikel tayang','dot'=>'bg-[#0F2A4A]','icon'=>'M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h2.25'],
             ];
         @endphp
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
@@ -91,14 +91,14 @@
                 <div class="w-14 h-14 rounded-2xl bg-[#EFF6FF] border border-[#BFDBFE] grid place-items-center mx-auto text-[#0F2A4A] font-bold">K</div>
                 <h3 class="font-bold text-[#0B1D33] mt-4 text-lg">Belum ada kategori</h3>
                 <p class="text-sm text-slate-500 mt-2 max-w-md mx-auto leading-relaxed">Admin belum membuat kategori. Kategori akan muncul di sini setelah dibuat via <span class="font-mono text-xs bg-slate-100 px-1.5 py-0.5 rounded border">/admin/categories</span> dan otomatis jadi filter di portfolio & layanan.</p>
-                <a href="{{ route('admin.categories.create') }}" class="mt-6 inline-flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-black transition">Buat kategori pertama <span>→</span></a>
+                <a href="{{ route('admin.categories.create') }}" class="mt-6 inline-flex items-center gap-2 bg-[#0B1D33] text-white px-6 py-3 rounded-full text-sm font-semibold hover:bg-[#0B1D33] transition">Buat kategori pertama <span>→</span></a>
             </div>
         @else
             @php
                 $typeMeta = [
-                    'portfolio' => ['label'=>'Portfolio','desc'=>'Karya nyata siswa — website, branding, konten UMKM','border'=>'border-violet-200/50','iconBg'=>'from-violet-600 to-indigo-600','accent'=>'bg-violet-600','soft'=>'bg-violet-50','chip'=>'bg-violet-50 text-violet-700 border-violet-200'],
-                    'service' => ['label'=>'Services','desc'=>'Layanan yang ditawarkan studio — siap pakai & dibimbing mentor','border'=>'border-sky-200/50','iconBg'=>'from-sky-600 to-blue-600','accent'=>'bg-sky-600','soft'=>'bg-sky-50','chip'=>'bg-sky-50 text-sky-700 border-sky-200'],
-                    'article' => ['label'=>'Articles','desc'=>'Tutorial, cerita project, dan wawasan digital dari studio','border'=>'border-amber-200/50','iconBg'=>'from-amber-500 to-orange-500','accent'=>'bg-amber-500','soft'=>'bg-amber-50','chip'=>'bg-amber-50 text-amber-700 border-amber-200'],
+                    'portfolio' => ['label'=>'Portfolio','desc'=>'Karya nyata siswa — website, branding, konten UMKM','border'=>'border-[#BFDBFE]/50','iconBg'=>'from-[#0F2A4A] to-[#0F2A4A]','accent'=>'bg-[#0F2A4A]','soft'=>'bg-[#EFF6FF]','chip'=>'bg-[#EFF6FF] text-[#0F2A4A] border-[#BFDBFE]'],
+                    'service' => ['label'=>'Services','desc'=>'Layanan yang ditawarkan studio — siap pakai & dibimbing mentor','border'=>'border-[#BFDBFE]/50','iconBg'=>'from-[#0F2A4A] to-[#0F2A4A]','accent'=>'bg-[#0F2A4A]','soft'=>'bg-[#EFF6FF]','chip'=>'bg-[#EFF6FF] text-[#0F2A4A] border-[#BFDBFE]'],
+                    'article' => ['label'=>'Articles','desc'=>'Tutorial, cerita project, dan wawasan digital dari studio','border'=>'border-[#BFDBFE]/50','iconBg'=>'from-[#0F2A4A] to-[#0F2A4A]','accent'=>'bg-[#0F2A4A]','soft'=>'bg-[#EFF6FF]','chip'=>'bg-[#EFF6FF] text-[#0F2A4A] border-[#BFDBFE]'],
                     'general' => ['label'=>'General','desc'=>'Kategori serbaguna lintas konten','border'=>'border-slate-200','iconBg'=>'from-slate-700 to-slate-900','accent'=>'bg-slate-700','soft'=>'bg-slate-50','chip'=>'bg-slate-100 text-slate-700 border-slate-200'],
                 ];
                 // Icon per kategori (Heroicons outline) — bukan P/S/A
@@ -129,7 +129,7 @@
             <div class="flex justify-center mb-8 sm:mb-10">
                 <div class="inline-flex items-center gap-1.5 p-1.5 bg-white border border-slate-200 rounded-full shadow-sm overflow-x-auto max-w-full scrollbar-thin">
                     @foreach(['all'=>'Semua','portfolio'=>'Portfolio','service'=>'Services','article'=>'Articles'] as $k=>$v)
-                        <a href="#type-{{ $k }}" class="shrink-0 px-4 sm:px-5 py-2 rounded-full text-sm font-semibold transition whitespace-nowrap {{ $k==='all' ? 'bg-black text-white shadow' : 'text-slate-600 hover:bg-slate-50 hover:text-[#0B1D33]' }}">{{ $v }}</a>
+                        <a href="#type-{{ $k }}" class="shrink-0 px-4 sm:px-5 py-2 rounded-full text-sm font-semibold transition whitespace-nowrap {{ $k==='all' ? 'bg-[#0B1D33] text-white shadow' : 'text-slate-600 hover:bg-slate-50 hover:text-[#0B1D33]' }}">{{ $v }}</a>
                     @endforeach
                 </div>
             </div>
@@ -167,7 +167,7 @@
                                             <span class="w-11 h-11 rounded-xl bg-gradient-to-br {{ $meta['iconBg'] }} text-white grid place-items-center shadow-sm ring-1 ring-black/5">
                                                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.8">{!! $catIcon !!}</svg>
                                             </span>
-                                            <span class="w-8 h-8 rounded-full bg-slate-50 border border-slate-200 grid place-items-center text-slate-400 group-hover:bg-black group-hover:text-white group-hover:border-black group-hover:rotate-45 transition-all duration-300 shrink-0">
+                                            <span class="w-8 h-8 rounded-full bg-slate-50 border border-slate-200 grid place-items-center text-slate-400 group-hover:bg-[#0B1D33] group-hover:text-white group-hover:border-[#0B1D33] group-hover:rotate-45 transition-all duration-300 shrink-0">
                                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7"/><path d="M8 7h9v9"/></svg>
                                             </span>
                                         </div>
@@ -176,16 +176,16 @@
                                         <p class="font-mono text-xs text-slate-400 mt-1 truncate">/{{ $cat->slug }}</p>
 
                                         <div class="mt-3 flex flex-wrap gap-1.5 min-h-[28px] content-start">
-                                            @if($cat->services_count)<span class="inline-flex items-center text-[11px] font-semibold px-2.5 py-1 rounded-full bg-sky-50 text-sky-700 border border-sky-200">{{ $cat->services_count }} service</span>@endif
-                                            @if($cat->portfolios_count)<span class="inline-flex items-center text-[11px] font-semibold px-2.5 py-1 rounded-full bg-violet-50 text-violet-700 border border-violet-200">{{ $cat->portfolios_count }} portfolio</span>@endif
-                                            @if($cat->articles_count)<span class="inline-flex items-center text-[11px] font-semibold px-2.5 py-1 rounded-full bg-amber-50 text-amber-700 border border-amber-200">{{ $cat->articles_count }} article</span>@endif
+                                            @if($cat->services_count)<span class="inline-flex items-center text-[11px] font-semibold px-2.5 py-1 rounded-full bg-[#EFF6FF] text-[#0F2A4A] border border-[#BFDBFE]">{{ $cat->services_count }} service</span>@endif
+                                            @if($cat->portfolios_count)<span class="inline-flex items-center text-[11px] font-semibold px-2.5 py-1 rounded-full bg-[#EFF6FF] text-[#0F2A4A] border border-[#BFDBFE]">{{ $cat->portfolios_count }} portfolio</span>@endif
+                                            @if($cat->articles_count)<span class="inline-flex items-center text-[11px] font-semibold px-2.5 py-1 rounded-full bg-[#EFF6FF] text-[#0F2A4A] border border-[#BFDBFE]">{{ $cat->articles_count }} article</span>@endif
                                             @if($total==0)<span class="inline-flex items-center text-[11px] font-medium px-2.5 py-1 rounded-full bg-slate-100 text-slate-500 border border-slate-200">Belum dipakai</span>@endif
                                         </div>
 
                                         <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
                                             <span class="inline-flex items-center gap-2 text-xs font-semibold text-[#0B1D33]">
                                                 Lihat kategori
-                                                <span class="w-6 h-6 rounded-full bg-black text-white grid place-items-center group-hover:translate-x-0.5 transition">
+                                                <span class="w-6 h-6 rounded-full bg-[#0B1D33] text-white grid place-items-center group-hover:translate-x-0.5 transition">
                                                     <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
                                                 </span>
                                             </span>
@@ -211,8 +211,8 @@
                 </div>
                 <div class="mt-5 flex flex-wrap gap-2">
                     @foreach($allCategories as $cat)
-                        <a href="{{ route('categories.show', $cat->slug) }}" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#F8FAFC] border border-slate-200 text-sm font-medium text-slate-700 hover:bg-black hover:text-white hover:border-[#0F2A4A] hover:shadow-sm transition">
-                            <span class="w-2 h-2 rounded-full shrink-0 {{ $cat->type=='portfolio' ? 'bg-violet-500' : ($cat->type=='service' ? 'bg-sky-500' : ($cat->type=='article' ? 'bg-amber-500' : 'bg-slate-400')) }}"></span>
+                        <a href="{{ route('categories.show', $cat->slug) }}" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#F8FAFC] border border-slate-200 text-sm font-medium text-slate-700 hover:bg-[#0B1D33] hover:text-white hover:border-[#0F2A4A] hover:shadow-sm transition">
+                            <span class="w-2 h-2 rounded-full shrink-0 {{ $cat->type=='portfolio' ? 'bg-[#0F2A4A]' : ($cat->type=='service' ? 'bg-[#0F2A4A]' : ($cat->type=='article' ? 'bg-[#0F2A4A]' : 'bg-slate-400')) }}"></span>
                             <span class="truncate max-w-[14ch] sm:max-w-none">{{ $cat->name }}</span>
                             <span class="text-xs font-semibold opacity-60 bg-white/70 border border-slate-200 group-hover:bg-white/20 px-1.5 py-0.5 rounded-full">{{ $cat->services_count + $cat->portfolios_count + $cat->articles_count }}</span>
                         </a>
