@@ -4,9 +4,9 @@
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
             {{-- Brand — full width di mobile --}}
             <div class="col-span-2 lg:col-span-1">
-                <div class="flex items-center gap-3">
-                    <span class="w-9 h-9 rounded-xl bg-white text-[#0B1D33] grid place-items-center font-black shrink-0">SM</span>
-                    <span class="font-bold text-white">SM STUDIO</span>
+                <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
+                    <img src="{{ asset('images/logo-sm-studio.svg') }}" alt="SM STUDIO" width="36" height="36" class="h-8 w-8 sm:h-9 sm:w-9 rounded-xl object-contain bg-white/5 shrink-0 aspect-square">
+                    <span class="font-bold text-white text-[15px] sm:text-base truncate">SM STUDIO</span>
                 </div>
                 <p class="text-[13px] sm:text-sm text-slate-400 mt-3 sm:mt-4 leading-relaxed">Unit Produksi PPLG dari <span class="text-white font-medium">SMK BPPI Baleendah</span>. Dibangun siswa, dikurasi mentor — siap bantu website & solusi digital Anda jadi lebih cepat, rapi, dan siap pakai.</p>
                 <div class="flex gap-2 mt-4 sm:mt-5">

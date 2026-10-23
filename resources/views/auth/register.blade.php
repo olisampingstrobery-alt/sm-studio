@@ -3,7 +3,7 @@
         <div class="hidden lg:flex lg:w-1/2 bg-[#0B1D33] text-white p-10 flex-col justify-between relative overflow-hidden">
             <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(white 1px, transparent 0); background-size: 24px 24px;"></div>
             <div>
-                <div class="flex items-center gap-3"><span class="w-10 h-10 rounded-xl bg-white text-[#0B1D33] grid place-items-center font-black">SM</span><span class="font-bold">SM STUDIO</span></div>
+                <div class="flex items-center gap-3 min-w-0"><img src="{{ asset('images/logo-sm-studio.svg') }}" alt="SM STUDIO" width="40" height="40" class="w-10 h-10 rounded-xl object-contain shrink-0 aspect-square"><span class="font-bold truncate">SM STUDIO</span></div>
                 <h1 class="mt-16 text-3xl font-bold leading-tight">Buat Akun Baru</h1>
                 <p class="text-white/70 mt-3">Hanya admin yang dapat membuat akun baru.</p>
             </div>

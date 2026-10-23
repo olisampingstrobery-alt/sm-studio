@@ -2,9 +2,9 @@
     <div class="min-h-screen flex items-center justify-center px-4 py-10">
         <div class="w-full max-w-md">
             <div class="text-center mb-6">
-                <a href="{{ route('home') }}" class="inline-flex items-center gap-2">
-                    <span class="w-9 h-9 rounded-xl bg-[#0B1D33] text-white grid place-items-center font-black">SM</span>
-                    <span class="font-bold text-[#0B1D33]">SM STUDIO</span>
+                <a href="{{ route('home') }}" class="inline-flex items-center gap-2 min-w-0">
+                    <img src="{{ asset('images/logo-sm-studio.svg') }}" alt="SM STUDIO" width="36" height="36" class="w-9 h-9 rounded-xl object-contain bg-[#0B1D33] shrink-0 aspect-square">
+                    <span class="font-bold text-[#0B1D33] truncate">SM STUDIO</span>
                 </a>
                 <p class="text-xs text-slate-500 mt-2">Anda akan dialihkan ke <a href="{{ route('admin.login') }}" class="text-[#0F2A4A] font-semibold hover:underline">Admin Login →</a></p>
             </div>

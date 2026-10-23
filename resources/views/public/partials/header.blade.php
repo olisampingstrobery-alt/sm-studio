@@ -27,10 +27,10 @@
     " @keydown.escape.window="open=false">
     <div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
-            <a href="{{ route('home') }}" class="flex items-center gap-3 shrink-0">
-                <span class="w-9 h-9 rounded-[10px] bg-[#0B1D33] text-white grid place-items-center font-black text-sm">SM</span>
-                <span class="font-bold tracking-tight text-[#0B1D33] text-[15px]">SM STUDIO</span>
-                <span class="hidden sm:inline text-[10px] tracking-[0.18em] text-slate-400 font-semibold ml-1">SMK BPPI BALEENDAH • Unit Produksi PPLG</span>
+            <a href="{{ route('home') }}" class="flex items-center gap-2 sm:gap-3 shrink-0 min-w-0 max-w-[72vw] sm:max-w-none">
+                <img src="{{ asset('images/logo-sm-studio.svg') }}" alt="SM STUDIO — SMK BPPI Baleendah" width="40" height="40" class="h-8 w-8 sm:h-9 sm:w-9 lg:h-10 lg:w-10 rounded-[10px] object-contain bg-[#0B1D33] shrink-0 aspect-square">
+                <span class="font-bold tracking-tight text-[#0B1D33] text-[14px] sm:text-[15px] lg:text-base truncate whitespace-nowrap">SM STUDIO</span>
+                <span class="hidden md:inline text-[10px] tracking-[0.18em] text-slate-400 font-semibold ml-1 truncate">SMK BPPI BALEENDAH • Unit Produksi PPLG</span>
             </a>
             {{-- DESKTOP NAV — tetap, warna & typography tidak diubah --}}
             <nav class="hidden lg:flex items-center gap-1">

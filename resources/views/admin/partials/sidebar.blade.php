@@ -16,7 +16,7 @@ $nav = [
        class="fixed inset-y-0 left-0 z-40 w-72 bg-[#0B1D33] text-slate-200 flex flex-col transition-transform duration-300 ease-in-out border-r border-white/10">
     {{-- Brand --}}
     <div class="h-16 flex items-center gap-3 px-6 border-b border-white/10 shrink-0">
-        <div class="w-9 h-9 rounded-xl bg-white text-[#0B1D33] grid place-items-center font-black text-sm shadow">SM</div>
+        <img src="{{ asset('images/logo-sm-studio.svg') }}" alt="SM STUDIO" width="36" height="36" class="w-9 h-9 rounded-xl object-contain shadow shrink-0 aspect-square bg-white/5">
         <div>
             <div class="font-bold leading-none tracking-tight text-white">SM STUDIO</div>
             <div class="text-[10px] tracking-[0.18em] text-slate-400 font-semibold">CREATIVE AGENCY</div>

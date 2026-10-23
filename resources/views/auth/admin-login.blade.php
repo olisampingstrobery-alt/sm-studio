@@ -21,9 +21,9 @@
     {{-- Thin top bar — utilitarian, bukan hero --}}
     <header class="h-[52px] shrink-0 bg-white border-b border-slate-200">
         <div class="max-w-[960px] mx-auto h-full px-4 sm:px-6 flex items-center justify-between">
-            <a href="{{ route('home') }}" class="flex items-center gap-2.5">
-                <span class="w-[30px] h-[30px] rounded-[8px] bg-[#0B1D33] text-white grid place-items-center text-[12px] font-bold tracking-tight leading-none">SM</span>
-                <span class="text-[13px] font-semibold tracking-tight text-[#0B1D33]">SM STUDIO</span>
+            <a href="{{ route('home') }}" class="flex items-center gap-2.5 min-w-0">
+                <img src="{{ asset('images/logo-sm-studio.svg') }}" alt="SM STUDIO" width="30" height="30" class="w-[30px] h-[30px] rounded-[8px] object-contain bg-[#0B1D33] shrink-0 aspect-square">
+                <span class="text-[13px] font-semibold tracking-tight text-[#0B1D33] truncate">SM STUDIO</span>
                 <span class="hidden sm:inline text-[10px] tracking-[0.14em] text-slate-400 font-medium ml-1 pl-3 border-l border-slate-200">ADMIN</span>
             </a>
             <a href="{{ route('home') }}" class="text-xs font-medium text-slate-500 hover:text-[#0B1D33] transition inline-flex items-center gap-1.5">
